@@ -1,0 +1,241 @@
+/*set cac thuoc tinh co ban cho body*/
+body{
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*set cac thuoc tinh co ban cho container*/
+#container{
+    width: 100%;
+    margin: auto;
+    min-height: 600px;
+}
+/*Tao header co chieu cao 50px va giu tai top*/
+#header{
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 50px;
+    background-color: #7e7e7e;
+    padding: 0px;
+}
+
+#banner{
+    margin-top: 50px;
+    width: 100%;
+    height: 60%;
+    background-color: #ffffff;
+}
+#banner img{
+    width:100%;
+    height:100%;
+}
+#content{
+    width: 100%;
+    min-height: 600px;
+    background-color: rebeccapurple;
+}
+#footer{
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #535353;
+    color: #fff;
+}
+#error{
+    text-align: center;
+}
+/*Set thuoc tinh cho logo*/
+#logo{
+    padding-top: 5px;
+    width:80px;
+    float: left;
+    cursor: pointer;
+}
+/*Set thuoc tinh cho menu_1: responsive >778px*/
+#menu_1{
+    width: 100%;
+    height: 50px;
+    display: block;
+}
+/*Set thuoc tinh cho menu: home - phones - tablets*/
+#menu{
+    width: 300px;
+    height: 50px;
+    float: left;
+}
+#header ul{ 
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    text-align: center;
+}
+#header ul li{
+    height: 50px;
+    width:95px;
+    display: inline-table;
+    background: #7e7e7e;
+    line-height: 50px;
+    position: relative;
+}
+#header ul li a{
+    color: #fff;
+    display: block;
+    text-decoration: none;
+}
+#header ul li a:hover{
+    background: #b3b0b0;
+}
+/*Set thuoc tinh cho menu con cua: home - phones - tablets*/
+#menu ul li > #sub_menu{
+    display: none;
+    position: absolute;
+}
+#menu ul li > #sub_menu li{
+    width:200px;
+}
+#menu ul li:hover #sub_menu{
+    display: block;
+}
+/*Set thuoc tinh cho signin*/
+#signin{    
+    height: 50px;
+    width: 80px;
+    float: right;
+    text-align: center;
+    line-height: 50px;
+    position: relative;
+}
+#signin a{
+    padding:15px 15px;
+    text-decoration: none;
+    color: #fff;
+}
+#signin > #frmlogin li{
+    display: none;
+    position: absolute;
+    width:190px;
+    height: 30px;
+    line-height: 30px;
+    right:0px;
+    text-align: left;
+    padding: 0px 0px 15px 15px;
+}
+
+#submit{
+    width:60px;
+    height: 30px;
+}
+/*Set thuoc tinh cho search*/
+#search{
+    padding-left: 10px;
+    height: 50px;
+    width: 300px;
+    float: right;
+    background: #7e7e7e;
+}
+/*Set thuoc tinh cho button search*/
+#btn{
+    margin: 7px;
+    padding: 2px;
+    border: #7e7e7e solid 1px;
+    width: 30px;
+    height: 30px;
+    float: right;
+    cursor: pointer;
+}
+/*Set thuoc tinh cho textbox search*/
+#txt{
+    padding: 7.5px 0px;
+    height: 35px;
+    float: right;
+    margin-right: 10px;
+    width: 80%;
+}
+#txt input{
+    width: 100%;
+    height: 80%;
+    font-size: 100%;
+}
+/*Bat su kien hover vao o signin*/
+#signin:hover{
+    background: #b3b0b0;
+}
+/*Bat su kien hover vao btn search*/
+#btn:hover{
+    background: #b3b0b0;
+    border: #ffffff solid 1px;
+}
+/*===============================================*/
+/*Set thuoc tinh cho menu_1: responsive <=778px*/
+#menu_2{
+    position: relative;
+    width:100%;
+    height: 50px;
+    display: none;
+}
+/*Set thuoc tinh cho o s_menu*/
+#s_menu{
+    position: absolute;
+    padding:5px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+#s_menu img{
+    width: 40px;
+    height: 40px;
+}
+/*Set thuoc tinh cho o s_logo*/
+#s_logo{
+    position: absolute;
+    left: 40%;
+    padding: 5px;
+    width:77px;
+    height: 40px;
+    cursor: pointer;
+}
+#s_logo img{
+    width: 77px;
+    height: 40px;
+}
+/*Set thuoc tinh cho o s_search*/
+#s_search{
+    position: absolute;
+    right: 50px;
+    margin-left: 10%;
+    padding:5px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+#s_search img{
+    width: 40px;
+    height: 40px;
+}
+/*Set thuoc tinh cho o s_signin*/
+#s_signin{
+    position: absolute;
+    right: 0px;
+    padding:5px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+#s_signin img{
+    width: 40px;
+    height: 40px;
+}
+/*Bat su kien khi hover vao o s_menu*/
+#s_menu:hover{
+    background: #b3b0b0;
+}
+/*Bat su kien khi hover vao o s_search*/
+#s_search:hover{
+    background: #b3b0b0;
+}
+/*Bat su kien khi hover vao o s_signin*/
+#s_signin:hover{
+    background: #b3b0b0;
+}
