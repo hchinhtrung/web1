@@ -1,3 +1,6 @@
+<?php
+    include_once ("lib/DataProvider.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +37,7 @@
                         include ("pages/pIndex.php");
                         break;
                     case 2:
-                        include ("pages/pListofPhones.php");
+                        include ("pages/pListOfProduct.php");
                         break;
                     case 3:
                         include ("pages/pListofTablet.php");

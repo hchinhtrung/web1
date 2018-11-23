@@ -9,26 +9,9 @@
         <img src="images/logo" width="77" height="40">
     </div>
     <div id="menu">
-        <ul>
-            <li><a href="index.php">Home</a></li>
-            <li>
-            <a href="index.php?a=2">Phones</a>
-                <ul id="sub_menu">
-                    <li><a href="">SamSung</a></li>
-                    <li><a href="">Iphone</a></li>
-                    <li><a href="">Sony</a></li>
-                    <li><a href="">Nokia</a></li>
-                    <li><a href="">Xiaomi</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="index.php?a=3">Tablet</a>
-                <ul id="sub_menu">
-                    <li><a href="">SamSung</a></li>
-                    <li><a href="">Iphone</a></li>
-                    <li><a href="">Xiaomi</a></li>
-                </ul>
-        </ul>
+       <?php
+            include ("modules/mMenu.php");
+       ?>
     </div>
     <div id="signin">
         <a id="a_signin">Sign in</a>
