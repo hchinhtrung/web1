@@ -31,15 +31,16 @@
         </ul>
     </div>
     <div id="signin">
-        <a href="#">Sign in</a>
+        <a id="a_signin">Sign in</a>
         <ul id="frmlogin">
             <li>
                 <form action="#">
-                    <p>Username</p><br />
+                    Username<br />
                     <input type="text"><br />
-                    <p>Password</p><br />
+                    Password<br />
                     <input type="text"><br />
-                    <input type="submit" value="Login" id="submit" id="submit">
+                    <div><input type="submit" value="Login" id="submit"></div>
+                    <a href="#">Sign up</a>
                 </form>
             </li>
         </ul>
