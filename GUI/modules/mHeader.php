@@ -1,27 +1,25 @@
-<div id="menu_2">
-    <a id="s_menu"><img src="images/menu.png"></a>
-    <a id="s_logo" href="index.php"><img src="images/logo.png"></a>
-    <a id="s_search" href="#"><img src="images/search.png"></a>
-    <a id="s_signin" href="#"><img src="images/avata.png"></a>
-</div>
 <div id="menu_1">
     <div id="logo">
-        <img src="images/logo" width="77" height="40">
+        <img src="GUI/images/logo" width="77" height="40">
     </div>
     <div id="menu">
-       <?php
-            include ("modules/mMenu.php");
-       ?>
+        <div id="a_menu"><img src="GUI/images/menu.png"></div>
+        <?php
+            include ("GUI/modules/mMenu.php");
+        ?>
+    </div>
+    <div id="a_logo">
+        <img src="GUI/images/logo" width="77" height="40">
     </div>
     <div id="signin">
-        <a id="a_signin">Sign in</a>
+        <div id="a_signin"><img src="GUI/images/avata.png"></div>
         <ul id="frmlogin">
             <li>
-                <form action="#">
+                <form action="index.php">
                     Username<br />
                     <input type="text"><br />
                     Password<br />
-                    <input type="text"><br />
+                    <input type="password"><br />
                     <div><input type="submit" value="Login" id="submit"></div>
                     <a href="#">Sign up</a>
                 </form>
@@ -29,9 +27,12 @@
         </ul>
     </div>
     <div id="search">
-        <div id="btn">
-            <img src="images/search.png" width="30" height="30"> 
-        </div>
-        <div id="txt"><input type="text" id="txtSearch"></div>
+        <div id="a_search"><img src="GUI/images/search.png"></div>
+        <ul id="frmSearch">
+            <li>
+                <input type="text" id="txt">
+                <input type="button" value="Search" id="btn">
+            </li>
+        </ul>
     </div>
 </div>

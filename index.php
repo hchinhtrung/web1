@@ -1,14 +1,14 @@
 <?php
-    include_once ("lib/DataProvider.php");
+    include_once ("GUI/lib/DataProvider.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
-    <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
-    <script src="js/myjs.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="GUI/css/style.css">
+    <script src="GUI/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="GUI/js/myjs.js" type="text/javascript"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Phones Store</title>
 </head>
@@ -16,12 +16,12 @@
     <div id="container">
         <div id="header">
             <?php
-            include ("modules/mHeader.php");
+            include ("GUI/modules/mHeader.php");
             ?>
         </div>
         <div id="banner">
         <?php
-            include ("modules/mBanner.php");
+            include ("GUI/modules/mBanner.php");
             ?>
         </div>
         <div id="content">
@@ -34,23 +34,23 @@
                 switch($a)
                 {
                     case 1:
-                        include ("pages/pIndex.php");
+                        include ("GUI/pages/pIndex.php");
                         break;
                     case 2:
-                        include ("pages/pListOfProduct.php");
+                        include ("GUI/pages/pQLGioHang.php");
                         break;
                     case 3:
-                        include ("pages/pListofTablet.php");
+                        include ("GUI/pages/pListofTablet.php");
                         break;
                     default:
-                        include ("pages/pError.php");
+                        include ("GUI/pages/pError.php");
                         break;
                 }
             ?>
         </div>
         <div id="footer">
             <?php
-                include ("modules/mFooter.php");
+                include ("GUI/modules/mFooter.php");
             ?>
         </div>
     </div>
