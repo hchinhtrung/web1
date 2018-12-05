@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 01, 2018 at 12:09 PM
+-- Generation Time: Dec 04, 2018 at 06:19 PM
 -- Server version: 5.7.23
 -- PHP Version: 5.6.38
 
@@ -39,7 +39,10 @@ CREATE TABLE IF NOT EXISTS `chitietdonhang` (
   KEY `MaSanPham` (`MaSanPham`),
   KEY `MaDonHangDaDat` (`MaDonDatHang`),
   KEY `MaDonDatHang` (`MaDonDatHang`),
-  KEY `MaDonDatHang_2` (`MaDonDatHang`)
+  KEY `MaDonDatHang_2` (`MaDonDatHang`),
+  KEY `MaDonDatHang_3` (`MaDonDatHang`),
+  KEY `MaSanPham_2` (`MaSanPham`),
+  KEY `MaDonDatHang_4` (`MaDonDatHang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -78,9 +81,10 @@ CREATE TABLE IF NOT EXISTS `dondathang` (
   `TongThanhTien` int(11) NOT NULL,
   `MaTaiKhoan` int(11) NOT NULL,
   `MaTinhTrang` int(11) NOT NULL,
-  PRIMARY KEY (`MaTinhTrang`),
+  PRIMARY KEY (`MaDonDatHang`),
   KEY `MaTaiKhoan` (`MaTaiKhoan`),
-  KEY `MaTaiKhoan_2` (`MaTaiKhoan`)
+  KEY `MaTaiKhoan_2` (`MaTaiKhoan`),
+  KEY `MaTinhTrang` (`MaTinhTrang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -212,7 +216,8 @@ CREATE TABLE IF NOT EXISTS `tinhtrang` (
 -- Constraints for table `chitietdonhang`
 --
 ALTER TABLE `chitietdonhang`
-  ADD CONSTRAINT `FK_MASP` FOREIGN KEY (`MaSanPham`) REFERENCES `sanpham` (`MaSanPham`);
+  ADD CONSTRAINT `FK_MADONDATHANG` FOREIGN KEY (`MaDonDatHang`) REFERENCES `dondathang` (`MaDonDatHang`),
+  ADD CONSTRAINT `FK_MASANPHAM` FOREIGN KEY (`MaSanPham`) REFERENCES `sanpham` (`MaSanPham`);
 
 --
 -- Constraints for table `dondathang`
