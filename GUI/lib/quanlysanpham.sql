@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 04, 2018 at 06:19 PM
+-- Generation Time: Dec 05, 2018 at 12:24 PM
 -- Server version: 5.7.23
 -- PHP Version: 5.6.38
 
@@ -43,29 +43,6 @@ CREATE TABLE IF NOT EXISTS `chitietdonhang` (
   KEY `MaDonDatHang_3` (`MaDonDatHang`),
   KEY `MaSanPham_2` (`MaSanPham`),
   KEY `MaDonDatHang_4` (`MaDonDatHang`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `chitietsp`
---
-
-DROP TABLE IF EXISTS `chitietsp`;
-CREATE TABLE IF NOT EXISTS `chitietsp` (
-  `MaChitietSP` int(11) NOT NULL AUTO_INCREMENT,
-  `TenSP` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `ManHinh` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `CamTruoc` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `CamSau` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `RAM` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `ROM` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `CPU` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `GPU` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `Pin` int(11) NOT NULL,
-  `HeDieuHanh` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `Sim` int(11) NOT NULL,
-  PRIMARY KEY (`MaChitietSP`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -164,11 +141,9 @@ CREATE TABLE IF NOT EXISTS `sanpham` (
   `BiXoa` tinyint(1) NOT NULL,
   `MaLoaiSanPham` int(11) NOT NULL,
   `MaHangSanXuat` int(11) NOT NULL,
-  `MaChitietSP` int(11) NOT NULL,
   PRIMARY KEY (`MaSanPham`),
   KEY `MaLoaiSanPham` (`MaLoaiSanPham`),
-  KEY `FK_HANGSANXUAT` (`MaHangSanXuat`),
-  KEY `MaChitietSP` (`MaChitietSP`)
+  KEY `FK_HANGSANXUAT` (`MaHangSanXuat`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -238,8 +213,7 @@ ALTER TABLE `hangsxcualoaisp`
 --
 ALTER TABLE `sanpham`
   ADD CONSTRAINT `FK_HANGSANXUAT` FOREIGN KEY (`MaHangSanXuat`) REFERENCES `hangsanxuat` (`MaHangSanXuat`),
-  ADD CONSTRAINT `FK_LOAISANPHAM` FOREIGN KEY (`MaLoaiSanPham`) REFERENCES `loaisanpham` (`MaLoaiSanPham`),
-  ADD CONSTRAINT `FK_MACHITIETSP` FOREIGN KEY (`MaChitietSP`) REFERENCES `chitietsp` (`MaChitietSP`);
+  ADD CONSTRAINT `FK_LOAISANPHAM` FOREIGN KEY (`MaLoaiSanPham`) REFERENCES `loaisanpham` (`MaLoaiSanPham`);
 
 --
 -- Constraints for table `taikhoan`
