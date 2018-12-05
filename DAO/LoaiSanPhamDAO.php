@@ -11,6 +11,7 @@
                 extract($row);
                 $loaiSanPham = new LoaiSanPhamDTO();
                 $loaiSanPham->MaLoaiSanPham = $MaLoaiSanPham;
+                
                 $loaiSanPham->TenLoaiSanPham = $TenLoaiSanPham;
                 $loaiSanPham->BiXoa = $BiXoa;
                 $lstLoaiSanPham[] = $loaiSanPham;
