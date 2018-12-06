@@ -5,7 +5,7 @@
             Iphone XS Max
         </p>
         <div>
-            10.000.000 vnd
+        33.990.000 vnd
         </div>
 </div>
 <div id="box">
@@ -14,7 +14,7 @@
             Iphone XS
         </p>
         <div>
-            10.000.000 vnd
+        29.990.000 vnd
         </div>
 </div>
 <div id="box">
@@ -23,7 +23,7 @@
             Iphone XR
         </p>
         <div>
-            10.000.000 vnd
+        22.990.000 vnd
         </div>
 </div>
 <div id="box">
@@ -32,7 +32,7 @@
             Iphone X
         </p>
         <div>
-            10.000.000 vnd
+        26.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -41,7 +41,7 @@
             Iphone 8 Plus
         </p>
         <div>
-            10.000.000 vnd
+        19.990.000   vnd
         </div>
 </div>
 <div id="box">
@@ -50,7 +50,7 @@
             Iphone 8
         </p>
         <div>
-            10.000.000 vnd
+        17.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -59,7 +59,7 @@
             Iphone 7 Plus
         </p>
         <div>
-            10.000.000 vnd
+        17.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -68,7 +68,7 @@
             Iphone 7
         </p>
         <div>
-            10.000.000 vnd
+        13.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -77,7 +77,7 @@
             Iphone 6 Plus
         </p>
         <div>
-            10.000.000 vnd
+        9.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -86,7 +86,7 @@
             Iphone 6
         </p>
         <div>
-            10.000.000 vnd
+        6.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -95,7 +95,7 @@
             iPad Pro 12.9 Wifi 4G 
         </p>
         <div>
-            10.000.000 vnd
+        27.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -104,7 +104,7 @@
             iPad Pro 12.9 Wifi
         </p>
         <div>
-            10.000.000 vnd
+        20.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -113,7 +113,7 @@
             iPad Pro 10.5 Wifi 4G
         </p>
         <div>
-            10.000.000 vnd
+        19.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -122,7 +122,7 @@
             iPad Pro 10.5 Wifi
         </p>
         <div>
-            10.000.000 vnd
+        16.990.000  vnd
         </div>
 </div>
 
@@ -132,7 +132,7 @@
             iPad 2018 Wifi 4G
         </p>
         <div>
-            10.000.000 vnd
+        11.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -141,7 +141,7 @@
             iPad 2018 Wifi
         </p>
         <div>
-            10.000.000 vnd
+        8.990.000 vnd
         </div>
 </div>
 <!--SAMSUNG-->
@@ -152,7 +152,7 @@
             Samsung Galaxy A6 Plus
         </p>
         <div>
-            10.000.000 vnd
+        5.190.000  vnd
         </div>
 </div>
 <div id="box">
@@ -161,7 +161,7 @@
             Samsung Galaxy A7
         </p>
         <div>
-            10.000.000 vnd
+        7.690.000 vnd
         </div>
 </div>
 <div id="box">
@@ -170,7 +170,7 @@
             Samsung Galaxy A8
         </p>
         <div>
-            10.000.000 vnd
+        10.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -179,7 +179,7 @@
             Samsung Galaxy A8 Star
         </p>
         <div>
-            10.000.000 vnd
+        13.990.000 vnd
         </div>
 </div>
 
@@ -189,7 +189,7 @@
             Samsung Galaxy Note 8
         </p>
         <div>
-            10.000.000 vnd
+        19.990.000 vnd
         </div>
 </div>
 <div id="box">
@@ -198,7 +198,7 @@
             Samsung Galaxy Note 9
         </p>
         <div>
-            10.000.000 vnd
+        22.990.000 vnd
         </div>
 </div>
 <div id="box">
@@ -207,7 +207,7 @@
             Samsung Galaxy Note FE
         </p>
         <div>
-            10.000.000 vnd
+        12.990.000 vnd
         </div>
 </div>
 <div id="box">
@@ -216,7 +216,7 @@
             Samsung Galaxy S8
         </p>
         <div>
-            10.000.000 vnd
+        15.990.000 vnd
         </div>
 </div>
 <div id="box">
@@ -225,7 +225,7 @@
             Samsung Galaxy S8 Plus
         </p>
         <div>
-            10.000.000 vnd
+        17.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -234,7 +234,7 @@
             Samsung Galaxy S9
         </p>
         <div>
-            10.000.000 vnd
+        19.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -243,7 +243,7 @@
             Samsung Galaxy S9 Plus
         </p>
         <div>
-            10.000.000 vnd
+        24.490.000  vnd
         </div>
 </div>
 
@@ -253,7 +253,7 @@
             Samsung Galaxy Tab A6
         </p>
         <div>
-            10.000.000 vnd
+        7.490.000  vnd
         </div>
 </div>
 <div id="box">
@@ -262,7 +262,7 @@
             Samsung Galaxy Tab A7
         </p>
         <div>
-            10.000.000 vnd
+        3.290.000  vnd
         </div>
 </div>
 <div id="box">
@@ -271,7 +271,7 @@
             Samsung Galaxy Tab A8.0
         </p>
         <div>
-            10.000.000 vnd
+        5.490.000  vnd
         </div>
 </div>
 <div id="box">
@@ -280,7 +280,7 @@
             Samsung Galaxy Tab A10.5
         </p>
         <div>
-            10.000.000 vnd
+        9.490.000  vnd
         </div>
 </div>
 <div id="box">
@@ -289,7 +289,7 @@
             Samsung Galaxy Tab E
         </p>
         <div>
-            10.000.000 vnd
+        3.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -298,7 +298,7 @@
             Samsung Galaxy Tab S4
         </p>
         <div>
-            10.000.000 vnd
+        17.990.000  vnd
         </div>
 </div>
 
@@ -310,7 +310,7 @@
             Nokia 2.1
         </p>
         <div>
-            10.000.000 vnd
+        2.590.000  vnd
         </div>
 </div>
 <div id="box">
@@ -319,7 +319,7 @@
             Nokia 2
         </p>
         <div>
-            10.000.000 vnd
+        1.790.000  vnd
         </div>
 </div>
 <div id="box">
@@ -328,7 +328,7 @@
             Nokia 3.1
         </p>
         <div>
-            10.000.000 vnd
+        2.890.000  vnd
         </div>
 </div>
 <div id="box">
@@ -337,7 +337,7 @@
             Nokia 5
         </p>
         <div>
-            10.000.000 vnd
+        3.090.000  vnd
         </div>
 </div>
 <div id="box">
@@ -346,7 +346,7 @@
             Nokia 6.1
         </p>
         <div>
-            10.000.000 vnd
+        4.890.000  vnd
         </div>
 </div>
 <div id="box">
@@ -355,7 +355,7 @@
             Nokia 6.1 Plus
         </p>
         <div>
-            10.000.000 vnd
+        6.590.000  vnd
         </div>
 </div>
 <div id="box">
@@ -364,7 +364,7 @@
             Nokia 6
         </p>
         <div>
-            10.000.000 vnd
+        2.999.000  vnd
         </div>
 </div>
 <div id="box">
@@ -373,7 +373,7 @@
             Nokia 7 Plus
         </p>
         <div>
-            10.000.000 vnd
+        8.240.000 vnd
         </div>
 </div>
 <div id="box">
@@ -382,7 +382,7 @@
             Nokia 3310
         </p>
         <div>
-            10.000.000 vnd
+        1.059.000 vnd
         </div>
 </div>
 <div id="box">
@@ -391,7 +391,7 @@
             Nokia 8110
         </p>
         <div>
-            10.000.000 vnd
+        1.480.000  vnd
         </div>
 </div>
 
@@ -402,7 +402,7 @@
             Oppo A3s
         </p>
         <div>
-            10.000.000 vnd
+        4.690.000  vnd
         </div>
 </div>
 <div id="box">
@@ -411,16 +411,16 @@
             Oppo A7
         </p>
         <div>
-            10.000.000 vnd
+        5.990.000  vnd
         </div>
 </div>
 <div id="box">
         <img src="GUI/images/oppo/a7youth.jpg">
         <p>
-            Oppo A7 Youth
+            Oppo F7 Youth
         </p>
         <div>
-            10.000.000 vnd
+        5.490.000  vnd
         </div>
 </div>
 <div id="box">
@@ -429,7 +429,7 @@
             Oppo A71
         </p>
         <div>
-            10.000.000 vnd
+        3.290.000  vnd
         </div>
 </div>
 <div id="box">
@@ -438,7 +438,7 @@
             Oppo A71k
         </p>
         <div>
-            10.000.000 vnd
+        2.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -447,7 +447,7 @@
             Oppo A83
         </p>
         <div>
-            10.000.000 vnd
+        3.190.000  vnd
         </div>
 </div>
 <div id="box">
@@ -456,7 +456,7 @@
             Oppo F5 Youth
         </p>
         <div>
-            10.000.000 vnd
+        4.490.000 vnd
         </div>
 </div>
 <div id="box">
@@ -465,7 +465,7 @@
             Oppo F7
         </p>
         <div>
-            10.000.000 vnd
+        6.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -474,7 +474,7 @@
             Oppo F9
         </p>
         <div>
-            10.000.000 vnd
+        7.690.000  vnd
         </div>
 </div>
 <div id="box">
@@ -483,7 +483,7 @@
             Oppo F9 (RAM 6GB)
         </p>
         <div>
-            10.000.000 vnd
+        8.490.000  vnd
         </div>
 </div>
 <div id="box">
@@ -492,7 +492,7 @@
             Oppo Find X
         </p>
         <div>
-            10.000.000 vnd
+        20.990.000  vnd
         </div>
 </div>
 
@@ -506,7 +506,7 @@
             Huawei Mate 20
         </p>
         <div>
-            10.000.000 vnd
+        15.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -515,7 +515,7 @@
             Huawei Mate 20 Pro
         </p>
         <div>
-            10.000.000 vnd
+        21.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -524,7 +524,7 @@
             Huawei Nova 3
         </p>
         <div>
-            10.000.000 vnd
+        9.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -533,7 +533,7 @@
             Huawei Nova3e
         </p>
         <div>
-            10.000.000 vnd
+        5.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -542,7 +542,7 @@
             Huawei Nova 3i
         </p>
         <div>
-            10.000.000 vnd
+        6.490.000  vnd
         </div>
 </div>
 <div id="box">
@@ -551,7 +551,7 @@
             Huawei P20 Pro
         </p>
         <div>
-            10.000.000 vnd
+        16.990.000 vnd
         </div>
 </div>
 <div id="box">
@@ -560,7 +560,7 @@
             Huawei Y3
         </p>
         <div>
-            10.000.000 vnd
+        1.790.000  vnd
         </div>
 </div>
 <div id="box">
@@ -569,7 +569,7 @@
             Huawei Y6 Prime
         </p>
         <div>
-            10.000.000 vnd
+        2.990.000  vnd
         </div>
 </div>
 <div id="box">
@@ -578,7 +578,7 @@
             Huawei Y7 Pro
         </p>
         <div>
-            10.000.000 vnd
+        3.490.000  vnd
         </div>
 </div>
 <div id="box">
@@ -587,6 +587,6 @@
             Huawei Y9
         </p>
         <div>
-            10.000.000 vnd
+        5.490.000  vnd
         </div>
 </div>
