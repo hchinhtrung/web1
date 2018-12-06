@@ -1,4 +1,4 @@
-
+<!--APPLE-->
 <div id="box">
         <img src="GUI/images/apple/iphoneXsmax.png">
         <p>
@@ -389,6 +389,202 @@
         <img src="GUI/images/nokia/nokia8110.jpg">
         <p>
             Nokia 8110
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+
+<!--OPPO-->
+<div id="box">
+        <img src="GUI/images/oppo/a3s.jpg">
+        <p>
+            Oppo A3s
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/oppo/a7.jpg">
+        <p>
+            Oppo A7
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/oppo/a7youth.jpg">
+        <p>
+            Oppo A7 Youth
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/oppo/a71.jpg">
+        <p>
+            Oppo A71
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/oppo/a71k.jpg">
+        <p>
+            Oppo A71k
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/oppo/a83.jpg">
+        <p>
+            Oppo A83
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/oppo/f5youth.jpg">
+        <p>
+            Oppo F5 Youth
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/oppo/f7.jpg">
+        <p>
+            Oppo F7
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/oppo/f9.jpg">
+        <p>
+            Oppo F9
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/oppo/f9ram6.jpg">
+        <p>
+            Oppo F9 (RAM 6GB)
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/oppo/findX.jpg">
+        <p>
+            Oppo Find X
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+
+
+
+
+<!--HUAWEI-->
+<div id="box">
+        <img src="GUI/images/huawei/mate20.jpg">
+        <p>
+            Huawei Mate 20
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/huawei/mate20pro.jpg">
+        <p>
+            Huawei Mate 20 Pro
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/huawei/nova3.jpg">
+        <p>
+            Huawei Nova 3
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/huawei/nova3e.jpg">
+        <p>
+            Huawei Nova3e
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/huawei/nova3i.jpg">
+        <p>
+            Huawei Nova 3i
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/huawei/P20pro.jpg">
+        <p>
+            Huawei P20 Pro
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/huawei/Y3.jpg">
+        <p>
+            Huawei Y3
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/huawei/Y6prime.jpg">
+        <p>
+            Huawei Y6 Prime
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/huawei/Y7pro.jpg">
+        <p>
+            Huawei Y7 Pro
+        </p>
+        <div>
+            10.000.000 vnd
+        </div>
+</div>
+<div id="box">
+        <img src="GUI/images/huawei/Y9.jpg">
+        <p>
+            Huawei Y9
         </p>
         <div>
             10.000.000 vnd
