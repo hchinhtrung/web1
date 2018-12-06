@@ -47,12 +47,13 @@
                 $this->loaiTaiKhoanDAO->SetDelete($loaiTaiKhoan);
             }
         }
-        public function SetDelete($maLoaiTaiKhoan)
+        public function Update($TenLoaiTaiKhoan)
         {
             $loaiTaiKhoan= new LoaiTaiKhoanDTO();
-            $loaiTaiKhoan->MaLoaiTaiKhoan=$maLoaiTaiKhoan;
-            $this->loaiTaiKhoanDAO->SetDelete($)
+            $loaiTaiKhoan->TenLoaiTaiKhoan= $TenLoaiTaiKhoan;
+            $this->loaiTaiKhoanDAO->Update($loaiTaiKhoan);
         }
 
         
     }
+?>
