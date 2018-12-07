@@ -299,6 +299,14 @@ body{
     background: #fb8619;
     color: #fff;
 }
+#container #product{
+    width: 100%;
+    height: 20px;
+    padding: 10px 10px 10px 10px;
+    font: 20px bold;
+    color: #fff;
+    background: #ef4444;
+}
 /*Responsive cho trang web*/
 @media screen and (max-width:1024px)
 {

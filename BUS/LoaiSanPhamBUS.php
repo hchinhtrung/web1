@@ -4,10 +4,10 @@
         var $loaiSanPhamDAO;
         public function __construct()
         {
-            $this->$loaiSanPhamDAO = new LoaiSanPhamDAO();
+            $this->loaiSanPhamDAO = new LoaiSanPhamDAO();
         }
 
-        public function GetAll();
+        public function GetAll()
         {
             return $this->loaiSanPhamDAO->GetAll();
         }
@@ -24,7 +24,7 @@
 
         public function Insert($loaiSanPham)
         {
-            $this->loaiSanPhamDAO->Insert($loaiSanPham)
+            $this->loaiSanPhamDAO->Insert($loaiSanPham);
         }
 
         public function InsertWithName($tenLoaiSanPham)

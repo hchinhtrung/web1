@@ -40,7 +40,7 @@
             $result = $this->ExecuteQuery($sql);
             if($result == null)
                 return null;
-            $row = mysqli_fetch_array($result)
+            $row = mysqli_fetch_array($result);
             extract($row);
             $loaiSanPham = new LoaiSanPhamDTO();
             $loaiSanPham->MaLoaiSanPham = $MaLoaiSanPham;
@@ -60,17 +60,17 @@
         }
         public function SetDelete($loaiSanPham)
         {
-            $sql = "update loaisanpham set BiXoa = 1 where $loaiSanPham->MaLoaiSanPham"
+            $sql = "update loaisanpham set BiXoa = 1 where $loaiSanPham->MaLoaiSanPham";
             $this->ExecuteQuery($sql);
         }
         public function UnsetDelete($loaiSanPham)
         {
-            $sql = "update loaisanpham set BiXoa = 0 where $loaiSanPham->MaLoaiSanPham"
+            $sql = "update loaisanpham set BiXoa = 0 where $loaiSanPham->MaLoaiSanPham";
             $this->ExecuteQuery($sql);
         }
         public function Update($loaiSanPham)
         {
-            $sql = "update loaisanpham set TenLoaiSanPham = $loaiSanPham->TenLoaiSanPham, BiXoa = $loaiSanPham->BiXoa where $loaiSanPham->MaLoaiSanPham"
+            $sql = "update loaisanpham set TenLoaiSanPham = $loaiSanPham->TenLoaiSanPham, BiXoa = $loaiSanPham->BiXoa where $loaiSanPham->MaLoaiSanPham";
             $this->ExecuteQuery($sql);
         }
         public function DemSoLuongSanPhamThuocLoai($maLoaiSanPham)

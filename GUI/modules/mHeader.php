@@ -13,18 +13,9 @@
     </div>
     <div id="signin">
         <div id="a_signin"><img src="GUI/images/avata.png"></div>
-        <ul id="frmlogin">
-            <li>
-                <form action="index.php">
-                    Username<br />
-                    <input type="text"><br />
-                    Password<br />
-                    <input type="password"><br />
-                    <div><input type="submit" value="Login" id="submit"></div>
-                    <a href="#">Sign up</a>
-                </form>
-            </li>
-        </ul>
+        <?php
+            include ("GUI/modules/mLogin/mLogin.php");
+        ?>
     </div>
     <div id="search">
         <div id="a_search"><img src="GUI/images/search.png"></div>

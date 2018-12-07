@@ -3,7 +3,7 @@ Class SanPhamDAO extends DB
 {
     public function GetAll()
     {
-        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham, NgayNhap, SoLuongTon, SoLuongBan, SoLuotXem, MoTa, MaLoaiSanPham, MaHangSanXuat from sanpham";
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham, NgayNhap, SoLuongTon, SoLuongBan, SoLuotXem, MoTa, BiXoa, MaLoaiSanPham, MaHangSanXuat from sanpham";
         $result =$this->ExecuteQuery($sql);
         $lstSanPham = array();
         while( $row = mysqli_fetch_array($result))
@@ -28,8 +28,8 @@ Class SanPhamDAO extends DB
     } 
     public function GetAllAvailable()
     {
-        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham, NgayNhap, SoLuongTon, SoLuongBan, SoLuotXem, MoTa, MaLoaiSanPham, MaHangSanXuat from sanpham";
-        $result = $this->ExecuteQuery($sql);
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham";
+        $result =$this->ExecuteQuery($sql);
         $lstSanPham = array();
         while( $row = mysqli_fetch_array($result))
         {
@@ -39,17 +39,43 @@ Class SanPhamDAO extends DB
             $sanPham->TenSanPham=$TenSanPham;
             $sanPham->HinhURL=$HinhURL;
             $sanPham->GiaSanPham = $GiaSanPham;
-            $sanPham->NgayNhap = $NgayNhap;
-            $sanPham->SoLuongTon = $SoLuongTon;
-            $sanPham->SoLuongBan = $SoLuongBan;
-            $sanPham->SoLuotXem = $SoLuotXem;
-            $sanPham->Mota = $MoTa;
-            $sanPham->BiXoa = $BiXoa;
-            $sanPham->MaLoaiSanPham = $MaLoaiSanPham;
-            $sanPham->MaHangSanXuat = $MaHangSanXuat;
             $lstsanPham[]= $sanPham;
         }
-        return $lstSanPham;
+        return $lstsanPham;
+    }
+    public function GetTopToDate()
+    {
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham order by NgayNhap desc limit 10";
+        $result =$this->ExecuteQuery($sql);
+        $lstSanPham = array();
+        while( $row = mysqli_fetch_array($result))
+        {
+            extract($row);
+            $sanPham= new SanPhamDTO();
+            $sanPham->MaSanPham = $MaSanPham;
+            $sanPham->TenSanPham=$TenSanPham;
+            $sanPham->HinhURL=$HinhURL;
+            $sanPham->GiaSanPham = $GiaSanPham;
+            $lstsanPham[]= $sanPham;
+        }
+        return $lstsanPham;
+    }
+    public function GetTopToSoLuongBan()
+    {
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham order by SoLuongBan desc limit 10";
+        $result =$this->ExecuteQuery($sql);
+        $lstSanPham = array();
+        while( $row = mysqli_fetch_array($result))
+        {
+            extract($row);
+            $sanPham= new SanPhamDTO();
+            $sanPham->MaSanPham = $MaSanPham;
+            $sanPham->TenSanPham=$TenSanPham;
+            $sanPham->HinhURL=$HinhURL;
+            $sanPham->GiaSanPham = $GiaSanPham;
+            $lstsanPham[]= $sanPham;
+        }
+        return $lstsanPham;
     }
     public function GetByID($maSanPham)
     {

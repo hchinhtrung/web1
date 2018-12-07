@@ -21,6 +21,10 @@ class TaiKhoanBUS
     {
         return $this->taiKhoanDAO->GetByID($maTaiKhoan);
     }
+    public function GetByUS_PW($tenDangNhap, $matKhau)
+    {
+        return $this->taiKhoanDAO->GetByUS_PW($tenDangNhap, $matKhau);
+    }
     public function Insert($taiKhoan)
     {
         $this->taiKhoanDAO->Insert($taiKhoan);

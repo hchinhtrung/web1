@@ -39,13 +39,29 @@
             $result = $this->ExecuteQuery($sql);
             if($result == null)
                 return null;
-            $row = mysqli_fetch_array($result)
+            $row = mysqli_fetch_array($result);
             extract($row);
             $hangSanXuat = new LoaiSanPhamDTO();
             $hangSanXuat->MaHangSanXuat = $MaHangSanXuat;
             $hangSanXuat->TenHangSanXuat = $TenHangSanXuat;
             $hangSanXuat->BiXoa = $BiXoa;
             return $hangSanXuat;
+        }
+        public function GetByMaLoaiSanPham($maLoaiSanPham)
+        {
+            $sql = "select hsx.MaHangSanXuat, TenHangSanXuat, BiXoa from hangsanxuat hsx, hangsxcualoaisp hsp where hsp.MaHangSanXuat = hsx.MaHangSanXuat and hsp.MaLoaiSanPham = $maLoaiSanPham and  hsx.BiXoa = 0";
+            $result = $this->ExecuteQuery($sql);
+            $lstHangSanXuat = array();
+            while( $row = mysqli_fetch_array($result))
+            {
+                extract($row);
+                $hangSanXuat = new LoaiSanPhamDTO();
+                $hangSanXuat->MaHangSanXuat = $MaHangSanXuat;
+                $hangSanXuat->TenHangSanXuat = $TenHangSanXuat;
+                $hangSanXuat->BiXoa = $BiXoa;
+                $lstHangSanXuat[] = $hangSanXuat;
+            }
+            return $lstHangSanXuat;
         }
         public function Insert($hangSanXuat)
         {
@@ -59,17 +75,17 @@
         }
         public function SetDelete($hangSanXuat)
         {
-            $sql = "update hangsanxuat set BiXoa = 1 where $hangSanXuat->MaHangSanXuat"
+            $sql = "update hangsanxuat set BiXoa = 1 where $hangSanXuat->MaHangSanXuat";
             $this->ExecuteQuery($sql);
         }
         public function UnsetDelete($hangSanXuat)
         {
-            $sql = "update hangsanxuat set BiXoa = 0 where $hangSanXuat->MaHangSanXuat"
+            $sql = "update hangsanxuat set BiXoa = 0 where $hangSanXuat->MaHangSanXuat";
             $this->ExecuteQuery($sql);
         }
         public function Update($hangSanXuat)
         {
-            $sql = "update hangsanxuat set TenHangSanXuat = $hangSanXuat->TenHangSanXuat, BiXoa = $HangSanXuat->BiXoa where $hangSanXuat->MaHangSanXuat"
+            $sql = "update hangsanxuat set TenHangSanXuat = $hangSanXuat->TenHangSanXuat, BiXoa = $HangSanXuat->BiXoa where $hangSanXuat->MaHangSanXuat";
             $this->ExecuteQuery($sql);
         }
         public function DemSoLuongSanPhamThuocHang($maHangSanXuat)

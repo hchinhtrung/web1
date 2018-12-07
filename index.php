@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include_once ("GUI/lib/DataProvider.php");
 ?>
 <!DOCTYPE html>
@@ -13,6 +14,30 @@
     <title>Phones Store</title>
 </head>
 <body>
+    <?php
+        include("DAO/DB.php");
+        include("DTO/TaiKhoanDTO.PHP");
+        include("DAO/TaiKhoanDAO.php");
+        include("BUS/TaiKhoanBUS.php");
+
+        include("DTO/LoaiSanPhamDTO.PHP");
+        include("DAO/LoaiSanPhamDAO.php");
+        include("BUS/LoaiSanPhamBUS.php");
+
+        include("DTO/HangSanXuatDTO.PHP");
+        include("DAO/HangSanXuatDAO.php");
+        include("BUS/HangSanXuatBUS.php");
+
+        include("DTO/HSXCuaLSPDTO.PHP");
+        include("DAO/HSXCuaLSPDAO.php");
+        include("BUS/HSXCuaLSPBUS.php");
+
+        include("DTO/SanPhamDTO.PHP");
+        include("DAO/SanPhamDAO.php");
+        include("BUS/SanPhamBUS.php");
+
+
+    ?>
     <div id="container">
         <div id="header">
             <?php
@@ -37,10 +62,19 @@
                         include ("GUI/pages/pIndex.php");
                         break;
                     case 2:
-                        include ("GUI/pages/pQLGioHang.php");
+                        include ("GUI/pages/pListOfProduct.php");
                         break;
                     case 3:
                         include ("GUI/pages/pListofTablet.php");
+                        break;
+                    case 4:
+                        include ("GUI/pages/pChiTietSanPham.php");
+                        break;
+                    case 10:
+                        include ("GUI/modules/mLogin/exLogin.php");
+                        break;
+                    case 11:
+                        include ("GUI/modules/mLogin/exLogout.php");
                         break;
                     default:
                         include ("GUI/pages/pError.php");

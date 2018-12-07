@@ -4,10 +4,10 @@
         var $hangSanXuatDAO;
         public function __construct()
         {
-            $this->$hangSanXuatDAO = new HangSanXuatDAO();
+            $this->hangSanXuatDAO = new HangSanXuatDAO();
         }
 
-        public function GetAll();
+        public function GetAll()
         {
             return $this->hangSanXuatDAO->GetAll();
         }
@@ -21,10 +21,13 @@
         {
             return $this->hangSanXuatDAO->GetByID($maHangSanXuat);
         }
-
+        public function GetByMaLoaiSanPham($maLoaiSanPham)
+        {
+            return $this->hangSanXuatDAO->GetByMaLoaiSanPham($maLoaiSanPham);
+        }
         public function Insert($hangSanXUat)
         {
-            $this->hangSanXuatDAO->Insert($hangSanXUat)
+            $this->hangSanXuatDAO->Insert($hangSanXUat);
         }
 
         public function InsertWithName($tenHangSanXuat)
