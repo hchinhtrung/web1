@@ -1,7 +1,6 @@
 <?php
     class SanPhamBUS
     {
-
         var $sanPhamDAO;
         public function __construct()
         {
