@@ -22,9 +22,9 @@ Class SanPhamDAO extends DB
             $sanPham->BiXoa = $BiXoa;
             $sanPham->MaLoaiSanPham = $MaLoaiSanPham;
             $sanPham->MaHangSanXuat = $MaHangSanXuat;
-            $lstsanPham[]= $sanPham;
+            $lstSanPham[]= $sanPham;
         }
-        return $lstsanPham;
+        return $lstSanPham;
     } 
     public function GetAllAvailable()
     {
@@ -39,9 +39,9 @@ Class SanPhamDAO extends DB
             $sanPham->TenSanPham=$TenSanPham;
             $sanPham->HinhURL=$HinhURL;
             $sanPham->GiaSanPham = $GiaSanPham;
-            $lstsanPham[]= $sanPham;
+            $lstSanPham[]= $sanPham;
         }
-        return $lstsanPham;
+        return $lstSanPham;
     }
     public function GetTopToDate()
     {
@@ -56,9 +56,9 @@ Class SanPhamDAO extends DB
             $sanPham->TenSanPham=$TenSanPham;
             $sanPham->HinhURL=$HinhURL;
             $sanPham->GiaSanPham = $GiaSanPham;
-            $lstsanPham[]= $sanPham;
+            $lstSanPham[]= $sanPham;
         }
-        return $lstsanPham;
+        return $lstSanPham;
     }
     public function GetTopToSoLuongBan()
     {
@@ -73,9 +73,9 @@ Class SanPhamDAO extends DB
             $sanPham->TenSanPham=$TenSanPham;
             $sanPham->HinhURL=$HinhURL;
             $sanPham->GiaSanPham = $GiaSanPham;
-            $lstsanPham[]= $sanPham;
+            $lstSanPham[]= $sanPham;
         }
-        return $lstsanPham;
+        return $lstSanPham;
     }
     public function GetByID($maSanPham)
     {
