@@ -4,7 +4,7 @@
         var $sanPhamDAO;
         public function __construct()
         {
-            $this->sanPhamDAO = new SanPhamDAO();
+             $this->sanPhamDAO = new SanPhamDAO();
         }
 
         public function GetAll()
