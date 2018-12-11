@@ -20,7 +20,7 @@ class TaiKhoanDTO
         $this->DienThoai = '';
         $this->Email = '';
         $this->BiXoa = 0;
-        $this->MaTaiKhoan = 0;
+        $this->MaLoaiTaiKhoan = 0;
     }
 }
 ?>

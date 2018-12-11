@@ -81,7 +81,7 @@ body{
 }
 /*Set thuoc tinh cho menu: home - phones - tablets*/
 #menu{
-    width: 330px;
+    width: 580px;
     height: 50px;
     float: left;
 }
@@ -104,6 +104,7 @@ body{
     color: #fff;
     display: block;
     text-decoration: none;
+    padding: 0px 5px;
 }
 #header ul li a:hover{
     background: #b3b0b0;
@@ -155,13 +156,13 @@ body{
     line-height: 30px;
     right:0px;
     text-align: left;
-    padding: 0px 18px 15px 15px;
+    padding: 5px 15px 5px 5px;
 }
 #signin .activeSignin{
     display: block;
 }
 #frmlogin input{
-    width:190px;
+    width:195px;
 
 }
 #frmlogin div{
@@ -170,7 +171,7 @@ body{
 }
 #frmlogin #submit{
     cursor: pointer;
-    width:195px;
+    width:200px;
     height: 30px;
     color: #fff;
     background-color: #902e2e;
@@ -178,11 +179,20 @@ body{
 #frmlogin #submit:hover{
     background-color: #e06464;
 }
-
+#frmlogin #button{
+    cursor: pointer;
+    width:200px;
+    height: 30px;
+    color: #fff;
+    background-color: #0fa13b;
+}
+#frmlogin #button:hover{
+    background-color: #0dda39;
+}
 #signin > #frmlogin li a{
     text-align: center;
     line-height: 50px;
-    width: 100%;
+    width: 190px;
 }
 /*Set thuoc tinh cho search*/
 #search{    
@@ -267,7 +277,7 @@ body{
 }
 #idTable{
     width: 100%;
-    text-align: left;
+    text-align: center;
     font-size: 18px;
     padding: 20px;
 }
@@ -287,16 +297,45 @@ body{
     border-radius: 5px;
     background: #ff0202;
 }
+#idTru{
+    width: 30px;
+    height: 30px;
+    color: #FFF;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #ef4444;
+    font-size: 18px; 
+}
+#idCong{
+    width: 30px;
+    height: 30px;
+    color: #FFF;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #0fa13b;
+    font-size: 18px; 
+}
+#idSL{
+    margin: 1px;
+    width: 30px;
+    height: 22px;
+    margin: center;
+}
 #DatHang{
-    width: 100px;
+    width: 100%;
     height: 100px;
     margin: auto;
+    text-align: center;
 }
 #DatHang input{
     width: 70px;
     height: 40px;
     background: #fb8619;
     color: #fff;
+}
+#DatHang p{
+    color: #ef4444;
+    font: 30px bold;
 }
 #container #product{
     width: 100%;
@@ -305,6 +344,52 @@ body{
     font: 20px bold;
     color: #fff;
     background: #ef4444;
+}
+/*Chi tiet san pham*/
+#boxDetail{
+    text-align: center;
+    padding: 20px 0px;
+    width: 100%;
+    min-height: 200px;
+}
+h3{
+    margin-bottom: 0px;
+    padding: 10px;
+    margin-top: 5px;
+    background: #ef4444;
+    color: #FFF;
+}
+#chitiet{
+    display: inline-block;
+    padding: 10px;
+    width: 95%;
+    height: 100%;
+}
+#chitiet img{
+    border: 5px solid #7e7e7e;
+    float: left;
+    width: 30%;
+    height: 30%;
+}
+#thongtinchitiet{
+    display: inline-block;
+    text-align: left;
+    margin-top: 0px;
+    width:67%; 
+    height: 100%;
+}
+#thongtinchitiet span h3{
+    color: #ef4444;
+    background: none;
+    padding: 0px 0px 20px 0px;
+}
+#addCart{
+    width: 150px;
+    height: 50px;
+    color: #FFF;
+    font-size: 18px;
+    background: #0fa13b;
+
 }
 /*Responsive cho trang web*/
 @media screen and (max-width:1024px)
@@ -326,20 +411,22 @@ body{
         margin-left: 30%;
     }
     #menu{
+
         width: 50px;
         float: left;
-        left: 0px;;
+        left: 0px;
     }
     #menu ul{
         display: none;
     }
     #menu ul li{
+        text-align: left;
         display: block;
-        width: 100px;
+        width: 150px;
     }
     #menu ul li #sub_menu{
         top: 0px;
-        left: 100px;
+        left: 150px;
     }
     #a_menu{
         display: block;
@@ -347,9 +434,8 @@ body{
     #idTable{
         font-size: 12px;
     }
-    #SoLuong{
-        min-width: 40px;
-        font-size: 12px;
+    #idTable td{
+        text-align: left;
     }
 }
 
@@ -374,17 +460,18 @@ body{
         display: none;
     }
     #menu ul li{
+        text-align: left;
         display: block;
-        width: 100px;
+        width: 150px;
+    }
+    #menu ul li #sub_menu{
+        top: 0px;
+        left: 150px;
     }
     #a_menu{
         display: block;
     }
     #idTable{
-        font-size: 11px;
-    }
-    #SoLuong{
-        min-width: 40px;
         font-size: 11px;
     }
 }

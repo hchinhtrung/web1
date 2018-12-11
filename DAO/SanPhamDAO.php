@@ -28,7 +28,7 @@ Class SanPhamDAO extends DB
     } 
     public function GetAllAvailable()
     {
-        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham";
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham where BiXoa = 0";
         $result =$this->ExecuteQuery($sql);
         $lstSanPham = array();
         while( $row = mysqli_fetch_array($result))
@@ -77,19 +77,64 @@ Class SanPhamDAO extends DB
         }
         return $lstSanPham;
     }
+    public function GetByHSX_LSP($mahsx, $maloaisp)
+    {
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham sp where MaHangSanXuat = $mahsx and MaLoaiSanPham = $maloaisp and BiXoa = 0";
+        $result =$this->ExecuteQuery($sql);
+        $lstSanPham = array();
+        while( $row = mysqli_fetch_array($result))
+        {
+            extract($row);
+            $sanPham= new SanPhamDTO();
+            $sanPham->MaSanPham = $MaSanPham;
+            $sanPham->TenSanPham=$TenSanPham;
+            $sanPham->HinhURL=$HinhURL;
+            $sanPham->GiaSanPham = $GiaSanPham;
+            $lstSanPham[]= $sanPham;
+        }
+        return $lstSanPham;
+    }
+    public function GetByLSP($maloaisp)
+    {
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham sp where MaLoaiSanPham = $maloaisp and BiXoa = 0";
+        $result =$this->ExecuteQuery($sql);
+        $lstSanPham = array();
+        while( $row = mysqli_fetch_array($result))
+        {
+            extract($row);
+            $sanPham= new SanPhamDTO();
+            $sanPham->MaSanPham = $MaSanPham;
+            $sanPham->TenSanPham=$TenSanPham;
+            $sanPham->HinhURL=$HinhURL;
+            $sanPham->GiaSanPham = $GiaSanPham;
+            $lstSanPham[]= $sanPham;
+        }
+        return $lstSanPham;
+    }
     public function GetByID($maSanPham)
     {
-        $sql = "select MaSanPham, TenSanPham, BiXoa  from sanpham";
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham, SoLuongTon, SoLuotXem, BiXoa, MaLoaiSanPham, MaHangSanXuat  from sanpham where MaSanPham = $maSanPham";
         $result = $this->ExecuteQuery($sql);
         if ($result == null)
-        return null;
-        $row == mysqli_fetch_array($result); 
-        extract($row);
-        $sanPham= new SanPhamDTO();
-        $sanPham->MaSanPham = $MaSanPham;
-        $sanPham->TenSanPham = $TenSanPham;
-        $sanPham->BiXoa = $BiXoa;
-        return $sanPham;
+        {
+            return null;
+        }
+        else
+        {
+            $row = mysqli_fetch_array($result); 
+            extract($row);
+            $sanPham= new SanPhamDTO();
+            $sanPham->MaSanPham = $MaSanPham;
+            $sanPham->TenSanPham = $TenSanPham;
+            $sanPham->HinhURL=$HinhURL;
+            $sanPham->GiaSanPham = $GiaSanPham;
+            $sanPham->SoLuongTon = $SoLuongTon;
+            $sanPham->SoLuotXem = $SoLuotXem;
+            $sanPham->BiXoa = $BiXoa;
+            $sanPham->MaLoaiSanPham = $MaLoaiSanPham;
+            $sanPham->MaHangSanXuat = $MaHangSanXuat;
+            return $sanPham;
+        }
 
     }
     public function Insert($sanPham)

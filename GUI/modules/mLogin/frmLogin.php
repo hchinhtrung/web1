@@ -1,12 +1,12 @@
 <ul id="frmlogin">
     <li>
-        <form action="index.php" method="post">
+        <form action="index.php?a=10" method="post">
             Username<br />
             <input type="text" name="us"><br />
             Password<br />
             <input type="password" name="pw"><br />
             <div><input type="submit" value="Login" id="submit"></div>
-            <a href="#">Sign up</a>
+            <div><input type="button" value="Signin" id="button"></div>            
         </form>
     </li>
 </ul>

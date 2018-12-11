@@ -1,4 +1,12 @@
 <ul id="frmlogin">
-    <li>Hello, <?php echo($_SESSION['dname'])?></li>
-    <li><a href="location:index.php?a=11">Logout</a></li>
+    <li>
+    <a href="#">Hello,&nbsp;<?php echo $_SESSION["dname"] ?></a>
+    <?php
+        if($_SESSION["tuid"] != 1)
+        {
+            echo "<a href='index.php?a=12'>Shopping Cart</a>";
+        }
+    ?>
+    <a href="index.php?a=11">Logout</a>
+    </li>
 </ul>

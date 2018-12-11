@@ -4,7 +4,7 @@ class TaiKhoanBUS
     var $taiKhoanDAO;
     public function __construct()
     {
-        $this->$taiKhoanDAO = new TaiKhoanDAO();
+        $this->taiKhoanDAO = new TaiKhoanDAO();
     }
 
     public function GetAll()

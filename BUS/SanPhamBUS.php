@@ -28,7 +28,14 @@
         {
             return $this->sanPhamDAO->GetByID($maSanPham);
         }
-
+        public function GetByHSX_LSP($mahsx, $maloaisp)
+        {
+            return $this->sanPhamDAO->GetByHSX_LSP($mahsx, $maloaisp);
+        }
+        public function GetByLSP($maloaisp)
+        {
+            return $this->sanPhamDAO->GetByLSP($maloaisp);
+        }
         public function Insert($sanPham)
         {
             $this->sanPhamDAO->Insert($sanPham);

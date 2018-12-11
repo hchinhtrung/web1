@@ -60,17 +60,22 @@ Class TaiKhoanDAO extends DB
     }
     public function GetByUS_PW($tenDangNhap, $matKhau)
     {
-        $sql = "select MaTaiKhoan, TenHienThi, MaLoaiTaiKhoan from taikhoan where TenDangNhap = $tenDangNhap and MatKhau = $matKhau";
+        $sql = "select MaTaiKhoan, TenHienThi, MaLoaiTaiKhoan from taikhoan where TenDangNhap = '$tenDangNhap' and MatKhau = '$matKhau' and BiXoa = 0";
         $result = $this->ExecuteQuery($sql);
         if ($result == null)
-        return null;
-        $row == mysqli_fetch_array($result); 
-        extract($row);
-        $taiKhoan= new TaiKhoanDTO();
-        $taiKhoan->MaTaiKhoan = $MaTaiKhoan;
-        $taiKhoan->TenHienThi = $TenHienThi;
-        $taiKhoan->MaLoaitaiKhoan = $MaLoaiTaiKhoan;
-        return $taiKhoan;
+        {
+            return null;
+        }
+        else
+        {
+            $row = mysqli_fetch_array($result); 
+            extract($row);
+            $taiKhoan = new TaiKhoanDTO();
+            $taiKhoan->MaTaiKhoan = $MaTaiKhoan;
+            $taiKhoan->TenHienThi = $TenHienThi;
+            $taiKhoan->MaLoaiTaiKhoan = $MaLoaiTaiKhoan;
+            return $taiKhoan;
+        }
 
     }
     public function Insert($taiKhoan)

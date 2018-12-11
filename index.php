@@ -16,23 +16,23 @@
 <body>
     <?php
         include("DAO/DB.php");
-        include("DTO/TaiKhoanDTO.PHP");
+        include("DTO/TaiKhoanDTO.php");
         include("DAO/TaiKhoanDAO.php");
         include("BUS/TaiKhoanBUS.php");
 
-        include("DTO/LoaiSanPhamDTO.PHP");
+        include("DTO/LoaiSanPhamDTO.php");
         include("DAO/LoaiSanPhamDAO.php");
         include("BUS/LoaiSanPhamBUS.php");
 
-        include("DTO/HangSanXuatDTO.PHP");
+        include("DTO/HangSanXuatDTO.php");
         include("DAO/HangSanXuatDAO.php");
         include("BUS/HangSanXuatBUS.php");
 
-        include("DTO/HSXCuaLSPDTO.PHP");
+        include("DTO/HSXCuaLSPDTO.php");
         include("DAO/HSXCuaLSPDAO.php");
         include("BUS/HSXCuaLSPBUS.php");
 
-        include("DTO/SanPhamDTO.PHP");
+        include("DTO/SanPhamDTO.php");
         include("DAO/SanPhamDAO.php");
         include("BUS/SanPhamBUS.php");
 
@@ -59,7 +59,21 @@
                 switch($a)
                 {
                     case 1:
-                        include ("GUI/pages/pIndex.php");
+                        if(isset($_SESSION["tuid"]))
+                        {
+                            if($_SESSION["tuid"] == 1)
+                            {
+                                include ("GUI/pages/Admin/pThongKe.php");
+                            }
+                            else
+                            {
+                                include ("GUI/pages/pIndex.php");
+                            }
+                        }
+                        else
+                        {
+                            include ("GUI/pages/pIndex.php");
+                        }
                         break;
                     case 2:
                         include ("GUI/pages/pListOfProduct.php");
@@ -70,12 +84,31 @@
                     case 4:
                         include ("GUI/pages/pChiTietSanPham.php");
                         break;
+                    case 5:
+                        include ("GUI/pages/Admin/pQLTaiKhoan.php");
+                        break;
+                    case 6:
+                        include ("GUI/pages/Admin/pQLSanPham.php");
+                        break;
+                    case 7:
+                        include ("GUI/pages/Admin/pQLHangSanXuat.php");
+                        break;
+                    case 8:
+                        include ("GUI/pages/Admin/pQLLoaiSanPham.php");
+                        break;
+                    case 9:
+                        include ("GUI/pages/Admin/pQLDonDatHang.php");
+                        break;
                     case 10:
                         include ("GUI/modules/mLogin/exLogin.php");
                         break;
                     case 11:
                         include ("GUI/modules/mLogin/exLogout.php");
                         break;
+                    case 12:
+                        include ("GUI/pages/pQLGioHang.php");
+                        break;
+
                     default:
                         include ("GUI/pages/pError.php");
                         break;
