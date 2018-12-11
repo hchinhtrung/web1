@@ -25,9 +25,13 @@ class TaiKhoanBUS
     {
         return $this->taiKhoanDAO->GetByUS_PW($tenDangNhap, $matKhau);
     }
+    public function CheckExistsUser($tenDangNhap)
+    {
+        return  $this->taiKhoanDAO->CheckExistsUser($tenDangNhap);
+    }
     public function Insert($taiKhoan)
     {
-        $this->taiKhoanDAO->Insert($taiKhoan);
+        return $this->taiKhoanDAO->Insert($taiKhoan);
     }
     public function InsertWithName($tenDangNhap)
     {

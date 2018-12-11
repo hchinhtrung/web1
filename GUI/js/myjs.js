@@ -10,5 +10,6 @@ $(document).ready(
         $('#a_menu').click(function(){
             $('#menu ul').toggleClass('activeMenu');
         })
+        $()
     }
 )

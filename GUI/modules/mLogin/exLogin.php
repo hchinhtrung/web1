@@ -4,7 +4,7 @@
         $us = $_POST['us'];
         $pw = $_POST['pw'];
         $taiKhoanBUS = new TaiKhoanBUS();
-        $taiKhoan = $taiKhoanBUS->GetByUS_PW($us, $pw);
+        $taiKhoan = $taiKhoanBUS->GetByUS_PW($us, md5($pw));
         if($taiKhoan == null)
         {
             echo '<script language="javascript">';

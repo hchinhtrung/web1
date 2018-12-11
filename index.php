@@ -1,6 +1,7 @@
 <?php
     session_start();
     include_once ("GUI/lib/DataProvider.php");
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +37,9 @@
         include("DAO/SanPhamDAO.php");
         include("BUS/SanPhamBUS.php");
 
-
+        include("DTO/TinhThanhDTO.php");
+        include("DAO/TinhThanhDAO.php");
+        include("BUS/TinhThanhBUS.php");
     ?>
     <div id="container">
         <div id="header">
@@ -108,7 +111,12 @@
                     case 12:
                         include ("GUI/pages/pQLGioHang.php");
                         break;
-
+                    case 13:
+                        include ("GUI/pages/pSignUp.php");
+                        break;
+                    case 14:
+                        include("GUI/pages/exSignUp.php");
+                        break;
                     default:
                         include ("GUI/pages/pError.php");
                         break;

@@ -6,7 +6,7 @@
             Password<br />
             <input type="password" name="pw"><br />
             <div><input type="submit" value="Login" id="submit"></div>
-            <div><input type="button" value="Signin" id="button"></div>            
+            <div><input type="button" value="Signin" id="button" onclick="location='index.php?a=13';"></div>            
         </form>
     </li>
 </ul>

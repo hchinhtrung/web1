@@ -3,6 +3,7 @@ class TaiKhoanDTO
 {
     var $MaTaiKhoan;
     var $TenDangNhap;
+    var $NgaySinh;
     var $MatKhau;
     var $TenHienThi;
     var $DiaChi;
@@ -12,15 +13,16 @@ class TaiKhoanDTO
     var $MaLoaiTaiKhoan;
     public function __construct()
     {
-        $this->MaTaiKhoan = 0;
+        $this->MaTaiKhoan = null;
         $this->TenDangNhap = '';
         $this->MatKhau = '';
         $this->TenHienThi = '';
         $this->DiaChi = '';
+        $this->NgaySinh = getdate();
         $this->DienThoai = '';
         $this->Email = '';
         $this->BiXoa = 0;
-        $this->MaLoaiTaiKhoan = 0;
+        $this->MaLoaiTaiKhoan = 2;
     }
 }
 ?>

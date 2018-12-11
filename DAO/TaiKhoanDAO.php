@@ -69,6 +69,10 @@ Class TaiKhoanDAO extends DB
         else
         {
             $row = mysqli_fetch_array($result); 
+            if($row == null)
+            {
+                return null;
+            }
             extract($row);
             $taiKhoan = new TaiKhoanDTO();
             $taiKhoan->MaTaiKhoan = $MaTaiKhoan;
@@ -76,12 +80,29 @@ Class TaiKhoanDAO extends DB
             $taiKhoan->MaLoaiTaiKhoan = $MaLoaiTaiKhoan;
             return $taiKhoan;
         }
-
+    }
+    public function CheckExistsUser($tenDangNhap)
+    {
+        $sql = "select MaTaiKhoan from taikhoan where TenDangNhap = '$tenDangNhap'";
+        $result = $this->ExecuteQuery($sql);
+        if($result == null)
+        {
+            return 0;
+        }
+        else
+        {
+            $row = mysqli_fetch_array($result); 
+            if($row == null)
+            {
+                return 0;
+            }
+            return 1;
+        }
     }
     public function Insert($taiKhoan)
     {
-       $sql = "insert into taikhoan(TenDangNhap, BiXoa) values ('$taiKhoan->TenDangNhap', '$taiKhoan->Bixoa')";
-       $this->ExecuteQuery($sql); 
+        $sql = "insert into taikhoan (TenDangNhap, NgaySinh, MatKhau, TenHienThi, DiaChi, DienThoai, Email, BiXoa, MaLoaiTaiKhoan) VALUES ('$taiKhoan->TenDangNhap', '$taiKhoan->NgaySinh', '$taiKhoan->MatKhau', '$taiKhoan->TenHienThi', '$taiKhoan->DiaChi', '$taiKhoan->DienThoai', '$taiKhoan->Email', $taiKhoan->BiXoa, $taiKhoan->MaLoaiTaiKhoan)";
+        return $check = $this->ExecuteQuery($sql); 
     }
     public function Delete($taiKhoan)
     {

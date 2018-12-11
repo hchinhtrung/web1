@@ -32,6 +32,10 @@
         {
             return $this->sanPhamDAO->GetByHSX_LSP($mahsx, $maloaisp);
         }
+        public function GetTop5OfHSX_LSP($mahsx, $maloaisp)
+        {
+            return $this->sanPhamDAO->GetTop5OfHSX_LSP($mahsx, $maloaisp);
+        }
         public function GetByLSP($maloaisp)
         {
             return $this->sanPhamDAO->GetByLSP($maloaisp);

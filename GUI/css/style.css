@@ -391,6 +391,38 @@ h3{
     background: #0fa13b;
 
 }
+#form{
+    width: 400px;
+    margin: 0 auto;
+}
+#form h4{
+    color: #4286f4;
+}
+#form input{
+    width: 400px;
+    height: 30px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+#form #city select{
+    width: 405px;
+}
+#form select{
+    width: 100px;
+    height: 35px;
+    margin: 0px 10px 10px 0px;
+}
+#form #idCaptcha input{
+    width: 220px;
+    height: 30px;
+    margin: 0px 0px 0px 30px;
+}
+#form #smSignUp{
+    width: 100px;
+    height: 50px;
+    margin:10px 0px 0px 300px; 
+    background: #4286f4;
+}
 /*Responsive cho trang web*/
 @media screen and (max-width:1024px)
 {

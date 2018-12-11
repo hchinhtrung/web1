@@ -94,6 +94,23 @@ Class SanPhamDAO extends DB
         }
         return $lstSanPham;
     }
+    public function GetTop5OfHSX_LSP($mahsx, $maloaisp)
+    {
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham sp where MaHangSanXuat = $mahsx and MaLoaiSanPham = $maloaisp and BiXoa = 0 limit 5";
+        $result =$this->ExecuteQuery($sql);
+        $lstSanPham = array();
+        while( $row = mysqli_fetch_array($result))
+        {
+            extract($row);
+            $sanPham= new SanPhamDTO();
+            $sanPham->MaSanPham = $MaSanPham;
+            $sanPham->TenSanPham=$TenSanPham;
+            $sanPham->HinhURL=$HinhURL;
+            $sanPham->GiaSanPham = $GiaSanPham;
+            $lstSanPham[]= $sanPham;
+        }
+        return $lstSanPham;
+    }
     public function GetByLSP($maloaisp)
     {
         $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham sp where MaLoaiSanPham = $maloaisp and BiXoa = 0";

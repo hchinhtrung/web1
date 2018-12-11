@@ -1,8 +1,6 @@
 <h3>Product Details</h3>
 <div id="boxDetail">
     <div id="chitiet">
-        <img src="GUI/images/iphone6.png">
-        <div id="thongtinchitiet">
         <?php
             if(isset($_GET["masp"]))
             {
@@ -19,6 +17,8 @@
                     $hangSanXuatBUS = new HangSanXuatBUS();
                     $loaiSanPham = $loaiSanPhamBUS->GetByID($sanPham->MaLoaiSanPham);
                     $hangSanXuat = $hangSanXuatBUS->GetByID($sanPham->MaHangSanXuat);
+                    echo "<img src='GUI/images/$sanPham->HinhURL'>";
+                    echo "<div id='thongtinchitiet'>";
                     echo"<h3>$sanPham->TenSanPham</h3>";
                     echo"<h4>Manufacturer: $hangSanXuat->TenHangSanXuat</h4>";
                     echo"<h4>Product Type: $loaiSanPham->TenLoaiSanPham</h4>";
@@ -38,3 +38,21 @@
     </div>
 </div>
 <h3>Related Products</h3>
+<div>
+    <?php
+        $sanPhamBUS = new SanPhamBUS();
+        $lstSanPham = $sanPhamBUS-> GetTop5OfHSX_LSP($hangSanXuat->MaHangSanXuat, $loaiSanPham->MaLoaiSanPham);
+        foreach ($lstSanPham as $sanPham)
+        {
+            echo "
+            <div id='box'>
+                <img src='GUI/images/$sanPham->HinhURL'>
+                <p>$sanPham->TenSanPham</p>
+                <div>
+                    $sanPham->GiaSanPham vnd
+                </div>
+                <p><a href='index.php?a=4&masp=$sanPham->MaSanPham'>Chi tiết</a></p>
+            </div>";
+        }
+    ?>
+</div>
