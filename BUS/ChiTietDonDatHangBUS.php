@@ -45,19 +45,7 @@
                 $this->chiTietDonDatHangDAO->SetDelete($chiTietDonDatHang);
             }
         }
-        public function SetDelete($maChiTietDonDatHang)
-        {
-            $chiTietDonDatHang = new ChiTietDonDatHangDTO();
-            $chiTietDonDatHang->MaChiTietDonDatHang = $maChiTietDonDatHang;
-            $this->ChiTietDonDatHangDAO->SetDelete($maChiTietDonDatHang);
-        }
-        public function UnsetDelete($maChiTietDonDatHang)
-        {
-            $chiTietDonDatHang = new ChiTietDonDatHangDTO();
-            $chiTietDonDatHang->MaChiTietDonDatHang = $maChiTietDonDatHang;
-            $this->ChiTietDonDatHangDAO->UnSetDelete($maChiTietDonDatHang);
-        }
-
+        
         public function Update($maChiTietDonDatHang)
         {
             $chiTietDonDatHang = new ChiTietDonDatHangDTO();
