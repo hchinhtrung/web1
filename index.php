@@ -1,6 +1,5 @@
 <?php
     session_start();
-    include_once ("GUI/lib/DataProvider.php");
     date_default_timezone_set('Asia/Ho_Chi_Minh');
 ?>
 <!DOCTYPE html>
