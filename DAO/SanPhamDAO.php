@@ -130,7 +130,7 @@ Class SanPhamDAO extends DB
     }
     public function GetByID($maSanPham)
     {
-        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham, SoLuongTon, SoLuotXem, BiXoa, MaLoaiSanPham, MaHangSanXuat  from sanpham where MaSanPham = $maSanPham";
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham, NgayNhap, SoLuongTon, SoLuotXem, BiXoa, MaLoaiSanPham, MaHangSanXuat  from sanpham where MaSanPham = $maSanPham";
         $result = $this->ExecuteQuery($sql);
         if ($result == null)
         {
@@ -139,18 +139,25 @@ Class SanPhamDAO extends DB
         else
         {
             $row = mysqli_fetch_array($result); 
-            extract($row);
-            $sanPham= new SanPhamDTO();
-            $sanPham->MaSanPham = $MaSanPham;
-            $sanPham->TenSanPham = $TenSanPham;
-            $sanPham->HinhURL=$HinhURL;
-            $sanPham->GiaSanPham = $GiaSanPham;
-            $sanPham->SoLuongTon = $SoLuongTon;
-            $sanPham->SoLuotXem = $SoLuotXem;
-            $sanPham->BiXoa = $BiXoa;
-            $sanPham->MaLoaiSanPham = $MaLoaiSanPham;
-            $sanPham->MaHangSanXuat = $MaHangSanXuat;
-            return $sanPham;
+            if($row == null)
+            {
+                return null;
+            }
+            else
+            {
+                extract($row);
+                $sanPham= new SanPhamDTO();
+                $sanPham->MaSanPham = $MaSanPham;
+                $sanPham->TenSanPham = $TenSanPham;
+                $sanPham->HinhURL=$HinhURL;
+                $sanPham->GiaSanPham = $GiaSanPham;
+                $sanPham->SoLuongTon = $SoLuongTon;
+                $sanPham->SoLuotXem = $SoLuotXem;
+                $sanPham->BiXoa = $BiXoa;
+                $sanPham->MaLoaiSanPham = $MaLoaiSanPham;
+                $sanPham->MaHangSanXuat = $MaHangSanXuat;
+                return $sanPham;
+            }
         }
 
     }
@@ -176,13 +183,13 @@ Class SanPhamDAO extends DB
     }
     public function Update($sanPham)
     {
-        $sql = "update sanpham set TenSanPham = $sanPham->TenSanPham, BiXoa = $sanPham->BiXoa where $sanPham->MaSanPham";
-        $this->ExecuteQuery($sanPham);
+        $sql = "update sanpham set TenSanPham = '$sanPham->TenSanPham', HinhURL = '$sanPham->HinhURL',  GiaSanPham = $sanPham->GiaSanPham, SoLuongTon = $sanPham->SoLuongTon, SoLuongBan = $sanPham->SoLuongBan, SoLuotXem = $sanPham->SoLuotXem , BiXoa = $sanPham->BiXoa where MaSanPham = $sanPham->MaSanPham";
+        $this->ExecuteQuery($sql);
     }
     public function DemSoLuongSanPhamThuocSanPham($maSanPham)
     {
         $sql = "select count(MaSanPham) from sanpham where MaSanPham=$maSanPham";
-        $this->ExecuteQuery($sql);
+        $result = $this->ExecuteQuery($sql);
         $row = mysqli_fetch_array($result);
         return $row[0];
     }

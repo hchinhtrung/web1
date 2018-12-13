@@ -40,6 +40,9 @@ body{
     width: 100%;
     background-color: #ffffff;   
 }
+#frm{
+    margin-bottom: 10px;
+}
 #footer{
     bottom: 0px;
     width: 100%;
@@ -320,6 +323,7 @@ body{
     width: 30px;
     height: 22px;
     margin: center;
+    text-align: center;
 }
 #DatHang{
     width: 100%;

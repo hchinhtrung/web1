@@ -7,9 +7,11 @@
         $taiKhoan = $taiKhoanBUS->GetByUS_PW($us, md5($pw));
         if($taiKhoan == null)
         {
-            echo '<script language="javascript">';
-            echo 'alert("Username or Password is incorrect")';
-            echo '</script>';
+            echo "<script>
+            alert('Username or Password is incorrect')
+            window.location.href = 'index.php'
+            </script>";
+
         }
         else
         {

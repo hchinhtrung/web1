@@ -39,6 +39,16 @@
         include("DTO/TinhThanhDTO.php");
         include("DAO/TinhThanhDAO.php");
         include("BUS/TinhThanhBUS.php");
+
+        include("DTO/DonDatHangDTO.php");
+        include("DAO/DonDatHangDAO.php");
+        include("BUS/DonDatHangBUS.php");
+
+        include("DTO/ChiTietDonDatHangDTO.php");
+        include("DAO/ChiTietDonDatHangDAO.php");
+        include("BUS/ChiTietDonDatHangBUS.php");
+
+        include("BUS/GioHangBUS.php");
     ?>
     <div id="container">
         <div id="header">
@@ -115,6 +125,21 @@
                         break;
                     case 14:
                         include("GUI/pages/exSignUp.php");
+                        break;
+                    case 15:
+                        include ("GUI/pages/Excute/exInsertCart.php");
+                        break;
+                    case 16:
+                        include ("GUI/pages/Excute/exMinus.php");
+                        break;
+                    case 17:
+                        include ("GUI/pages/Excute/exPlus.php");
+                        break;
+                    case 18:
+                        include ("GUI/pages/Excute/exDelete.php");
+                        break;
+                    case 19:
+                        include ("GUI/pages/Excute/exOrderAll.php");
                         break;
                     default:
                         include ("GUI/pages/pError.php");

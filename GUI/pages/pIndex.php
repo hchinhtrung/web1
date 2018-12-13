@@ -1,5 +1,5 @@
 <div id="product">SẢN PHẨM MỚI NHẤT</div>
-<div>
+<div id="frm">
     <?php
         $sanPhamBUS = new SanPhamBUS();
         $lstSanPham = $sanPhamBUS->GetTopToDate();

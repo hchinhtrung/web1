@@ -28,6 +28,21 @@
         {
             return $this->sanPhamDAO->GetByID($maSanPham);
         }
+        public function GetSoLuongTon($maSanPham)
+        {
+            $sanPham = $this->sanPhamDAO->GetByID($maSanPham);
+            return $sanPham->SoLuongTon;
+        }
+        public function GetSoLuongBan($maSanPham)
+        {
+            $sanPham = $this->sanPhamDAO->GetByID($maSanPham);
+            return $sanPham->SoLuongBan;
+        }
+        public function GetSoLuotXem($maSanPham)
+        {
+            $sanPham = $this->sanPhamDAO->GetByID($maSanPham);
+            return $sanPham->SoLuotXem;
+        }
         public function GetByHSX_LSP($mahsx, $maloaisp)
         {
             return $this->sanPhamDAO->GetByHSX_LSP($mahsx, $maloaisp);
@@ -77,11 +92,61 @@
             $sanPham->MaSanPham = $maSanPham;
             $this->sanPhamDAO->UnsetDelete($sanPham);
         }
-        public function Update($tenSanPham)
+        public function UpdateTenSanPham($tenSanPham, $maSanPham)
         {
             $sanPham  = new SamPhamDTO();
-            $sannPham->TenSanPham = $tenSanPham;
-            $this->sanPhamDAO->Update($sanPham);
+            $sanPham = $this->GetByID($maSanPham);
+            if($sanPham == null)
+            {
+                return null;
+            }
+            else
+            {
+                $sanPham->TenSanPham = $tenSanPham;
+                return $this->sanPhamDAO->Update($sanPham);
+            }
+        }
+        public function UpdateSoLuongTon($soLuong, $maSanPham)
+        {
+            $sanPham  = new SanPhamDTO();
+            $sanPham = $this->GetByID($maSanPham);
+            if($sanPham == null)
+            {
+                return null;
+            }
+            else
+            {
+                $sanPham->SoLuongTon = $soLuong;
+                return $this->sanPhamDAO->Update($sanPham);
+            }
+        }
+        public function UpdateSoLuongBan($soLuong, $maSanPham)
+        {
+            $sanPham  = new SanPhamDTO();
+            $sanPham = $this->GetByID($maSanPham);
+            if($sanPham == null)
+            {
+                return null;
+            }
+            else
+            {
+                $sanPham->SoLuongBan = $soLuong;
+                return $this->sanPhamDAO->Update($sanPham);
+            }
+        }
+        public function UpdateSoLuotXem($soLuot, $maSanPham)
+        {
+            $sanPham  = new SanPhamDTO();
+            $sanPham = $this->GetByID($maSanPham);
+            if($sanPham == null)
+            {
+                return null;
+            }
+            else
+            {
+                $sanPham->SoLuotXem = $soLuot;
+                return $this->sanPhamDAO->Update($sanPham);
+            }
         }
     }
 ?>

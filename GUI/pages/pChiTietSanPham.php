@@ -6,6 +6,7 @@
             {
                 $masp = $_GET["masp"];
                 $sanPhamBUS = new SanPhamBUS();
+                $sanPhamBUS->UpdateSoLuotXem($sanPhamBUS->GetSoLuotXem($masp) + 1, $masp);
                 $sanPham = $sanPhamBUS->GetByID($masp);
                 if($sanPham == null)
                 {
@@ -25,16 +26,14 @@
                     echo"<h4>Amount: $sanPham->SoLuongTon</h4>";
                     echo"<h4>Views: $sanPham->SoLuotXem</h4>";
                     echo "<span><h3>Price: $sanPham->GiaSanPham VND</h3></span>";
+                    if(isset($_SESSION["uid"]))
+                    {
+                        echo "<input type='button' value='ADD TO CART' id='addCart' onclick=\"location='index.php?a=15&masp=$masp';\">";
+                    }
                 }
             }
         ?>
-        <?php
-            if(isset($_SESSION["uid"]))
-            {
-                echo "<input type='button' value='ADD TO CART' id='addCart'>";
-            }
-        ?>
-    </div>
+        </div>
     </div>
 </div>
 <h3>Related Products</h3>

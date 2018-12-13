@@ -1,3 +1,4 @@
+<div id="product">SẢN PHẨM</div>
 <?php
     if(isset($_GET["malsp"]))
     {
