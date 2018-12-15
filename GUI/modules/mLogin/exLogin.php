@@ -18,10 +18,10 @@
             $_SESSION['uid'] = $taiKhoan->MaTaiKhoan;
             $_SESSION['dname'] = $taiKhoan->TenHienThi;
             $_SESSION['tuid'] = $taiKhoan->MaLoaiTaiKhoan;
-            header("location: index.php");
+            echo '<script> window.location = "index.php"; </script>';
         }
     }
     else{
-        header("location: index.php?a=404");
+        echo '<script> window.location = "index.php?a=404"; </script>';
     }
 ?>

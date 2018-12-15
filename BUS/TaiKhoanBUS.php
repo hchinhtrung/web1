@@ -25,6 +25,10 @@ class TaiKhoanBUS
     {
         return $this->taiKhoanDAO->GetByUS_PW($tenDangNhap, $matKhau);
     }
+    public function GetByName($tentaikhoan)
+    {
+        return $this->taiKhoanDAO->GetByName($tentaikhoan);
+    }
     public function CheckExistsUser($tenDangNhap)
     {
         return  $this->taiKhoanDAO->CheckExistsUser($tenDangNhap);
@@ -42,30 +46,34 @@ class TaiKhoanBUS
 
     public function Delete ($maTaiKhoan)
     {
-        $taiKhoan = new TaiKhoanDTO();
-        $taiKhoan->maTaiKhoan = $maTaiKhoan;
-            $this->taiKhoanDAO->Delete($taiKhoan);
+        $soDonDatHangThuocTaiKhoan = $this->taiKhoanDAO->DemSoLuongDonDatHanghuocTaiKhoan($maTaiKhoan);
+        if ($soDonDatHangThuocTaiKhoan == 0) 
+        {
+            return $this->taiKhoanDAO->Delete($maTaiKhoan);
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public function SetDelete ($maTaiKhoan)
     {
         $taiKhoan = new TaiKhoanDTO();
-        $taiKhoan->MaTaiKhoan == $maTaiKhoan;
-        $this->TaiKhoanDAO->SetDelete($taiKhoan);
+        $taiKhoan->MaTaiKhoan = $maTaiKhoan;
+        $this->taiKhoanDAO->SetDelete($taiKhoan);
     }
 
     public function UnsetDelete($maTaiKhoan)
     {
         $taiKhoan = new TaiKhoanDAO();
         $taiKhoan->MaTaiKhoan = $maTaiKhoan;
-        $this->TaiKhoanDAO->UnsetDelete($taiKhoan);
+        $this->taiKhoanDAO->UnsetDelete($taiKhoan);
     }
 
-    public function Update($tenDangNhap)
+    public function Update($taiKhoan)
     {
-        $taiKhoan = new TaiKhoanDTO();
-        $taiKhoan->TenDangNhap= $tenDangNhap;
-        $this->TaiKhoanDAO->Update($taiKhoan);
+        return $this->taiKhoanDAO->Update($taiKhoan);
     }
 }
 ?>

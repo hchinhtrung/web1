@@ -4,7 +4,7 @@
         var $hSXCuaLSPDAO;
         public function __construct()
         {
-            $this->$hSXCuaLSPDAO = new HSXCuaLSPDAO();
+            $this->hSXCuaLSPDAO = new HSXCuaLSPDAO();
         }
         public function GetAll()
         {
@@ -19,7 +19,7 @@
             $hSXCuaLSP= new HSXCuaLSPDTO();
             $hSXCuaLSP->MaLoaiSanPham = $maLoaiSanPham;
             $hSXCuaLSP->MaHangSanXuat = $maHangSanXuat;
-            $this->hSXCuaLSPDAO->Insert($hSXCuaLSP);
+            return $this->hSXCuaLSPDAO->Insert($hSXCuaLSP);
         }
         public function Delete($maLoaiSanPham, $maHangSanXuat)
         {

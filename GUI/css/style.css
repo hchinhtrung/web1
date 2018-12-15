@@ -344,10 +344,66 @@ body{
 #container #product{
     width: 100%;
     height: 20px;
-    padding: 10px 10px 10px 10px;
+    padding: 10px 0px 10px 0px;
     font: 20px bold;
     color: #fff;
     background: #ef4444;
+}
+#container #Operation{
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+    background: #4286f4;
+    text-align: right;
+}
+#container #Operation input{
+    margin-right: 5px;
+    height: 25px;
+    font-size: 15px;
+}
+#container #Operation #btnsadmin
+{
+    height: 30px;
+    background: #e06464;
+    color: #FFF;
+
+}
+#container #Operation #btniadmin
+{
+    height: 30px;
+    background: #0dda39;
+    color: #FFF;
+}
+#container #btnlock{
+    width: 25px;
+    height: 25px;
+    color: #FFF;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+#container #btnunlock{
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+#container #btnupdate{
+    width: 25px;
+    height: 25px;
+    color: #FFF;
+    margin-right: 5px;
+}
+#container #btndelete{
+    width: 25px;
+    height: 25px;
+}
+#container #comback{
+    text-align: center;
+}
+#container #comback #btncomback{
+    width: 100px;
+    height: 40px;
+    background: #0fa13b;
+    color: #FFF;
+    font-size: 15px;
 }
 /*Chi tiet san pham*/
 #boxDetail{
@@ -427,6 +483,29 @@ h3{
     margin:10px 0px 0px 300px; 
     background: #4286f4;
 }
+#form #checkbox{
+    width: 13px;
+    height: 13px;
+    
+}
+#frmDetail{
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    padding: 20px;
+}
+#frmDetail td{
+    border-top: 1px solid #0e1bcc;
+    min-height: 40px;
+}
+#detailorder{
+    padding-top: 20px;
+    font-size: 20px;
+}
+#detailorder div{
+    padding-left: 20px ; 
+}
+
 /*Responsive cho trang web*/
 @media screen and (max-width:1024px)
 {
@@ -469,9 +548,6 @@ h3{
     }
     #idTable{
         font-size: 12px;
-    }
-    #idTable td{
-        text-align: left;
     }
 }
 

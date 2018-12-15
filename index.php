@@ -20,6 +20,10 @@
         include("DAO/TaiKhoanDAO.php");
         include("BUS/TaiKhoanBUS.php");
 
+        include("DTO/LoaiTaiKhoanDTO.php");
+        include("DAO/LoaiTaiKhoanDAO.php");
+        include("BUS/LoaiTaiKhoanBUS.php");
+
         include("DTO/LoaiSanPhamDTO.php");
         include("DAO/LoaiSanPhamDAO.php");
         include("BUS/LoaiSanPhamBUS.php");
@@ -40,6 +44,10 @@
         include("DAO/TinhThanhDAO.php");
         include("BUS/TinhThanhBUS.php");
 
+        include("DTO/TinhTrangDTO.php");
+        include("DAO/TinhTrangDAO.php");
+        include("BUS/TinhTrangBUS.php");
+
         include("DTO/DonDatHangDTO.php");
         include("DAO/DonDatHangDAO.php");
         include("BUS/DonDatHangBUS.php");
@@ -49,6 +57,7 @@
         include("BUS/ChiTietDonDatHangBUS.php");
 
         include("BUS/GioHangBUS.php");
+        include("BUS/AdminBUS.php");
     ?>
     <div id="container">
         <div id="header">
@@ -103,10 +112,10 @@
                         include ("GUI/pages/Admin/pQLSanPham.php");
                         break;
                     case 7:
-                        include ("GUI/pages/Admin/pQLHangSanXuat.php");
+                        include ("GUI/pages/Admin/pQLLoaiSanPham.php");
                         break;
                     case 8:
-                        include ("GUI/pages/Admin/pQLLoaiSanPham.php");
+                        include ("GUI/pages/Admin/pQLHangSanXuat.php");
                         break;
                     case 9:
                         include ("GUI/pages/Admin/pQLDonDatHang.php");
@@ -140,6 +149,36 @@
                         break;
                     case 19:
                         include ("GUI/pages/Excute/exOrderAll.php");
+                        break;
+                    case 20:
+                        include ("GUI/pages/Admin/pSearch.php");
+                        break;
+                    case 21:
+                        include ("GUI/pages/Admin/pInsert.php");
+                        break;
+                    case 22:
+                        include ("GUI/pages/Admin/pUpdate.php");
+                        break;
+                    case 23:
+                        include ("GUI/pages/Admin/exDelete.php");
+                        break;
+                    case 24:
+                        include ("GUI/pages/Admin/exLock.php");
+                        break;
+                    case 25:
+                        include ("GUI/pages/Admin/exUpdate.php");
+                        break;
+                    case 26:
+                        include ("GUI/pages/Admin/exInsert.php");
+                        break;
+                    case 27:
+                        include ("GUI/pages/Admin/pDetail.php");
+                        break;
+                    case 28:
+                        include ("GUI/pages/Admin/exPrint.php");
+                        break;
+                    case 113: 
+                        include ("GUI/pages/Excute/exSignUp.php");
                         break;
                     default:
                         include ("GUI/pages/pError.php");

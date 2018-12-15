@@ -25,11 +25,18 @@
         {
             return $this->hangSanXuatDAO->GetByMaLoaiSanPham($maLoaiSanPham);
         }
-        public function Insert($hangSanXUat)
+        public function GetByName($tenHangSanXuat)
         {
-            $this->hangSanXuatDAO->Insert($hangSanXUat);
+            return $this->hangSanXuatDAO->GetByName($tenHangSanXuat);
         }
-
+        public function GetMaxID()
+        {
+            return $this->hangSanXuatDAO->GetMaxID();
+        }
+        public function Insert($hangSanXuat)
+        {
+            return $this->hangSanXuatDAO->Insert($hangSanXuat);
+        }
         public function InsertWithName($tenHangSanXuat)
         {
             $hangSanXuat = new HangSanXuatDTO();
@@ -38,21 +45,26 @@
         }
         public function Delete($maHangSanXuat)
         {
-            $hangSanXuat  = new HnagSanXuatDTO();
+            $hangSanXuat  = new HangSanXuatDTO();
             $hangSanXuat->MaHangSanXuat = $maHangSanXuat;
             $soSanPhamThuocHang = $this->hangSanXuatDAO->DemSoLuongSanPhamThuocHang($maHangSanXuat);
             if($soSanPhamThuocHang == 0)
             {
-                $this->hangSanXUatDAO->Delete($hangSanXuat);
+                $this->hangSanXuatDAO->Delete($hangSanXuat);
+                return true;
             }
             else
             {
-                $this->hangSanXuatDAO->SetDelete($hangSanXuat);
+                return false;
             }
+        }
+        public function DemSoLuongSanPhamThuocHang($maHangSanXuat)
+        {
+            return $this->hangSanXuatDAO->DemSoLuongSanPhamThuocHang($maHangSanXuat);   
         }
         public function SetDelete($maHangSanXuat)
         {
-            $hangSanXuat  = new HnagSanXuatDTO();
+            $hangSanXuat  = new HangSanXuatDTO();
             $hangSanXuat->MaHangSanXuat = $maHangSanXuat;
             $this->hangSanXuatDAO->SetDelete($hangSanXuat);
         }
@@ -62,11 +74,9 @@
             $hangSanXuat->MaHangSanXuat = $maHangSanXuat;
             $this->hangSanXuatDAO->UnsetDelete($hangSanXuat);
         }
-        public function Update($tenHangSanXuat)
+        public function Update($hangSanXuat)
         {
-            $hangSanXuat  = new HangSanXuatDTO();
-            $hangSanXuat->TenHangSanXuat = $tenHangSanXuat;
-            $this->hangSanXuatDAO->Update($hangSanXuat);
+            return $this->hangSanXuatDAO->Update($hangSanXuat);
         }
     }
 ?>

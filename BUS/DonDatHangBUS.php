@@ -8,7 +8,7 @@
         }
         public function GetAll()
         {
-            return $this->donDatHang->GetAll();
+            return $this->donDatHangDAO->GetAll();
         }
         public function GetByID($maDonDatHang)
         {
@@ -17,6 +17,10 @@
         public function GetMaxID()
         {
             return $this->donDatHangDAO->GetMaxID();
+        }
+        public function GetByName($hoadon)
+        {
+            return $this->donDatHangDAO->GetByName($hoadon);
         }
         public function Insert($donDatHang)
         {

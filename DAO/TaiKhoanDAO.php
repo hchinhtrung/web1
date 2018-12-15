@@ -13,7 +13,7 @@ Class TaiKhoanDAO extends DB
             $taiKhoan->MaTaiKhoan = $MaTaiKhoan;
             $taiKhoan->TenDangNhap = $TenDangNhap;
             $taiKhoan->MatKhau = $MatKhau;
-            $taiKhoan->TenHienThi = $TennHienThi;
+            $taiKhoan->TenHienThi = $TenHienThi;
             $taiKhoan->DiaChi = $DiaChi;
             $taiKhoan->EMail = $EMail;
             $taiKhoan->BiXoa = $BiXoa;
@@ -45,18 +45,32 @@ Class TaiKhoanDAO extends DB
     }
     public function GetByID($maTaiKhoan)
     {
-        $sql = "select MaTaiKhoan, TenDangNhap, BiXoa from taikhoan";
+        $sql = "select MaTaiKhoan, TenDangNhap, NgaySinh, TenHienThi, DiaChi, DienThoai, Email, MaLoaiTaiKhoan, BiXoa from taikhoan where MaTaiKhoan = $maTaiKhoan";
         $result = $this->ExecuteQuery($sql);
         if ($result == null)
-        return null;
-        $row == mysqli_fetch_array($result); 
-        extract($row);
-        $taiKhoan= new TaiKhoanDTO();
-        $taiKhoan->MaTaiKhoan = $MaTaiKhoan;
-        $taiKhoan->TenDangNhap = $TenDangNhap;
-        $taiKhoan->BiXoa = $BiXoa;
-        return $taiKhoan;
-
+        {
+            return null;
+        }
+        else
+        {
+            $row = mysqli_fetch_array($result); 
+            if($row == null)
+            {
+                return null;
+            }
+            extract($row);
+            $taiKhoan= new TaiKhoanDTO();
+            $taiKhoan->MaTaiKhoan = $MaTaiKhoan;
+            $taiKhoan->TenDangNhap = $TenDangNhap;
+            $taiKhoan->NgaySinh = $NgaySinh;
+            $taiKhoan->TenHienThi = $TenHienThi;
+            $taiKhoan->DiaChi = $DiaChi;
+            $taiKhoan->DienThoai = $DienThoai;
+            $taiKhoan->Email = $Email;
+            $taiKhoan->MaLoaiTaiKhoan = $MaLoaiTaiKhoan;
+            $taiKhoan->BiXoa = $BiXoa;
+            return $taiKhoan;
+        }
     }
     public function GetByUS_PW($tenDangNhap, $matKhau)
     {
@@ -81,6 +95,31 @@ Class TaiKhoanDAO extends DB
             return $taiKhoan;
         }
     }
+    public function GetByName($tentaikhoan)
+    {
+        $sql = "select MaTaiKhoan, TenDangNhap, TenHienThi, MaLoaiTaiKhoan, BiXoa from taikhoan where TenDangNhap like '$tentaikhoan' or TenHienThi like '$tentaikhoan'";
+        $result = $this->ExecuteQuery($sql);
+        if($result == null)
+            {
+                return null;
+            }
+            else
+            {
+                $lstTaiKhoan = array();
+                while( $row = mysqli_fetch_array($result))
+                {
+                    extract($row);
+                    $taiKhoan = new TaiKhoanDTO();
+                    $taiKhoan->MaTaiKhoan = $MaTaiKhoan;
+                    $taiKhoan->TenDangNhap = $TenDangNhap;
+                    $taiKhoan->TenHienThi = $TenHienThi;
+                    $taiKhoan->MaLoaiTaiKhoan = $MaLoaiTaiKhoan;
+                    $taiKhoan->BiXoa = $BiXoa;
+                    $lstTaiKhoan[] = $taiKhoan;
+                }
+                return $lstTaiKhoan;
+            }            
+    }
     public function CheckExistsUser($tenDangNhap)
     {
         $sql = "select MaTaiKhoan from taikhoan where TenDangNhap = '$tenDangNhap'";
@@ -101,33 +140,49 @@ Class TaiKhoanDAO extends DB
     }
     public function Insert($taiKhoan)
     {
-        $sql = "insert into taikhoan (TenDangNhap, NgaySinh, MatKhau, TenHienThi, DiaChi, DienThoai, Email, BiXoa, MaLoaiTaiKhoan) VALUES ('$taiKhoan->TenDangNhap', '$taiKhoan->NgaySinh', '$taiKhoan->MatKhau', '$taiKhoan->TenHienThi', '$taiKhoan->DiaChi', '$taiKhoan->DienThoai', '$taiKhoan->Email', $taiKhoan->BiXoa, $taiKhoan->MaLoaiTaiKhoan)";
+        if($taiKhoan->NgaySinh == null)
+        {
+            $sql = "insert into taikhoan (TenDangNhap, NgaySinh, MatKhau, TenHienThi, DiaChi, DienThoai, Email, BiXoa, MaLoaiTaiKhoan) VALUES ('$taiKhoan->TenDangNhap', NULL, '$taiKhoan->MatKhau', '$taiKhoan->TenHienThi', '$taiKhoan->DiaChi', '$taiKhoan->DienThoai', '$taiKhoan->Email', $taiKhoan->BiXoa, $taiKhoan->MaLoaiTaiKhoan)";
+
+        }
+        else
+        {
+            $sql = "insert into taikhoan (TenDangNhap, NgaySinh, MatKhau, TenHienThi, DiaChi, DienThoai, Email, BiXoa, MaLoaiTaiKhoan) VALUES ('$taiKhoan->TenDangNhap', '$taiKhoan->NgaySinh', '$taiKhoan->MatKhau', '$taiKhoan->TenHienThi', '$taiKhoan->DiaChi', '$taiKhoan->DienThoai', '$taiKhoan->Email', $taiKhoan->BiXoa, $taiKhoan->MaLoaiTaiKhoan)";
+        }
         return $check = $this->ExecuteQuery($sql); 
     }
-    public function Delete($taiKhoan)
+    public function Delete($maTaiKhoan)
     {
-        $sql= "delete from taikhoan where MaTaiKhoan = $taiKhoan->MaTaiKhoan";
-        $this->ExecuteQuery($sql);
+        $sql= "delete from taikhoan where MaTaiKhoan = $maTaiKhoan";
+        return $this->ExecuteQuery($sql);
     }
     public function SetDelete($taiKhoan)
     {
-        $sql = "update taikhoan set BiXoa = 1 where $taiKhoan->MaTaiKhoan";
+        $sql = "update taikhoan set BiXoa = 1 where MaTaiKhoan = $taiKhoan->MaTaiKhoan";
         $this->ExecuteQuery($sql);
     }
     public function UnsetDelete($taiKhoan)
     {
-        $sql = "update taikhoan set BiXoa = 0 where $taiKhoan->MaTaiKhoan";
+        $sql = "update taikhoan set BiXoa = 0 where MaTaiKhoan = $taiKhoan->MaTaiKhoan";
         $this->ExecuteQuery($sql);
     }
     public function Update($taiKhoan)
     {
-        $sql = "update taikhoan set TenDangNhap = $taiKhoan->TenDangNhap, BiXoa = $taiKhoan->BiXoa where $taiKhoan->MaTaiKhoan";
-        $this->ExecuteQuery($taiKhoan);
+        if($taiKhoan->NgaySinh == NULL)
+        {
+            $sql = "update taikhoan set NgaySinh = NULL, TenHienThi = '$taiKhoan->TenHienThi', DiaChi = '$taiKhoan->DiaChi', DienThoai = '$taiKhoan->DienThoai', Email = '$taiKhoan->Email' , BiXoa = $taiKhoan->BiXoa where MaTaiKhoan =  $taiKhoan->MaTaiKhoan";
+            return $this->ExecuteQuery($sql);
+        }
+        else
+        {
+            $sql = "update taikhoan set NgaySinh = '$taiKhoan->NgaySinh', TenHienThi = '$taiKhoan->TenHienThi', DiaChi = '$taiKhoan->DiaChi', DienThoai = '$taiKhoan->DienThoai', Email = '$taiKhoan->Email' , BiXoa = $taiKhoan->BiXoa where MaTaiKhoan =  $taiKhoan->MaTaiKhoan";
+            return $this->ExecuteQuery($sql);
+        }
     }
-    public function DemSoLuongTaiKhoanThuocTaiKhoan($maTaiKhoan)
+    public function DemSoLuongDonDatHanghuocTaiKhoan($maTaiKhoan)
     {
-        $sql = "select count(MaTaiKhoan) from taikhoan where MaTaiKhoan=$maTaiKhoan";
-        $this->ExecuteQuery($sql);
+        $sql = "select count(MaTaiKhoan) from dondathang where MaTaiKhoan = $maTaiKhoan";
+        $result = $this->ExecuteQuery($sql);
         $row = mysqli_fetch_array($result);
         return $row[0];
     }

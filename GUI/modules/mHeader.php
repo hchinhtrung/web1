@@ -17,6 +17,10 @@
             include ("GUI/modules/mLogin/mLogin.php");
         ?>
     </div>
+    <?php
+    if(!isset($_SESSION['uid']) || $_SESSION['tuid'] != 1)
+    {
+    ?>
     <div id="search">
         <div id="a_search"><img src="GUI/images/search.png"></div>
         <ul id="frmSearch">
@@ -26,4 +30,7 @@
             </li>
         </ul>
     </div>
+    <?php
+    }
+    ?>
 </div>

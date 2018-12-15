@@ -4,10 +4,10 @@
         var $tinhTrangDAO;
         public function __construct()
         {
-            $this->$tinhTrangDAO = new TinhTrangDAO();
+            $this->tinhTrangDAO = new TinhTrangDAO();
         }
 
-        public function GetAll();
+        public function GetAll()
         {
             return $this->tinhTrangDAO->GetAll();
         }
@@ -24,7 +24,7 @@
 
         public function Insert($tinhTrang)
         {
-            $this->tinhTrangDAO->Insert($tinhTrang)
+            $this->tinhTrangDAO->Insert($tinhTrang);
         }
 
         public function InsertWithName($tenTinhTrang)

@@ -5,8 +5,8 @@
     {
         echo "<li><a href='index.php?a=5'>Tài Khoản</a></li>";
         echo "<li><a href='index.php?a=6'>Sản Phẩm</a></li>";
-        echo "<li><a href='index.php?a=7'>Hãng Sản Xuất</a></li>";
-        echo "<li><a href='index.php?a=8'>Loại Sản Phẩm</a></li>";
+        echo "<li><a href='index.php?a=7'>Loại Sản Phẩm</a></li>";
+        echo "<li><a href='index.php?a=8'>Hãng Sản Xuất</a></li>";
         echo "<li><a href='index.php?a=9'>Đơn Hàng</a></li>";
     }
     else

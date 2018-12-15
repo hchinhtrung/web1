@@ -3,6 +3,7 @@
     {
         var $MaLoaiTaiKhoan;
         var $TenLoaiTaiKhoan;
+        
         public function __construct()
         {
             $this->MaLoaiTaiKhoan = 0;

@@ -31,7 +31,7 @@
         }
         public function Insert($hSXCuaLSP)
         {
-            $sql = "insert into hangsxcualoaisp(MaLoaiSanPham, MaHangSanXuat) values('$hSXCuaLSP->MaLoaiSanPham, $hSXCuaLSP->MaHangSanXuat)";
+            $sql = "insert into hangsxcualoaisp(MaLoaiSanPham, MaHangSanXuat) values($hSXCuaLSP->MaLoaiSanPham, $hSXCuaLSP->MaHangSanXuat)";
             $this->ExecuteQuery($sql);
         }
         public function Delete($hSXCuaLSP)

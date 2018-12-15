@@ -1,6 +1,6 @@
 <h3>SIGN UP FOR AN ACCOUNT</h3>
 <div id="form">
-    <form name="frmSignUp" action="" method="POST" id="idForm">
+    <form name="frmSignUp" action="index.php?a=113" method="POST" id="idForm">
         <h4>Profile information</h4>
         <div>
             Full name:<br />
@@ -99,81 +99,36 @@
         <input type="submit" name="submit" id="smSignUp" value="Sign up">
         <span style="color:red"><p id="cautionPass"></p></span>
     </form>
-    <?php
-    if(isset($_POST["submit"]))
+<?php
+    if(isset($_SESSION['checknull']))
     {
-        $fullname = $_POST["fullname"];
-        $day = $_POST["day"];
-        $month = $_POST["month"];
-        $year = $_POST["year"];
-        $city = $_POST["city"];
-        $usname = $_POST["usname"];
-        $pass = $_POST["password"];
-        $cfpass=$_POST["cfpassword"];
-        $captcha = $_POST["captcha"];
-        $taiKhoanBUS = new TaiKhoanBUS();
-        $a = $taiKhoanBUS->CheckExistsUser($usname);
-        $taiKhoanBUS = new TaiKhoanBUS();
-        $a = $taiKhoanBUS->CheckExistsUser($usname);
-        if($usname == "" || $pass == "" || $cfpass =="" || $captcha == "")
-        {
-            echo '<script language="javascript">';
-            echo 'alert("Please fill in the required information!")';
-            echo '</script>';
-        }
-        else if($a == 1)
-        {
-            echo '<script language="javascript">';
-            echo 'alert("Username already exists!")';
-            echo '</script>';
-        }
-        else if($cfpass!=$pass)
-        {
-            echo '<script language="javascript">';
-            echo 'alert("Confirm password is incorrect!")';
-            echo '</script>';
-        }
-        else if($captcha != $_SESSION["captcha"])
-        {
-            echo '<script language="javascript">';
-            echo 'alert("Captcha is incorrect!")';
-            echo '</script>';
-        }
-        else if(checkdate($month, $day, $year) == false)
-            {
-                echo '<script language="javascript">';
-                echo 'alert("Date of birth is incorrect!")';
-                echo '</script>';
-            }
-        else
-        {
-            $taiKhoan = new TaiKhoanDTO();
-            $taiKhoan->TenDangNhap = $usname;
-            $taiKhoan->MatKhau = md5($pass);
-            if($day!=0)
-            {
-                $taiKhoan->NgaySinh = $year."-".$month."-".$day;
-            }
-            else
-            {
-                $taiKhoan->NgaySinh = null;
-            }
-            $taiKhoanBUS->TenHienThi = $fullname;
-            $taiKhoan->DiaChi = $city;
-            $check = $taiKhoanBUS->Insert($taiKhoan);
-            if($check ==false)
-            {
-                echo '<script language="javascript">';
-                echo 'alert("Sign Up Falsed")';
-                echo '</script>';
-            }
-            else
-            {
-                echo '<script language="javascript">';
-                echo 'alert("Sign Up Success")';
-                echo '</script>';
-            }
-        }
+        echo '<script language="javascript">';
+        echo 'alert("Please fill in the required information!")';
+        echo '</script>';
     }
-    ?>
+    else if(isset($_SESSION['checkexists']))
+    {
+        echo '<script language="javascript">';
+          echo 'alert("Username already exists!")';
+          echo '</script>';
+    }
+    else if(isset($_SESSION['checkpass']))
+    {
+        echo '<script language="javascript">';
+        echo 'alert("Confirm password is incorrect!")';
+        echo '</script>';
+    }
+    else if(isset($_SESSION['checkcaptcha']))
+    {
+        echo '<script language="javascript">';
+        echo 'alert("Captcha is incorrect!")';
+        echo '</script>';
+    }
+    else if(isset($_SESSION['checkdate']))
+    {
+        echo '<script language="javascript">';
+        echo 'alert("Date of birth is incorrect!")';
+        echo '</script>';
+    }
+?>
 </div>

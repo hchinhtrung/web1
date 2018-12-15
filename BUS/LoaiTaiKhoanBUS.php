@@ -2,14 +2,14 @@
     class LoaiTaiKhoanBUS
     {
         var $loaiTaiKhoanDAO;
-        public function _construct()
+        public function __construct()
         {
-            $this->$loaiTaiKhoanDAO=new LoaiTaiKhoanDAO();
+            $this->loaiTaiKhoanDAO = new LoaiTaiKhoanDAO();      
         }
 
-        public function GetAll();
+        public function GetAll()
         {
-            retrun $this->loaiTaiKhoanDAO->GetAll();
+            return $this->loaiTaiKhoanDAO->GetAll();
         }
 
         public function GetAllAvailable()
@@ -24,7 +24,7 @@
 
         public function Insert($loaiTaiKhoan)
         {
-            $this->$loaiTaiKhoanDAO->Insert($loaiTaiKhoan)
+            $this->$loaiTaiKhoanDAO->Insert($loaiTaiKhoan);
         } 
         
         public function InsertWithName($tenLoaiTaiKhoan)

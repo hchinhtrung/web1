@@ -21,10 +21,13 @@
         {
             return $this->loaiSanPhamDAO->GetByID($maLoaiSanPham);
         }
-
+        public function GetByName($tenLoaiSanPham)
+        {
+            return $this->loaiSanPhamDAO->GetByName($tenLoaiSanPham);
+        }
         public function Insert($loaiSanPham)
         {
-            $this->loaiSanPhamDAO->Insert($loaiSanPham);
+            return $this->loaiSanPhamDAO->Insert($loaiSanPham);
         }
 
         public function InsertWithName($tenLoaiSanPham)
@@ -41,11 +44,16 @@
             if($soSanPhamThuocLoai == 0)
             {
                 $this->loaiSanPhamDAO->Delete($loaiSanPham);
+                return true;
             }
             else
             {
-                $this->loaiSanPhamDAO->SetDelete($loaiSanPham);
+                return false;
             }
+        }
+        public function DemSoLuongSanPhamThuocLoai($maLoaiSanPham)
+        {
+            return $this->loaiSanPhamDAO->DemSoLuongSanPhamThuocLoai($maLoaiSanPham);
         }
         public function SetDelete($maLoaiSanPham)
         {
@@ -59,11 +67,9 @@
             $loaiSanPham->MaLoaiSanPham = $maLoaiSanPham;
             $this->loaiSanPhamDAO->UnsetDelete($loaiSanPham);
         }
-        public function Update($TenLoaiSanPham)
+        public function Update($loaiSanPham)
         {
-            $loaiSanPham  = new LoaiSanPhamDTO();
-            $loaiSanPham->TenLoaiSanPham = $TenLoaiSanPham;
-            $this->loaiSanPhamDAO->Update($loaiSanPham);
+            return $this->loaiSanPhamDAO->Update($loaiSanPham);
         }
     }
 ?>

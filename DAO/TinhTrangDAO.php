@@ -1,5 +1,5 @@
 <?php
-    class TinhTrang extends DB
+    class TinhTrangDAO extends DB
     {
         public function GetAll()
         {
@@ -8,7 +8,7 @@
             $lstTinhTrang=array();
             while($row=mysqli_fetch_array($result))
             {
-                extracts($row);
+                extract($row);
                 $tinhTrang= new TinhTrangDTO();
                 $tinhTrang->MaTinhTrang=$MaTinhTrang;
                 $tinhTrang->TenTinhTrang=$TenTinhTrang;
@@ -23,7 +23,7 @@
             $lstTinhTrang=array();
             while($row=mysqli_fetch_array($result))
             {
-                extracts($row);
+                extract($row);
                 $tinhTrang= new TinhTrangDTO();
                 $tinhTrang->MaTinhTrang=$MaTinhTrang;
                 $tinhTrang->TenTinhTrang=$TenTinhTrang;
@@ -34,17 +34,19 @@
         }
         public function GetByID($MaTinhTrang)
         {
-            $sql= "select MaTinhTrang, TenTinhTrang where MaTinhTrang=$MaTinhTrang";
+            $sql= "select MaTinhTrang, TenTinhTrang from tinhtrang where MaTinhTrang = $MaTinhTrang";
             $result=$this->ExecuteQuery($sql);
-            if($result==null)
+            if($result == null)
                 return null;
-            $row= mysqli_fetch_array($result)
-            extract($row);
-            $tinhTrang= new TinhTrangDTO();
-            $tinhTrang->MaTinhTrang=$MaTinhTrang;
-            $tinhTrang->TenTinhTrang=$TenTinhTrang;
-            return $tinhTrang;
-
+            else 
+            {
+                $row = mysqli_fetch_array($result);
+                extract($row);
+                $tinhTrang= new TinhTrangDTO();
+                $tinhTrang->MaTinhTrang = $MaTinhTrang;
+                $tinhTrang->TenTinhTrang = $TenTinhTrang;
+                return $tinhTrang;
+            }
         }
 
         public function Insert($tinhTrang)
@@ -55,13 +57,13 @@
 
         public function Delete($tinhTrang)
         {
-            $sql= "delete from tinhtrang where MaTinhTrang=$tinhTrang->MaTinhTrang";
+            $sql= "delete from tinhtrang where MaTinhTrang = $tinhTrang->MaTinhTrang";
             $this->ExecuteQuery($sql);
         }
 
         public function Update($tinhTrang)
         {
-            $sql = "update tinhtrang set TenTinhTrang = $tinhTrang->TenTinhTrang where $tinhTrang->MaTinhTrang"
+            $sql = "update tinhtrang set TenTinhTrang = $tinhTrang->TenTinhTrang where MaTinhTrang = $tinhTrang->MaTinhTrang";
             $this->ExecuteQuery($sql);
         }
         

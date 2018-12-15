@@ -5,7 +5,6 @@ if(isset($_SESSION['GioHang']))
     {
         $gioHang = new GioHangBUS();
         $gioHang->Minus($_GET['masp']);
-        header("location:index.php?a=12");
-    }
+        echo '<script> window.location = "index.php"; </script>';    }
 }
 ?>

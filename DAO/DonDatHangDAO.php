@@ -40,9 +40,38 @@
                 $donDatHang->NgayLap = $NgayLap;
                 $donDatHang->TongThanhTien = $TongThanhTien;
                 $donDatHang->MaTaiKhoan = $MaTaiKhoan;
-                $donDatHang->MaTinhTrang = $MaTinhTrang;
+                $donDatHang->MaTinhTrang = $MaTinhTrang; 
                 return $donDatHang;
             }
+        }
+        public function GetByName($hoadon)
+        {
+            $sql = "select DISTINCT dh.MaDonDatHang, dh.NgayLap, dh.TongThanhTien, dh.MaTaiKhoan, dh.MaTinhTrang from dondathang dh, taikhoan tk where tk.TenHienThi = 'le van trong' or dh.MaDonDatHang = '151218001' and dh.MaTaiKhoan = tk.MaTaiKhoan";   
+            $result = $this->ExecuteQuery($sql);
+            if($result == null)
+            {
+                return null;
+            }
+            else
+            {
+                $lstDonDatHang = array();
+                while( $row = mysqli_fetch_array($result))
+                {
+                    if($row == null)
+                    {
+                        return null;
+                    }
+                    extract($row);
+                    $donDatHang = new DonDatHangDTO();
+                    $donDatHang->MaDonDatHang = $MaDonDatHang;
+                    $donDatHang->NgayLap = $NgayLap;
+                    $donDatHang->TongThanhTien = $TongThanhTien;
+                    $donDatHang->MaTaiKhoan = $MaTaiKhoan;
+                    $donDatHang->MaTinhTrang = $MaTinhTrang;
+                    $lstDonDatHang[] = $donDatHang;
+                }
+                return $lstDonDatHang;
+            }            
         }
         public function GetMaxID()
         {
@@ -58,12 +87,12 @@
         }
         public function Update($donDatHang)
         {
-            $sql = "update dondathang set MaTinhTrang = $donDatHang->MaTinhTrang where $donDatHang->MaDonDatHang";
+            $sql = "update dondathang set MaTinhTrang = $donDatHang->MaTinhTrang where MaDonDatHang = $donDatHang->MaDonDatHang";
             return $this->ExecuteQuery($sql);
         }
         public function Delete($maDonDatHang)
         {
-            $sql = "delete from donDatHang where MaDonDAtHang = $maDonDatHang";
+            $sql = "delete from donDatHang where MaDonDatHang = $maDonDatHang";
             $this->ExecuteQuery($sql);
         }
     }

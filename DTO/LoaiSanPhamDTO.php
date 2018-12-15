@@ -6,7 +6,7 @@
         var $BiXoa;
         public function __construct()
         {
-            $this->MaLoaiSanPham = 0;
+            $this->MaLoaiSanPham = null;
             $this->TenLoaiSanPham = '';
             $this->BiXoa = 0;
         }

@@ -13,12 +13,12 @@ class TaiKhoanDTO
     var $MaLoaiTaiKhoan;
     public function __construct()
     {
-        $this->MaTaiKhoan = null;
+        $this->MaTaiKhoan = NULL;
         $this->TenDangNhap = '';
         $this->MatKhau = '';
         $this->TenHienThi = '';
         $this->DiaChi = '';
-        $this->NgaySinh = getdate();
+        $this->NgaySinh = NULL;
         $this->DienThoai = '';
         $this->Email = '';
         $this->BiXoa = 0;
