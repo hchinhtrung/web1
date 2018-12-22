@@ -10,21 +10,21 @@
                 $giohang = new GioHangBUS();
                 if(count( $_SESSION['GioHang']) > 10)
                 {
-                    echo "<script> alert('Shopping cart is full!');
-                    window.location.href = 'index.php?a=4&masp=$masp';</script>";
+                    $_SESSION['checkcartfull'] = 1;
+                    echo "<script> window.location.href = 'index.php?a=4&masp=$masp';</script>";
                 }
                 else if($giohang->CheckExists($masp) == 1)
                 {
                     $_SESSION['GioHang'][$masp]['SoLuong'] += 1;
-                    echo "<script> alert('Add to cart successfully!');
-                    window.location.href = 'index.php?a=4&masp=$masp';</script>";
+                    $_SESSION['checkinsertcart'] = 1;
+                    echo "<script>window.location.href = 'index.php?a=4&masp=$masp';</script>";
                 }
                 else
                 {
                     $_SESSION['GioHang'][$masp]['MaSanPham'] = $masp;
                     $_SESSION['GioHang'][$masp]["SoLuong"] = 1;
-                    echo "<script> alert('Add to cart successfully!');
-                    window.location.href = 'index.php?a=4&masp=$masp';</script>";
+                    $_SESSION['checkinsertcart'] = 1;
+                    echo "<script> window.location.href = 'index.php?a=4&masp=$masp';</script>";
                 }
             }
             else
@@ -32,8 +32,8 @@
                 $_SESSION['GioHang'] = array();
                 $_SESSION['GioHang'][$masp]['MaSanPham'] = $masp;
                 $_SESSION['GioHang'][$masp]['SoLuong'] = 1;
-                echo "<script> alert('Add to cart successfully!');
-                window.location.href = 'index.php?a=4&masp=$masp';</script>";
+                $_SESSION['checkinsertcart'] = 1;
+                echo "<script> window.location.href = 'index.php?a=4&masp=$masp';</script>";
             }
         }
         public function Minus($masp)
@@ -61,8 +61,8 @@
             $sanPhamBUS = new SanPhamBUS();
             if($sanPhamBUS->GetSoLuongTon($masp) < 1)
             {
-                echo "<script> alert('Out of stock!');
-                window.location.href = 'index.php?a=4&masp=$masp';</script>";
+                $_SESSION['checkoutstock'] = 1;
+                echo "<script>window.location.href = 'index.php?a=4&masp=$masp';</script>";
             }
             else
             {

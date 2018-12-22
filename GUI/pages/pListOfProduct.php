@@ -1,4 +1,4 @@
-<div id="product">SẢN PHẨM</div>
+<div id="product">&nbsp;PRODUCT</div>
 <?php
     if(isset($_GET["malsp"]))
     {
@@ -15,7 +15,7 @@
                     <div>
                         $sanPham->GiaSanPham vnd
                     </div>
-                    <p><a href='index.php?a=4&masp=$sanPham->MaSanPham'>Chi tiết</a></p>
+                    <p><a href='index.php?a=4&masp=$sanPham->MaSanPham'>Detail</a></p>
                 </div>";
             }
         }
@@ -31,7 +31,7 @@
                     <div>
                         $sanPham->GiaSanPham vnd
                     </div>
-                    <p><a href='index.php?a=4&masp=$sanPham->MaSanPham'>Chi tiết</a></p>
+                    <p><a href='index.php?a=4&masp=$sanPham->MaSanPham'>Detail</a></p>
                 </div>";
             }
         }

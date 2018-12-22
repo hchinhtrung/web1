@@ -275,9 +275,16 @@ body{
     color: red;
     font-size: 20px;
 }
+#box a{
+    text-decoration: none;
+    background: #0fa13b;
+    color: #FFF;
+    padding: 10px 20px 10px 20px;
+}
 #box:hover{
     background: #c8c8c8;
 }
+
 #idTable{
     width: 100%;
     text-align: center;
@@ -287,6 +294,15 @@ body{
 #idTable td{
     border-top: 1px solid #0e1bcc;
     min-height: 40px;
+}
+#idTable #history{
+    text-align: left;
+    color: #fff;
+    background: #4286f4;
+    font-size: 22px;
+}
+#idTable #history #hstotal{
+    text-align: right;
 }
 #SoLuong{
     min-width: 60px;

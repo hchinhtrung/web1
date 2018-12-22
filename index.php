@@ -180,6 +180,15 @@
                     case 113: 
                         include ("GUI/pages/Excute/exSignUp.php");
                         break;
+                    case 112:
+                        include ("GUI/pages/pLichSuDatHang.php");
+                        break;
+                    case 119:
+                        include ("GUI/pages/pOrderAddress.php");
+                        break;
+                    case 120:
+                        include ("GUI/pages/Excute/exOrderAddress.php");
+                        break;
                     default:
                         include ("GUI/pages/pError.php");
                         break;

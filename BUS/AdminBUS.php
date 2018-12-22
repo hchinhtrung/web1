@@ -506,7 +506,7 @@
             $chiTietDonDatHangBUS = new ChiTietDonDatHangBUS();
             $donDatHang = $donDatHangBUS->GetByID($madondathang);
             $taiKhoan = $taiKhoanBUS->GetByID($donDatHang->MaTaiKhoan);
-            $lstchiTietDonDatHang = $chiTietDonDatHangBUS->GetAll();
+            $lstchiTietDonDatHang = $chiTietDonDatHangBUS->GetByMaDonDatHang($madondathang);
             echo "<h3>ACCOUNT DETAILS</h3>";
             echo '<div id="Operation">';
             echo ('<input type="image" src="GUI/images/print.png" id="btnunlock" onclick="PrintOrder(\'detailorder\')">');

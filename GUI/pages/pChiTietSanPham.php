@@ -30,28 +30,42 @@
                     {
                         echo "<input type='button' value='ADD TO CART' id='addCart' onclick=\"location='index.php?a=15&masp=$masp';\">";
                     }
+        ?>
+                </div>
+            </div>
+        </div>
+        <h3>Related Products</h3>
+        <div>
+            <?php
+                $sanPhamBUS = new SanPhamBUS();
+                $lstSanPham = $sanPhamBUS-> GetTop5OfHSX_LSP($hangSanXuat->MaHangSanXuat, $loaiSanPham->MaLoaiSanPham);
+                foreach ($lstSanPham as $sanPham)
+                {
+                    echo "
+                    <div id='box'>
+                        <img src='GUI/images/$sanPham->HinhURL'>
+                        <p>$sanPham->TenSanPham</p>
+                        <div>
+                            $sanPham->GiaSanPham vnd
+                        </div>
+                        <p><a href='index.php?a=4&masp=$sanPham->MaSanPham'>Detail</a></p>
+                    </div>";
+                }
+                if(isset($_SESSION['checkoutstock']))
+                {
+                    echo "<script> alert('Out of stock!');</script>";
+                    unset($_SESSION['checkoutstock']);
+                }
+                else if(isset($_SESSION['checkinsertcart']))
+                {
+                    echo "<script> alert('Add to cart successfully!');</script>";
+                    unset($_SESSION['checkinsertcart']);
+                }
+                else if(isset($_SESSION['checkcartfull'])){
+                    echo "<script> alert('Shopping cart is full!');</script>";
+                    unset($_SESSION['checkcartfull']);
                 }
             }
-        ?>
-        </div>
-    </div>
-</div>
-<h3>Related Products</h3>
-<div>
-    <?php
-        $sanPhamBUS = new SanPhamBUS();
-        $lstSanPham = $sanPhamBUS-> GetTop5OfHSX_LSP($hangSanXuat->MaHangSanXuat, $loaiSanPham->MaLoaiSanPham);
-        foreach ($lstSanPham as $sanPham)
-        {
-            echo "
-            <div id='box'>
-                <img src='GUI/images/$sanPham->HinhURL'>
-                <p>$sanPham->TenSanPham</p>
-                <div>
-                    $sanPham->GiaSanPham vnd
-                </div>
-                <p><a href='index.php?a=4&masp=$sanPham->MaSanPham'>Chi tiết</a></p>
-            </div>";
         }
     ?>
 </div>

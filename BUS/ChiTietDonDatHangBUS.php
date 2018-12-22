@@ -14,12 +14,15 @@
 
         public function GetByID($maChiTietDonDatHang)
         {
-            return $this->chiTietDonDatHangDAO->GetByIDDonHang($maChiTietDonDatHang);
+            return $this->chiTietDonDatHangDAO->GetByID($maChiTietDonDatHang);
         }
-
+        public function GetByMaDonDatHang($maDonDatHang)
+        {
+            return $this->chiTietDonDatHangDAO->GetByMaDonDatHang($maDonDatHang);
+        }
         public function Insert($chiTietDonDatHang)
         {
-            $this->chiTietDonDatHangDAO->Insert($chiTietDonDatHang);
+            return $this->chiTietDonDatHangDAO->Insert($chiTietDonDatHang);
         }
 
         public function Delete($maChiTietDonDatHang)

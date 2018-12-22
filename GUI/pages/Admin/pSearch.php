@@ -55,7 +55,7 @@
                 $lst = $donDatHangBUS->GetByName($_POST['donhang']);
                 if(count($lst) == 0)
                 {
-                    //echo "<h1 id='error'>Manufacturer not found!!!</h1>";
+                    echo "<h1 id='error'>Order not found!!!</h1>";
                 }
                 else
                 {

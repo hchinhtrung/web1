@@ -47,6 +47,24 @@
                 }
             }
         }
+        public function GetByMaDonDatHang($maDonDatHang)
+        {
+            $sql = "select MaChiTietDonDatHang, SoLuong, GiaBan, MaDonDatHang, MaSanPham from chitietdonhang where MaDonDatHang = $maDonDatHang";
+            $result = $this->ExecuteQuery($sql);
+            $lstChiTietDonDatHang= array();
+            while($row = mysqli_fetch_array($result))
+            {
+                extract($row);
+                $chiTietDonDatHang= new ChiTietDonDatHangDTO();
+                $chiTietDonDatHang->MaChiTietDonDatHang = $MaChiTietDonDatHang;
+                $chiTietDonDatHang->SoLuong=$SoLuong;
+                $chiTietDonDatHang->GiaBan=$GiaBan;
+                $chiTietDonDatHang->MaDonDatHang=$MaDonDatHang;
+                $chiTietDonDatHang->MaSanPham=$MaSanPham;
+                $lstChiTietDonDatHang[] = $chiTietDonDatHang;
+            }
+            return $lstChiTietDonDatHang;
+        }
         public function Insert($chiTietDonDatHang)
         {
             $sql ="insert into chitietdonhang(MaChiTietDonDatHang, SoLuong, GiaBan, MaDonDatHang, MaSanPham) values ('$chiTietDonDatHang->MaChiTietDonDatHang', $chiTietDonDatHang->SoLuong, $chiTietDonDatHang->GiaBan, '$chiTietDonDatHang->MaDonDatHang', $chiTietDonDatHang->MaSanPham)";

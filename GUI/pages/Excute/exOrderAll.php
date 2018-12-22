@@ -4,6 +4,7 @@
         $gioHang = new GioHangBUS();
         $total = 0;
         $sanPhamBUS = new SanPhamBUS();
+//tính tổng tiền
         foreach($_SESSION['GioHang'] as $key=>$value)
         { 
             $masp = $_SESSION['GioHang'][$key]['MaSanPham'];
@@ -12,6 +13,7 @@
             $tien = $soluong*$sanPham->GiaSanPham;
             $total += $tien;
         }
+//tạo và insert dondathang vao database
         $donDatHangBUS = new DonDatHangBUS();
         $donDatHang = new DonDatHangDTO();
         $donDatHang->MaDonDatHang = $gioHang->CreateID();
@@ -24,10 +26,10 @@
         $machitiet = (int)$donDatHang->MaDonDatHang * 100;
         $chiTietDonHang = new ChiTietDonDatHangDTO();
         $chiTietDonHangBUS = new ChiTietDonDatHangBUS();
+///tạo và insert chitietdondathang vao database - update soluongban trong sanpham
         foreach($_SESSION['GioHang'] as $key=>$value)
         { 
             $masp = $_SESSION['GioHang'][$key]['MaSanPham'];
-            $sanPhamBUS->UpdateSoLuongBan($sanPhamBUS->GetSoLuongBan($masp) + 1, $masp);
             $machitiet = $machitiet + 1;
             $chiTietDonHang->MaChiTietDonDatHang = (string)($machitiet);
             $chiTietDonHang->SoLuong =  $_SESSION['GioHang'][$key]['SoLuong'];
@@ -35,14 +37,23 @@
             $chiTietDonHang->MaDonDatHang = $donDatHang->MaDonDatHang;
             $chiTietDonHang->MaSanPham = $_SESSION['GioHang'][$key]['MaSanPham'];
             $check = $chiTietDonHangBUS->Insert($chiTietDonHang);
+            $sanPhamBUS->UpdateSoLuongBan($_SESSION['GioHang'][$key]['SoLuong'], $masp);
         }
         unset($_SESSION['GioHang']);
-        echo "<script> alert('Order Success!');
-        window.location.href = 'index.php?a=12';</script>";
+        if($check == true)
+        {
+            $_SESSION['checktrue'] = 1;
+            echo "<script>window.location.href = 'index.php?a=12';</script>";
+        }
+        else
+        {
+            $_SESSION['checkfalse'] = 1;
+            echo "<script>window.location.href = 'index.php?a=12';</script>";
+        }
     }
     else
     {
-        echo "<script> alert('No Orders!');
-        window.location.href = 'index.php?a=12';</script>";
+        $_SESSION['checkcartnull'] = 1;
+        echo "<script>window.location.href = 'index.php?a=12';</script>";
     }
 ?>

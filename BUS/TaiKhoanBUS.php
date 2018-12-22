@@ -66,13 +66,20 @@ class TaiKhoanBUS
 
     public function UnsetDelete($maTaiKhoan)
     {
-        $taiKhoan = new TaiKhoanDAO();
+        $taiKhoan = new TaiKhoanDTO();
         $taiKhoan->MaTaiKhoan = $maTaiKhoan;
         $this->taiKhoanDAO->UnsetDelete($taiKhoan);
     }
 
     public function Update($taiKhoan)
     {
+        return $this->taiKhoanDAO->Update($taiKhoan);
+    }
+    public function UpdateInforOrder($address, $phone, $maTaiKhoan)
+    {
+        $taiKhoan = $this->taiKhoanDAO->GetByID($maTaiKhoan);
+        $taiKhoan->DiaChi = $address;
+        $taiKhoan->DienThoai = $phone;
         return $this->taiKhoanDAO->Update($taiKhoan);
     }
 }

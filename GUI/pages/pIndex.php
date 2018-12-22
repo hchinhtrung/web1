@@ -1,4 +1,4 @@
-<div id="product">SẢN PHẨM MỚI NHẤT</div>
+<div id="product">&nbsp;BEST-NEW PRODUCTS</div>
 <div id="frm">
     <?php
         $sanPhamBUS = new SanPhamBUS();
@@ -12,12 +12,12 @@
                 <div>
                     $sanPham->GiaSanPham vnd
                 </div>
-                <p><a href='index.php?a=4&masp=$sanPham->MaSanPham'>Chi tiết</a></p>
+                <p><a href='index.php?a=4&masp=$sanPham->MaSanPham'>Detail</a></p>
             </div>";
         }
     ?>
 </div>
-<div id="product">SẢN PHẨM HOT NHẤT</div>
+<div id="product">&nbsp;BEST-SELLING PRODUCTS</div>
 <div>
     <?php
         $sanPhamBUS = new SanPhamBUS();
@@ -31,7 +31,7 @@
                 <div>
                     $sanPham->GiaSanPham vnd
                 </div>
-                <p><a href='index.php?a=4&masp=$sanPham->MaSanPham'>Chi tiết</a></p>
+                <p><a href='index.php?a=4&masp=$sanPham->MaSanPham'>Detail</a></p>
             </div>";
         }
     ?>

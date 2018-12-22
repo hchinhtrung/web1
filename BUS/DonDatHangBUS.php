@@ -22,6 +22,10 @@
         {
             return $this->donDatHangDAO->GetByName($hoadon);
         }
+        public function GetByMaTaiKhoan($maTaiKhoan)
+        {
+            return $this->donDatHangDAO->GetByMaTaiKhoan($maTaiKhoan);
+        }
         public function Insert($donDatHang)
         {
             return $this->donDatHangDAO->Insert($donDatHang);

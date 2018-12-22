@@ -105,30 +105,42 @@
         echo '<script language="javascript">';
         echo 'alert("Please fill in the required information!")';
         echo '</script>';
+        unset($_SESSION['checknull']);
     }
     else if(isset($_SESSION['checkexists']))
     {
         echo '<script language="javascript">';
-          echo 'alert("Username already exists!")';
-          echo '</script>';
+        echo 'alert("Username already exists!")';
+        echo '</script>';
+        unset($_SESSION['checkexists']);
     }
     else if(isset($_SESSION['checkpass']))
     {
         echo '<script language="javascript">';
         echo 'alert("Confirm password is incorrect!")';
         echo '</script>';
+        unset($_SESSION['checkpass']);
     }
     else if(isset($_SESSION['checkcaptcha']))
     {
         echo '<script language="javascript">';
         echo 'alert("Captcha is incorrect!")';
         echo '</script>';
+        unset($_SESSION['checkcaptcha']);
     }
     else if(isset($_SESSION['checkdate']))
     {
         echo '<script language="javascript">';
         echo 'alert("Date of birth is incorrect!")';
         echo '</script>';
+        unset($_SESSION['checkdate']);
+    }
+    else if(isset($_SESSION['checktrue']))
+    {
+        echo '<script language="javascript">';
+        echo 'alert("Sign Up Success!")';
+        echo '</script>';
+        unset($_SESSION['checktrue']);
     }
 ?>
 </div>

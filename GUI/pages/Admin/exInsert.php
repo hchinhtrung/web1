@@ -62,7 +62,7 @@
                             {
                                 $taiKhoan->NgaySinh = NULL;
                             }
-                            $taiKhoanBUS->TenHienThi = $fullname;
+                            $taiKhoan->TenHienThi = $fullname;
                             $taiKhoan->DiaChi = $city;
                             $taiKhoan->DienThoai = $phone;
                             $taiKhoan->Email = $email;

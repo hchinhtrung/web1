@@ -6,8 +6,8 @@
         $sanPhamBUS->UpdateSoLuotXem($sanPhamBUS->GetSoLuotXem($masp) - 1, $masp);
         if($sanPhamBUS->GetSoLuongTon($masp) < 1)
         {
-            echo "<script> alert('Out of stock!');
-            window.location.href = 'index.php?a=4&masp=$masp';</script>";
+            $_SESSION['checkoutstock'] = 1;
+            echo "<script>window.location.href = 'index.php?a=4&masp=$masp';</script>";
         }
         else
         {

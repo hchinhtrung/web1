@@ -130,7 +130,7 @@
             }
             else
             {
-                $sanPham->SoLuongBan = $soLuong;
+                $sanPham->SoLuongBan += $soLuong;
                 return $this->sanPhamDAO->Update($sanPham);
             }
         }
