@@ -3,7 +3,7 @@
  {
     if(isset($_SESSION['GioHang']))
     {
-        echo '<div id="product">&nbsp;SHIPPING ADDRESS</div>';
+        echo '<h3><a id="back" onclick="ComeBack()">&lt;&lt;</a>&nbsp;&nbsp;SHIPPING ADDRESS</h3>';
         echo '<div id="form">';
         echo '<form name="update" action="index.php?a=120" method="POST" id="idForm">';
         echo'<h4>Adress:</h4>';
@@ -17,7 +17,6 @@
         echo '<input type="submit" name="update" id="smSignUp" value="Next">';
         echo '</form>';
         echo '</div>';
-        echo '<div id="comback"><input type="submit" value="<< Go Back" id="btncomback" onclick="ComeBack()"></div>';
         if(isset($_SESSION['checknull']))
         {
             echo '<script> alert("Please fill in the required information!")</script>';

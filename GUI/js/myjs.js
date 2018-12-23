@@ -2,15 +2,53 @@ $(document).ready(
     function a()
     {
         $('#a_search').click(function(){
-            $('#search ul').toggleClass('activeSearch');
+            if($('#signin ul').attr('class') == "activeSignin")
+            {
+                $('#signin ul').removeClass('activeSignin');
+                $('#search ul').toggleClass('activeSearch');
+            }
+            else if($('#menu ul').attr('class') == "activeMenu")
+            {
+                $('#menu ul').removeClass('activeMenu');
+                $('#search ul').toggleClass('activeSearch');
+            }
+            else
+            {
+                $('#search ul').toggleClass('activeSearch');
+            }
         })
         $('#a_signin').click(function(){
-            $('#signin ul').toggleClass('activeSignin');
+            if($('#search ul').attr('class') == "activeSearch")
+            {
+                $('#search ul').removeClass('activeSearch');
+                $('#signin ul').toggleClass('activeSignin');
+            }
+            else if($('#menu ul').attr('class') == "activeMenu")
+            {
+                $('#menu ul').removeClass('activeMenu');
+                $('#signin ul').toggleClass('activeSignin');
+            }
+            else
+            {
+                $('#signin ul').toggleClass('activeSignin');
+            }
         })
         $('#a_menu').click(function(){
-            $('#menu ul').toggleClass('activeMenu');
+            if($('#search ul').attr('class') == "activeSearch")
+            {
+                $('#search ul').removeClass('activeSearch');
+                $('#menu ul').toggleClass('activeMenu');
+            }
+            else if($('#signin ul').attr('class') == "activeSignin")
+            {
+                $('#signin ul').removeClass('activeSignin');
+                $('#menu ul').toggleClass('activeMenu');
+            }
+            else
+            {
+                $('#menu ul').toggleClass('activeMenu');
+            }
         })
-        $()
     }
 )
 function ComeBack(){
@@ -22,10 +60,5 @@ function Location()
 }
 function PrintOrder(strid)
 {   
-    var prtContent = document.getElementById(strid);
-    var WinPrint = window.open('','','letf=50,top=50,width=800,height=800');
-    WinPrint.document.write(prtContent.innerHTML);
-    WinPrint.document.close();
-    WinPrint.focus();
-    WinPrint.print();
+    window.print();
 }

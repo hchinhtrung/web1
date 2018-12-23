@@ -2,7 +2,7 @@
 if(isset($_SESSION["uid"]) && $_SESSION['tuid'] == 2)
 {
 ?>
-<div id="product">CART</div>
+<h3>&nbsp;CART</h3>
     <table id="idTable" cellspacing="0">
         <thead>
             <tr>

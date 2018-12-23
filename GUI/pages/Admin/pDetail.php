@@ -24,9 +24,9 @@
                     }
                 }
 ?>
-             <div id="comback"><input type="submit" value="<< Go Back" id="btncomback" onclick="ComeBack()"></div>
 <?php
             }
+//page chi tiet cho dondathang
             else if(isset($_GET['madondathang']))
             {
                 $donDatHangBUS = new DonDatHangBUS();
@@ -42,7 +42,6 @@
                     echo '</div>';
                 }
 ?>
-            <div id="comback"><input type="submit" value="<< Go Back" id="btncomback" onclick="ComeBack()"></div>
 <?php
             }
             else

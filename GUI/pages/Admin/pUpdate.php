@@ -75,7 +75,6 @@
             echo '<script> window.location = "index.php?a=404"; </script>';
         }
 ?>
-        <div id="comback"><input type="submit" value="<< Go Back" id="btncomback" onclick="ComeBack()"></div>
 <?php
     }
     else

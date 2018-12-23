@@ -7,10 +7,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" media="screen" href="GUI/css/style.css">
+    <link rel="stylesheet" type="text/css" media="all" href="GUI/css/style.css">
     <script src="GUI/js/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script src="GUI/js/myjs.js" type="text/javascript"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link REL="SHORTCUT ICON" href="GUI/images/title.png">
     <title>Phones Store</title>
 </head>
 <body>

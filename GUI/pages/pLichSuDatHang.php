@@ -1,7 +1,7 @@
 <?php
 if(isset($_SESSION['uid']) && $_SESSION['tuid'] == 2)
 {
-    echo '<h3>ORDERS HISTORY</h3>';
+    echo '<h3>&nbsp;ORDERS HISTORY</h3>';
     $donDatHangBUS = new DonDatHangBUS();
     $lstdonhang = array();
     $lstdonhang = $donDatHangBUS->GetByMaTaiKhoan($_SESSION['uid']);
@@ -14,8 +14,8 @@ if(isset($_SESSION['uid']) && $_SESSION['tuid'] == 2)
         echo"<table id='idTable' cellspacing='0'>
         <thead>
             <tr id='history'>
-                <th colspan='4'>&nbsp;$donhang->MaDonDatHang ($donhang->NgayLap)</th>
-                <th id='hstotal'>Total: $donhang->TongThanhTien&nbsp;</th>
+                <th colspan='3'>&nbsp;$donhang->MaDonDatHang ($donhang->NgayLap)</th>
+                <th id='hstotal' colspan='2'>Total: $donhang->TongThanhTien&nbsp;</th>
             </tr>
             <tr>
                 <th>ID</th>

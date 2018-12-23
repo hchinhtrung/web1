@@ -421,6 +421,14 @@ body{
     color: #FFF;
     font-size: 15px;
 }
+#container #back{
+    background: #0fa13b;
+    padding: 10px 10px 11px 10px;
+    font: 20px;
+    cursor: pointer;
+    color: #FFF;
+    text-decoration: none;
+}
 /*Chi tiet san pham*/
 #boxDetail{
     text-align: center;
@@ -430,7 +438,7 @@ body{
 }
 h3{
     margin-bottom: 0px;
-    padding: 10px;
+    padding: 10px 0px 10px 0px;
     margin-top: 5px;
     background: #ef4444;
     color: #FFF;
@@ -446,6 +454,10 @@ h3{
     float: left;
     width: 30%;
     height: 30%;
+}
+#chitiet h3 
+{
+    background: #4286f4;
 }
 #thongtinchitiet{
     display: inline-block;
@@ -475,21 +487,21 @@ h3{
     color: #4286f4;
 }
 #form input{
-    width: 400px;
+    width: 100%;
     height: 30px;
     margin-bottom: 10px;
     font-size: 16px;
 }
 #form #city select{
-    width: 405px;
+    width: 100%;
 }
 #form select{
-    width: 100px;
+    width: 27%;
     height: 35px;
     margin: 0px 10px 10px 0px;
 }
 #form #idCaptcha input{
-    width: 220px;
+    width: 50%;
     height: 30px;
     margin: 0px 0px 0px 30px;
 }
@@ -601,5 +613,34 @@ h3{
     }
     #idTable{
         font-size: 11px;
+    }
+    #form{
+        width: 90%;
+        margin: 0 auto;
+        padding-right: 5px;
+
+    }
+    #form #smSignUp{
+        width: 30%;
+        height: 50px;
+        margin:10px 0px 0px 60%; 
+        background: #4286f4;
+    }
+    #idTable #history{
+        text-align: left;
+        color: #fff;
+        background: #4286f4;
+        font-size: 12px;
+    }
+    #chitiet img{
+        border: 5px solid #7e7e7e;
+        width: 95%;
+        height: 30%;
+    }
+    #thongtinchitiet{
+        text-align: left;
+        margin: 0px 10px 0px 0px;
+        width:95%; 
+        height: 100%;
     }
 }

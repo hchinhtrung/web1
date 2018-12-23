@@ -1,4 +1,4 @@
-<div id="product">&nbsp;PRODUCT</div>
+<h3>&nbsp;PRODUCT</h3>
 <?php
     if(isset($_GET["malsp"]))
     {

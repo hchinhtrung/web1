@@ -1,4 +1,4 @@
-<div id="product">&nbsp;BEST-NEW PRODUCTS</div>
+<h3>&nbsp;BEST-NEW PRODUCTS</h3>
 <div id="frm">
     <?php
         $sanPhamBUS = new SanPhamBUS();
@@ -17,7 +17,7 @@
         }
     ?>
 </div>
-<div id="product">&nbsp;BEST-SELLING PRODUCTS</div>
+<h3>&nbsp;BEST-SELLING PRODUCTS</h3>
 <div>
     <?php
         $sanPhamBUS = new SanPhamBUS();

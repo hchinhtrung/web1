@@ -90,7 +90,7 @@
                         <img src="GUI/modules/captcha.php" width="140" height="60" id="captchaimg"><br />
                         </th>
                         <th>
-                        <input type="text" name="captcha" id="captcha">
+                        &nbsp;<input type="text" name="captcha" id="captcha">
                         </th>
                     </tr>
                 </thead>

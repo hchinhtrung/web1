@@ -137,7 +137,7 @@
         {
             $loaiSanPhamBUS = new LoaiSanPhamBUS();
             $loaiSanPham = $loaiSanPhamBUS->GetByID($maLoaiSanPham);
-            echo '<h3>UPDATE PRODUCT TYPE</h3>';
+            echo '<h3><a id="back" onclick="ComeBack()">&lt;&lt;</a>&nbsp;&nbsp;UPDATE PRODUCT TYPE</h3>';
             echo '<div id="form">';
             echo '<form name="update" action="index.php?a=25&maloaisanpham='.$maLoaiSanPham.'" method="POST" id="idForm">';
             echo'<h4>Name of product type</h4>';
@@ -150,7 +150,7 @@
         }
         public function FormInsertLoaiSanPham($id)
         {
-            echo '<h3>INSERT PRODUCT TYPE</h3>';
+            echo '<h3><a id="back" onclick="ComeBack()">&lt;&lt;</a>&nbsp;&nbsp;INSERT PRODUCT TYPE</h3>';
             echo '<div id="form">';
             echo "<form name='insert' action='index.php?a=26&id=$id' method='POST' id='idForm'>";
             echo'<h4>Name of product type</h4>';
@@ -165,7 +165,7 @@
         {
             $hangSanXuatBUS = new HangSanXuatBUS();
             $hangSanXuat = $hangSanXuatBUS->GetByID($maHangSanXuat);
-            echo '<h3>UPDATE MANUFACTURER</h3>';
+            echo '<h3><a id="back" onclick="ComeBack()">&lt;&lt;</a>&nbsp;&nbsp;UPDATE MANUFACTURER</h3>';
             echo '<div id="form">';
             echo '<form name="update" action="index.php?a=25&mahangsanxuat='.$maHangSanXuat.'" method="POST" id="idForm">';
             echo'<h4>Name of manufacturer</h4>';
@@ -178,7 +178,7 @@
         }
         public function FormInsertHangSanXuat($id)
         {
-            echo '<h3>INSERT MANUFACTURER</h3>';
+            echo '<h3><a id="back" onclick="ComeBack()">&lt;&lt;</a>&nbsp;&nbsp;INSERT MANUFACTURER</h3>';
             echo '<div id="form">';
             echo "<form name='insert' action='index.php?a=26&id=$id' method='POST' id='idForm'>";
             echo'<h4>Name of manufacturer</h4>';
@@ -204,7 +204,7 @@
         {
             $taiKhoanBUS = new TaiKhoanBUS();
             $taiKhoan = $taiKhoanBUS->GetByID($maTaiKhoan);
-            echo '<h3>UPDATE ACCOUNT</h3>';
+            echo '<h3><a id="back" onclick="ComeBack()">&lt;&lt;</a>&nbsp;&nbsp;UPDATE ACCOUNT</h3>';
             echo '<div id="form">';
             echo '<form name="update" action="index.php?a=25&mataikhoan='.$maTaiKhoan.'" method="POST" id="idForm">';
             echo'<h4>User name:</h4>';
@@ -310,7 +310,7 @@
         }
         public function FormInsertTaiKhoan($id)
         {
-            echo '<h3>INSERT ACCOUNT</h3>';
+            echo '<h3><a id="back" onclick="ComeBack()">&lt;&lt;</a>&nbsp;&nbsp;INSERT ACCOUNT</h3>';
             echo '<div id="form">';
             echo "<form name='insert' action='index.php?a=26&id=$id' method='POST' id='idForm'>";
             echo '<h4>Profile information</h4>
@@ -413,7 +413,7 @@
         }
         public function FormUpdateDonDatHang($madondathang)
         {
-            echo '<h3>UPDATE ORDER</h3>';
+            echo '<h3><a id="back" onclick="ComeBack()">&lt;&lt;</a>&nbsp;&nbsp;UPDATE ORDER</h3>';
             echo '<div id="form">';
             echo '<form name="update" action="index.php?a=25&madondathang='.$madondathang.'" method="POST" id="idForm">';
             echo'<h4>Status:</h4>';
@@ -444,7 +444,7 @@
         {
             $taiKhoanBUS = new TaiKhoanBUS();
             $taiKhoan = $taiKhoanBUS->GetByID($maTaiKhoan);
-            echo "<h3>ACCOUNT DETAILS</h3>";
+            echo "<h3><a id='back' onclick='ComeBack()'>&lt;&lt;</a>&nbsp;&nbsp;ACCOUNT DETAILS</h3>";
             echo '<div id="Operation">';
             if($taiKhoan->BiXoa == 0)
             {
@@ -507,7 +507,7 @@
             $donDatHang = $donDatHangBUS->GetByID($madondathang);
             $taiKhoan = $taiKhoanBUS->GetByID($donDatHang->MaTaiKhoan);
             $lstchiTietDonDatHang = $chiTietDonDatHangBUS->GetByMaDonDatHang($madondathang);
-            echo "<h3>ACCOUNT DETAILS</h3>";
+            echo "<h3><a id='back' onclick='ComeBack()'>&lt;&lt;</a>&nbsp;&nbsp;ACCOUNT DETAILS</h3>";
             echo '<div id="Operation">';
             echo ('<input type="image" src="GUI/images/print.png" id="btnunlock" onclick="PrintOrder(\'detailorder\')">');
             echo '</div>';

@@ -1,4 +1,4 @@
-<h3>Product Details</h3>
+<h3>&nbsp;Product Details</h3>
 <div id="boxDetail">
     <div id="chitiet">
         <?php
@@ -20,7 +20,7 @@
                     $hangSanXuat = $hangSanXuatBUS->GetByID($sanPham->MaHangSanXuat);
                     echo "<img src='GUI/images/$sanPham->HinhURL'>";
                     echo "<div id='thongtinchitiet'>";
-                    echo"<h3>$sanPham->TenSanPham</h3>";
+                    echo"<h3>&nbsp;$sanPham->TenSanPham</h3>";
                     echo"<h4>Manufacturer: $hangSanXuat->TenHangSanXuat</h4>";
                     echo"<h4>Product Type: $loaiSanPham->TenLoaiSanPham</h4>";
                     echo"<h4>Amount: $sanPham->SoLuongTon</h4>";
@@ -34,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <h3>Related Products</h3>
+        <h3>&nbsp;Related Products</h3>
         <div>
             <?php
                 $sanPhamBUS = new SanPhamBUS();
