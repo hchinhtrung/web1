@@ -65,7 +65,7 @@
         }
         public function GetByName($tenHangSanXuat)
         {
-            $sql = "select MaHangSanXuat, TenHangSanXuat, BiXoa from hangsanxuat where TenHangSanXuat like '$tenHangSanXuat'";
+            $sql = "select MaHangSanXuat, TenHangSanXuat, BiXoa from hangsanxuat where TenHangSanXuat like '%$tenHangSanXuat%'";
             $result = $this->ExecuteQuery($sql);
             if($result == null)
             {
