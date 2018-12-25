@@ -80,6 +80,70 @@
                             }
                         }
                     }
+//thuc hien insert cho san pham
+                    else if($_GET['id'] == 6)
+                    {
+                        if(isset($S_POST["insert"]))
+                        {
+                            if($_FILES["image_file"]["name"] != '')
+                            {
+                                $allowed_ext = array("jpg", "png" );
+                                $ext = end (explode(".", $_FILES["image_file"]["name"]));
+                                if(in_array($ext, $allowed_ext))
+                                {
+                                    if($_FILES["image_file"]["size"]<50000)
+                                    {
+                                        $name= md5(rand()) . '.' . $ext;
+                                        $path = "images/" .$name;
+                                        move_uploaded_file ($_FILE["image_file"]["tmp_name"], $path);
+                                        header("location:index.php?filename=".$name."");
+                                    }
+                                }
+                                else{
+                                    echo '<script>alert("big image file")</script>';
+                                }
+                            }
+                            else
+                            {
+                                echo '<script> alert("please select file")</script>';
+                            }
+                        
+                        $sanPhamBUS = new SanPhamBUS();
+                        $name = $_POST['adname'];
+                        $manu = $_POST['manufacture'];
+                        $typep = $_POST['typeofproduct'];
+                        $price = $_POST['price'];
+                        $quaex = $_POST['quaex'];
+                        $date = date('Y-m-d');
+                        $image = $_POST['image_file'];
+
+                        if($name == "" || $manu = "" ||  $typep="" || $price="" ||$quaex ="")
+                        {
+                            $_SESSION['checknull'] = 1;
+                            echo "<script> window.location = 'index.php?a=21&id=6';</script>";   
+                        }
+                        else
+                        {
+                            $sanPham = new SanPhamDTO();
+                            $sanPham->TenSanPham = $name;
+                            $sanPham->TenHangSanXuat=$manu;
+                            $sanPham->GiaSanPham = $price;
+                            $sanPham->SoLuongTon = $quaex;
+                            $sanPham->HinhURL = $image;
+                            $sanPham->NgayNhap = $date;
+                            $check = $sanPhamBUS->Insert($sanPham);
+                            if($check)
+                            {
+                                echo '<script> window.location = "index.php?a=6"; </script>';
+                            }
+                            else
+                            {
+                                $_SESSION['checkfalse'] = 1;
+                                echo "<script> window.location = 'index.php?a=21&id=6';</script>";
+                            }
+                        }
+                    }
+}
 //thuc hien insert cho loai san pham
                     else if($_GET['id'] == 7)
                     {

@@ -313,8 +313,8 @@ Class SanPhamDAO extends DB
     }
     public function Insert($sanPham)
     {
-       $sql = "insert into sanpham(TenSanPham, BiXoa) values ('$sanPham->TenSanPham', '$sanPham->BiXoa')";
-       $this->ExecuteQuery($sql); 
+        $sql = "insert into sanpham (TenSanPham, GiaSanPham, HinhURL, NgayNhap, SoLuongTon, SoLuongBan, SoLuotXem, MoTa, BiXoa ,MaLoaiSanPham, MaHangSanXuat) VALUES ('$sanPham->TenSanPham', $sanPham->GiaSanPham,'$sanPham->HinhURL','$sanPham->NgayNhap', $sanPham->SoLuongTon, 0, 0, '', 0, $sanPham->MaLoaiSanPham, $sanPham->MaHangSanXuat)";
+        return $check = $this->ExecuteQuery($sql); 
     }
     public function Delete($sanPham)
     {

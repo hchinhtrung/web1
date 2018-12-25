@@ -39,6 +39,21 @@
                     unset($_SESSION['checkfalse']);
                 }
             }
+//page insert cho sanpham
+            else if($_GET['id'] == 6)
+            {
+                $adminBUS = new AdminBUS();
+                $adminBUS->FormInsertSanPham($_GET['id']);
+                if(isset($_SESSION['checknull']))
+                {
+                    echo "<script> alert('Please fill in the required information!');</script>";
+                    unset($_SESSION['checknull']);
+                }
+                else if(isset($_SESSION['checkfalse']))
+                {
+                    echo "<script> alert('Insert Failed!');</script>";
+                }
+            }
 //page insert cho loaitakhoan
             else if($_GET['id'] == 7)
             {
