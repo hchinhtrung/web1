@@ -11,20 +11,20 @@
                 if(count( $_SESSION['GioHang']) > 10)
                 {
                     $_SESSION['checkcartfull'] = 1;
-                    echo "<script> window.location.href = 'index.php?a=4&masp=$masp';</script>";
+                    header("location:index.php?a=4&masp=$masp");
                 }
                 else if($giohang->CheckExists($masp) == 1)
                 {
                     $_SESSION['GioHang'][$masp]['SoLuong'] += 1;
                     $_SESSION['checkinsertcart'] = 1;
-                    echo "<script>window.location.href = 'index.php?a=4&masp=$masp';</script>";
+                    header("location:index.php?a=4&masp=$masp");
                 }
                 else
                 {
                     $_SESSION['GioHang'][$masp]['MaSanPham'] = $masp;
                     $_SESSION['GioHang'][$masp]["SoLuong"] = 1;
                     $_SESSION['checkinsertcart'] = 1;
-                    echo "<script> window.location.href = 'index.php?a=4&masp=$masp';</script>";
+                    header("location:index.php?a=4&masp=$masp");
                 }
             }
             else
@@ -33,7 +33,7 @@
                 $_SESSION['GioHang'][$masp]['MaSanPham'] = $masp;
                 $_SESSION['GioHang'][$masp]['SoLuong'] = 1;
                 $_SESSION['checkinsertcart'] = 1;
-                echo "<script> window.location.href = 'index.php?a=4&masp=$masp';</script>";
+                header("location:index.php?a=4&masp=$masp");
             }
         }
         public function Minus($masp)
@@ -62,7 +62,7 @@
             if($sanPhamBUS->GetSoLuongTon($masp) < 1)
             {
                 $_SESSION['checkoutstock'] = 1;
-                echo "<script>window.location.href = 'index.php?a=4&masp=$masp';</script>";
+                header("location:index.php?a=4&masp=$masp");
             }
             else
             {

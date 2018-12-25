@@ -14,6 +14,10 @@
         {
             return $this->donDatHangDAO->GetByID($maDonDatHang);
         }
+        public function GetForChart()
+        {
+            return $this->donDatHangDAO->GetForChart();
+        }
         public function GetMaxID()
         {
             return $this->donDatHangDAO->GetMaxID();

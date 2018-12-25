@@ -10,28 +10,35 @@ if(isset($_GET['a']))
             $price = 0;
             if(isset($_POST['typeproduct']))
             {
-                $type = $_POST['typeproduct'];
-                $man = $_POST['manufacturer'];
-                $price = $_POST['price'];
-                echo '<script> window.location = "index.php?a=30&search='.$_GET['search'].'&type='.$type.'&manufacturer='.$man.'&price='.$price.'"; </script>';
+                if(is_numeric($_POST['typeproduct']) && is_numeric($_POST['manufacturer']))
+                {
+                    $type = $_POST['typeproduct'];
+                    $man = $_POST['manufacturer'];
+                    $price = $_POST['price'];
+                    header("location:index.php?a=30&search='.$_GET['search'].'&type='.$type.'&manufacturer='.$man.'&price='.$price.'");
+                }
+                else
+                {
+                    header("location:index.php?a=404");
+                }
             }
             else
             {
-                echo '<script> window.location = "index.php?a=404"; </script>';
+                header("location:index.php?a=404");
             }
         }
         else
         {
-            echo '<script> window.location = "index.php?a=404"; </script>';
+            header("location:index.php?a=404");
         }
     }
     else
     {
-        echo '<script> window.location = "index.php?a=404"; </script>';
+        header("location:index.php?a=404");
     }
 }
 else
 {
-    echo '<script> window.location = "index.php?a=404"; </script>';
+    header("location:index.php?a=404");
 }
 ?>

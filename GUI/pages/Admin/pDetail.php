@@ -4,7 +4,7 @@
         if(isset($_GET['a']))
         {
 //page chi tiet cho taikhoan
-            if(isset($_GET['mataikhoan']))
+            if(isset($_GET['mataikhoan']) and is_numeric($_GET['mataikhoan']))
             {
                 $taiKhoanBUS = new TaiKhoanBUS();
                 $admin = new AdminBUS();
@@ -27,7 +27,7 @@
 <?php
             }
 //page chi tiet cho san pham
-            else if(isset($_GET['masanpham']))
+            else if(isset($_GET['masanpham']) and is_numeric($_GET['masanpham']))
             {
                 $sanPhamBUS = new SanPhamBUS();
                 $admin = new AdminBUS();
@@ -46,7 +46,7 @@
                 }
             }
 //page chi tiet cho dondathang
-            else if(isset($_GET['madondathang']))
+            else if(isset($_GET['madondathang']) and is_numeric($_GET['madondathang ']))
             {
                 $donDatHangBUS = new DonDatHangBUS();
                 $admin = new AdminBUS();
@@ -65,16 +65,16 @@
             }
             else
             {
-                echo '<script> window.location = "index.php?a=404"; </script>';
+                header("location:index.php?a=404");
             }
         }
         else
         {
-            echo '<script> window.location = "index.php?a=404"; </script>';
+            header("location:index.php?a=404");
         }
     }
     else
     {
-        echo '<script> window.location = "index.php?a=404"; </script>';
+        header("location:index.php?a=404");
     }
 ?>

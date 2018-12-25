@@ -3,9 +3,24 @@ if(isset($_SESSION['GioHang']))
 {
     if(isset($_GET['masp']))
     {
-        $gioHang = new GioHangBUS();
-        $gioHang->Delete($_GET['masp']);
-        echo '<script> window.location = "index.php"; </script>';
+        if(is_numeric($_GET['masp']))
+        {
+            $gioHang = new GioHangBUS();
+            $gioHang->Delete($_GET['masp']);
+            header("location:index.php");
+        }
+        else
+        {
+            header("location:index.php?a=404");
+        }
     }
+    else
+    {
+        header("location:index.php?404");
+    }
+}
+else
+{
+    header("location:index.php?a=404");
 }
 ?>

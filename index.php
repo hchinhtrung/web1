@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" media="all" href="GUI/css/style.css">
     <script src="GUI/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="GUI/js/myjs.js" type="text/javascript"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link REL="SHORTCUT ICON" href="GUI/images/title.png">

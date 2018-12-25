@@ -15,29 +15,29 @@
       if($usname == "" || $pass == "" || $cfpass =="" || $captcha == "")
       {
             $_SESSION['checknull'] = 1;
-            echo '<script> window.location = "index.php?a=13"; </script>';
+            header("location:index.php?a=13");
       }
       else if($a == 1)
       {
             $_SESSION['checkexists'] = 1;
-            echo '<script> window.location = "index.php?a=13"; </script>';
+            header("location:index.php?a=13");
       }
       else if($cfpass!=$pass)
       {
             $_SESSION['checkpass'] = 1;
-            echo '<script> window.location = "index.php?a=13"; </script>';
+            header("location:index.php?a=13");
       }
       else if($captcha != $_SESSION["captcha"])
       {
             $_SESSION['checkcaptcha'] = 1;
-            echo '<script> window.location = "index.php?a=13"; </script>';
+            header("location:index.php?a=13");
       }
       else if($day != 0 || $month != 0 || $year != 0)
       {
           if(checkdate($month, $day, $year) == false)
           {
                 $_SESSION['checkdate'] = 1;
-                echo '<script> window.location = "index.php?a=13"; </script>';
+                header("location:index.php?a=13");
           }
       }
       else
@@ -59,12 +59,12 @@
           if($check ==false)
           {
                 $_SESSION['checkfalse'] = 1;
-                echo '<script> window.location = "index.php?a=13"; </script>';
+                header("location:index.php?a=13");
           }
           else
           {
                 $_SESSION['checktrue'] = 1;
-                echo '<script> window.location = "index.php?a=13"; </script>';
+                header("location:index.php?a=13");
               echo '<script language="javascript">';
               echo 'alert("Sign Up Success")';
               echo '</script>';

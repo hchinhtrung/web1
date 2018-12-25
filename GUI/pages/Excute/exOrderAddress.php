@@ -8,7 +8,7 @@
             if($address == "" || $phone == "")
             {
                 $_SESSION['checknull'] = 1;
-                echo "<script>window.location.href = 'index.php?a=119';</script>";
+                header("location:index.php?a=119");
             }
             else
             {
@@ -16,21 +16,21 @@
                 $check = $taiKhoanBUS->UpdateInforOrder($address, $phone, $_SESSION['uid']);
                 if($check == true)
                 {
-                    echo "<script>window.location.href = 'index.php?a=19';</script>";
+                    header("location:index.php?a=19");
                 }
                 else
                 {
-                    echo "<script>window.location.href = 'index.php?a=404';</script>";
+                    header("location:index.php?a=404");
                 }
             }
         }
         else
         {
-            echo "<script>window.location.href = 'index.php?a=404';</script>";
+            header("location:index.php?a=404");
         }
     }
     else
     {
-        echo "<script>window.location.href = 'index.php?a=404';</script>";
+        header("location:index.php?a=404");
     }
 ?>

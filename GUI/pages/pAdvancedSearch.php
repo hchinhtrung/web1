@@ -67,7 +67,7 @@ if(isset($_GET['a']))
                     }
                     else
                     {
-                        echo '<script> window.location = "index.php?a=404"; </script>';
+                        header("location:index.php?a=404");
                     }
                     $sanPhamBUS = new SanPhamBUS();
                     $lst = $sanPhamBUS->GetByNameAndPrice($_GET['search'], $max, $min);
@@ -151,7 +151,7 @@ if(isset($_GET['a']))
                         }
                         else
                         {
-                            echo '<script> window.location = "index.php?a=404"; </script>';
+                            header("location:index.php?a=404");
                         }
                         echo '<h3><a id="back" onclick="ComeBack()">&lt;&lt;</a>&nbsp;&nbsp;SEARCH FOR: "'.$_GET['search'].'"</h3>';
                         $sanPhamBUS = new SanPhamBUS();
@@ -179,7 +179,7 @@ if(isset($_GET['a']))
                 }
                 else
                 {
-                    echo '<script> window.location = "index.php?a=404"; </script>';
+                    header("location:index.php?a=404");
                 }
             }
         }
@@ -246,7 +246,7 @@ if(isset($_GET['a']))
                         }
                         else
                         {
-                            echo '<script> window.location = "index.php?a=404"; </script>';
+                            header("location:index.php?a=404");
                         }
                         $sanPhamBUS = new SanPhamBUS();
                         $lst = $sanPhamBUS->GetByNameAndPriceAndType($_GET['search'], $max, $min, $type);
@@ -330,7 +330,7 @@ if(isset($_GET['a']))
                             }
                             else
                             {
-                                echo '<script> window.location = "index.php?a=404"; </script>';
+                                header("location:index.php?a=404");
                             }
                             $sanPhamBUS = new SanPhamBUS();
                             $lst = $sanPhamBUS->GetByNameAndPriceAndManufacturerAndType($_GET['search'], $max, $min, $man, $type);
@@ -357,23 +357,23 @@ if(isset($_GET['a']))
                     }
                     else
                     {
-                        echo '<script> window.location = "index.php?a=404"; </script>';
+                        header("location:index.php?a=404");
                     }
                 }
             }
             else
             {
-                echo '<script> window.location = "index.php?a=404"; </script>';
+                header("location:index.php?a=404");
             }
         }
     }
     else
     {
-        echo '<script> window.location = "index.php?a=404"; </script>';
+        header("location:index.php?a=404");
     }
 }
 else
 {
-    echo '<script> window.location = "index.php?a=404"; </script>';
+    header("location:index.php?a=404");
 }
 ?>

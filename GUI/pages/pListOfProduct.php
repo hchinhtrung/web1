@@ -36,4 +36,8 @@
             }
         }
     }
+    else
+    {
+        header("location:index.php?a=404");
+    }
 ?>

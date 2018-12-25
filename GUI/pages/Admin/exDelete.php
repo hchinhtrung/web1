@@ -6,7 +6,7 @@
             if($_GET['a'] == 23)
             {
 //thuc thi delete cho taikhoan
-                if(isset($_GET['mataikhoan']))
+                if(isset($_GET['mataikhoan']) and is_numeric($_GET['mataikhoan']))
                 {
                     $taiKhoanBUS = new TaiKhoanBUS();
                     if($taiKhoanBUS->GetByID($_GET['mataikhoan']) != null)
@@ -14,22 +14,22 @@
                         $check = $taiKhoanBUS->Delete($_GET['mataikhoan']);
                         if($check == true)
                         {
-                            echo '<script> window.location = "index.php?a=5"; </script>';
+                            header("location:index.php?a=5");
                         }
                         else
                         {
                             $_SESSION['deletefalse'] = 1;
-                            echo "<script>window.location.href = 'index.php?a=5';</script>";
+                            header("location:index.php?a=5");
                         }   
                     }
                     else
                     {
                         $_SESSION['deleteexists'] = 1;
-                        echo "<script>window.location.href = 'index.php?a=8';</script>";
+                        header("location:index.php?a=8");
                     }
                 }
 //thuc thi delete sanpham
-                if(isset ($_GET['masanpham']))
+                if(isset ($_GET['masanpham']) and is_numeric($_GET['masanpham']))
                 {
                     $sanPhamBUS = new SanPhamBUS();
                     if($sanPhamBUS->GetByID($_GET['masanpham']) != null)
@@ -37,22 +37,22 @@
                         $check = $sanPhamBUS ->Delete($_GET['masanpham']);
                         if($check == true)
                         {
-                            echo '<script> window.location ="index.php?a=6";</script>';
+                            header("location:index.php?a=6");
                         }
                         else
                         {
                             $_SESSION['deletefalse'] = 1;
-                            echo "<script>window.location.href='index.php?a=6';</script>";
+                            header("location:index.php?a=6");
                         }
                     }
                     else 
                     {
                         $_SESSION['deleteexists'] = 1;
-                        echo "<script> window.location.href='index.php?a=6'</script>";
+                        header("location:index.php?a=6");
                     }
                 }
 //thuc thi delete cho loaisanpham
-                else if(isset($_GET['maloaisanpham']))
+                else if(isset($_GET['maloaisanpham']) and is_numeric($_GET['maloaisanpham']))
                 {
                     $loaiSanPhamBUS = new LoaiSanPhamBUS();
                     $loaiSanPham = $loaiSanPhamBUS->GetByID($_GET['maloaisanpham']);
@@ -61,22 +61,22 @@
                         $check = $loaiSanPhamBUS->Delete($_GET['maloaisanpham']);
                         if($check == true)
                         {
-                            echo '<script> window.location = "index.php?a=7"; </script>';
+                            header("location:index.php?a=7");
                         }
                         else
                         {
                             $_SESSION['deletefalse'] = 1;
-                            echo "<script> window.location.href = 'index.php?a=7';</script>";
+                            header("location:index.php?a=7");
                         }
                     }
                     else
                     {
                         $_SESSION['deleteexists'] = 1;
-                        echo "<script>window.location.href = 'index.php?a=7';</script>";
+                        header("location:index.php?a=7");
                     }
                 }
 //thuc thi delete cho hangsanxuat
-                else if(isset($_GET['mahangsanxuat']))
+                else if(isset($_GET['mahangsanxuat']) and is_numeric($_GET['mahangsanxuat']))
                 {
                  
                     $hangSanXuatBUS = new HangSanXuatBUS();
@@ -86,33 +86,33 @@
                         $check = $hangSanXuatBUS->Delete($_GET['mahangsanxuat']);
                         if($check == true)
                         {
-                            echo '<script> window.location = "index.php?a=8"; </script>';
+                            header("location:index.php?a=8");
                         }
                         else
                         {
                             $_SESSION['deletefalse'] = 1;
-                            echo "<script>window.location.href = 'index.php?a=8';</script>";
+                            header("location:index.php?a=8");
                         }   
                     }   
                     else
                     {
                         $_SESSION['deleteexists'] = 1;
-                        echo "<script>window.location.href = 'index.php?a=8';</script>";
+                        header("location:index.php?a=8");
                     }
                 }
             }
             else
             {
-                echo '<script> window.location = "index.php?a=404"; </script>';   
+                header("location:index.php?a=404");   
             }
         }
         else
         {
-            echo '<script> window.location = "index.php?a=404"; </script>';
+            header("location:index.php?a=404");
         }
     }
     else
     {
-        echo '<script> window.location = "index.php?a=404"; </script>';
+        header("location:index.php?a=404");
     }
 ?>

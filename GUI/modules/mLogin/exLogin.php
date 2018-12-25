@@ -11,17 +11,16 @@
             alert('Username or Password is incorrect')
             window.location.href = 'index.php'
             </script>";
-
         }
         else
         {
             $_SESSION['uid'] = $taiKhoan->MaTaiKhoan;
             $_SESSION['dname'] = $taiKhoan->TenHienThi;
             $_SESSION['tuid'] = $taiKhoan->MaLoaiTaiKhoan;
-            echo '<script> window.location = "index.php"; </script>';
+            header("location:index.php");
         }
     }
     else{
-        echo '<script> window.location = "index.php?a=404"; </script>';
+        header("location:index.php?a=404");
     }
 ?>

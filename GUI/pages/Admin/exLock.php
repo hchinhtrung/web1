@@ -8,107 +8,137 @@
 //thuc thi lock hoac unlock cho taikhoan
                 if(isset($_GET['mataikhoan']))
                 {
-                    $taiKhoanBUS = new TaiKhoanBUS();
-                    $taiKhoan = $taiKhoanBUS->GetByID($_GET['mataikhoan']);
-                    if($taiKhoan != null)
+                    if(is_numeric($_GET['mataikhoan']))
                     {
-                        if($taiKhoan->BiXoa == 0)
+                        $matk = $_GET['mataikhoan'];
+                        $taiKhoanBUS = new TaiKhoanBUS();
+                        $taiKhoan = $taiKhoanBUS->GetByID($_GET['mataikhoan']);
+                        if($taiKhoan != null)
                         {
-                            $taiKhoanBUS->SetDelete($_GET['mataikhoan']);
-                            echo '<script> window.location = "index.php?a=5"; </script>';
+                            if($taiKhoan->BiXoa == 0)
+                            {
+                                $taiKhoanBUS->SetDelete($_GET['mataikhoan']);
+                                header("location:index.php?a=5");
+                            }
+                            else
+                            {
+                                $taiKhoanBUS->UnsetDelete($_GET['mataikhoan']);
+                                header("location:index.php?a=5");
+                            }
                         }
                         else
                         {
-                            $taiKhoanBUS->UnsetDelete($_GET['mataikhoan']);
-                            echo '<script> window.location = "index.php?a=5"; </script>';
+                            header("location:index.php?a=404");
                         }
                     }
                     else
                     {
+                        header("location:index.php?a=404");
                     }
                 }
 //thuc thi lock hoac unlock cho sanpham
                 else if(isset($_GET['masanpham']))
                 {
-                    $sanPhamBUS = new SanPhamBUS();
-                    $sanPham = $sanPhamBUS->GetByID($_GET['masanpham']);
-                    if($sanPham != null)
+                    if(is_numeric($_GET['masanpham']))
                     {
-                        if($sanPham->BiXoa == 0)
+                        $sanPhamBUS = new SanPhamBUS();
+                        $sanPham = $sanPhamBUS->GetByID($_GET['masanpham']);
+                        if($sanPham != null)
                         {
-                            $sanPhamBUS->SetDelete($_GET['masanpham']);
-                            echo '<script> window.location = "index.php?a=6"; </script>';
+                            if($sanPham->BiXoa == 0)
+                            {
+                                $sanPhamBUS->SetDelete($_GET['masanpham']);
+                                header("location:index.php?a=6");
+                            }
+                            else
+                            {
+                                $sanPhamBUS->UnsetDelete($_GET['masanpham']);
+                                header("location:index.php?a=6");
+                            }
                         }
                         else
                         {
-                            $sanPhamBUS->UnsetDelete($_GET['masanpham']);
-                            echo '<script> window.location = "index.php?a=6"; </script>';
-                        }
-                        }
-                        else
-                        {
-                            echo '<script> window.location = "index.php?a=6"; </script>';
-                        }
-                }
-//thuc thi lock hoac unlock cho loaisanpham
-                else if(isset($_GET['maloaisanpham']))
-                {
-                    $loaiSanPhamBUS = new LoaiSanPhamBUS();
-                    $loaiSanPham = $loaiSanPhamBUS->GetByID($_GET['maloaisanpham']);
-                    if($loaiSanPham != null)
-                    {
-                        if($loaiSanPham->BiXoa == 0)
-                        {
-                            $loaiSanPhamBUS->SetDelete($_GET['maloaisanpham']);
-                            echo '<script> window.location = "index.php?a=7"; </script>';
-                        }
-                        else
-                        {
-                            $loaiSanPhamBUS->UnsetDelete($_GET['maloaisanpham']);
-                            echo '<script> window.location = "index.php?a=7"; </script>';
+                            header("location:index.php?a=404");
                         }
                     }
                     else
                     {
-                        echo '<script> window.location = "index.php?a=7"; </script>';
+                        header("location:index.php?a=404");
+                    }
+                }
+//thuc thi lock hoac unlock cho loaisanpham
+                else if(isset($_GET['maloaisanpham']))
+                {
+                    if(is_numeric($_GET['maloaisanpham']))
+                    {
+                        $loaiSanPhamBUS = new LoaiSanPhamBUS();
+                        $loaiSanPham = $loaiSanPhamBUS->GetByID($_GET['maloaisanpham']);
+                        if($loaiSanPham != null)
+                        {
+                            if($loaiSanPham->BiXoa == 0)
+                            {
+                                $loaiSanPhamBUS->SetDelete($_GET['maloaisanpham']);
+                                header("location:index.php?a=7");
+                            }
+                            else
+                            {
+                                $loaiSanPhamBUS->UnsetDelete($_GET['maloaisanpham']);
+                                header("location:index.php?a=7");
+                            }
+                        }
+                        else
+                        {
+                            header("location:index.php?a=404");
+                        }
+                    }
+                    else
+                    {
+                        header("location:index.php?a=404");
                     }
                 }
 //thuc thi lock hoac unlock cho hangsanxuat
                 else if(isset($_GET['mahangsanxuat']))
                 {
-                    $hangSanXuatBUS = new HangSanXuatBUS();
-                    $hangSanXuat = $hangSanXuatBUS->GetByID($_GET['mahangsanxuat']);
-                    if($hangSanXuat != null)
+                    if(is_numeric($_GET['mahangsanxuat']))
                     {
-                        if($hangSanXuat->BiXoa == 0)
+                        $hangSanXuatBUS = new HangSanXuatBUS();
+                        $hangSanXuat = $hangSanXuatBUS->GetByID($_GET['mahangsanxuat']);
+                        if($hangSanXuat != null)
                         {
-                            $hangSanXuatBUS->SetDelete($_GET['mahangsanxuat']);
-                            echo '<script> window.location = "index.php?a=8"; </script>';
+                            if($hangSanXuat->BiXoa == 0)
+                            {
+                                $hangSanXuatBUS->SetDelete($_GET['mahangsanxuat']);
+                                header("location:index.php?a=8");
+                            }
+                            else
+                            {
+                                $hangSanXuatBUS->UnsetDelete($_GET['mahangsanxuat']);
+                                header("location:index.php?a=8");
+                            }
                         }
                         else
                         {
-                            $hangSanXuatBUS->UnsetDelete($_GET['mahangsanxuat']);
-                            echo '<script> window.location = "index.php?a=8"; </script>';
+                            header("location:index.php?a=8");
                         }
                     }
                     else
                     {
-                        echo '<script> window.location = "index.php?a=8"; </script>';
+                        header("location:index.php?a=404");
                     }
                 }
             }
             else
             {
-                echo '<script> window.location = "index.php?a=404"; </script>';    
+                header("location:index.php?a=404");    
             }
         }
         else
         {
-            echo '<script> window.location = "index.php?a=404"; </script>';
+            header("location:index.php?a=404");
         }
     }
     else
     {
-        echo '<script> window.location = "index.php?a=404"; </script>';
+        header("location:index.php?a=404");
     }
 ?>

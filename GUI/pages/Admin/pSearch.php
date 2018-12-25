@@ -80,12 +80,12 @@
             }
             else
             {
-                echo '<script> window.location = "index.php?a=404"; </script>';
+                header("location:index.php?a=404");
             }
         }
         else
         {
-            echo '<script> window.location = "index.php?a=404"; </script>';
+            header("location:index.php?a=404");
         }
 ?>
     <div id="comback"><input type="submit" value="<< Go Back" id="btncomback" onclick="ComeBack()"></div>
@@ -93,6 +93,6 @@
     }
     else
     {
-        echo '<script> window.location = "index.php?a=404"; </script>';
+        header("location:index.php?a=404");
     }
 ?>

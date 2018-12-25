@@ -44,6 +44,17 @@
                 return $donDatHang;
             }
         }
+        public function GetForChart()
+        {
+            $sql = "select date(NgayLap) as NgayLap, sum(TongThanhTien) as TongTien from dondathang group by date(NgayLap)";
+            $result = $this->ExecuteQuery($sql);
+            $lstDonDatHang = array();
+            while( $row = mysqli_fetch_array($result))
+            {
+                $lstDonDatHang[] = $row;
+            }
+            return $lstDonDatHang;
+        }
         public function GetByName($hoadon)
         {
             $sql = "select DISTINCT dh.MaDonDatHang, dh.NgayLap, dh.TongThanhTien, dh.MaTaiKhoan, dh.MaTinhTrang from dondathang dh, taikhoan tk where tk.TenHienThi like '%$hoadon%' or dh.MaDonDatHang like '%$hoadon%' and dh.MaTaiKhoan = tk.MaTaiKhoan";   

@@ -26,11 +26,11 @@
     else
     {
         $_SESSION['checkcartnull'] = 1;
-        echo "<script>window.location.href = 'index.php?a=12';</script>";
+        header("location:index.php?a=12");
     }
 }
 else
 {
-    echo "<script>window.location.href = 'index.php?a=404';</script>";
+    header("location:index.php?a=404");
 }
 ?>

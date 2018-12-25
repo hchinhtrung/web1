@@ -156,6 +156,60 @@
         echo "</tbody></table>";
 
         }
+        public function FormInsertSanPham($id)
+        {
+            echo '<h3><a id="back" onclick="ComeBack()">&lt;&lt;</a>&nbsp;&nbsp;INSERT PRODUCT</h3>';
+            echo '<div id="form">';
+            echo "<form name='ainsert' action='index.php?a=26&id=$id' method='POST' id='idForm'>";
+            echo'<h4>Name of product</h4>';
+            echo '<div>';
+            echo '<input type="text" name="adname" id="fullname">';
+            echo '</div>';
+            echo 'Name of manufacture:';
+            echo '<div id="manufacture" name="manufacture">';
+            echo '<select name="manufacture">
+            <option value="0">--Manufacturer--</option>';
+                $hangSanXuatBUS = new HangSanXuatBUS();
+                $lst = $hangSanXuatBUS->GetAllAvailable();
+                foreach($lst as $hangSanXuat)
+                {
+                    echo '<option value='.$hangSanXuat->MaHangSanXuat.'>'.$hangSanXuat->TenHangSanXuat.'</option>';
+                }
+            echo '</select>';
+            echo '</div>';
+
+            echo 'Name of type product:';
+            echo '<div id="typeofproduct" name="typeofproduct">';
+            echo '<select name="typeofproduct">
+            <option value="0">--Type of Product--</option>';
+            $loaiSanPhamBUS = new LoaiSanPhamBUS();
+            $lst1 = array();
+            $lst1 = $loaiSanPhamBUS->GetAll();
+            foreach($lst1 as $loaiSanPham)
+            {
+                echo '<option value='.$loaiSanPham->MaLoaiSanPham.'>'.$loaiSanPham->TenLoaiSanPham.'</option>';
+            }
+            echo '</select>';
+            echo '</div>';
+            
+            echo 'Price:';
+            echo '<div>';
+            echo '<input type="text" name="price" id="fullname">';
+            echo '</div>';
+            echo 'Quantity Exists:';
+            echo '<div>';
+            echo '<input type="text" name="quaex" id="fullname">';
+            echo '</div>';
+            echo 'Image:';
+            echo '<div id="image_file" name="image_file">';
+            echo '<form method="post" action="" enctype ="multipart/form-data">
+                    <input type="file" name="image_file">
+                    <input type="submit" name="insert" id="smSignUp" value="Insert">';
+            echo '</form>';
+            echo '</div>';
+             echo '</form>';
+             echo '</div>';
+        }
         public function FromUpdateSanPham($maSanPham)
         {
             $sanPhamBUS = new SanPhamBUS();
@@ -174,10 +228,6 @@
             echo '<h4>Quantity Exists</h4>';
             echo '<div>';
             echo '<input type="text" name="quaex" id="fullname" value="'.$sanPham->SoLuongTon.'">';
-            echo '</div>';
-            echo '<h4>Date Added</h4>';
-            echo '<div>';
-            echo '<input type="text" name="datad" id="fullname" value="'.$sanPham->NgayNhap.'">';
             echo '</div>';
             echo '<br/>';
             echo '<input type="submit" name="update" id="smSignUp" value="Update">';

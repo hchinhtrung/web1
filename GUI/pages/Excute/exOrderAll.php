@@ -43,17 +43,17 @@
         if($check == true)
         {
             $_SESSION['checktrue'] = 1;
-            echo "<script>window.location.href = 'index.php?a=12';</script>";
+            header("location:index.php?a=12");
         }
         else
         {
             $_SESSION['checkfalse'] = 1;
-            echo "<script>window.location.href = 'index.php?a=12';</script>";
+            header("location:index.php?a=12");
         }
     }
     else
     {
         $_SESSION['checkcartnull'] = 1;
-        echo "<script>window.location.href = 'index.php?a=12';</script>";
+        header("location:index.php?a=12");
     }
 ?>

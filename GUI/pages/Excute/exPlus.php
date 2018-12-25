@@ -3,9 +3,12 @@ if(isset($_SESSION['GioHang']))
 {
     if(isset($_GET['masp']))
     {
-        $gioHang = new GioHangBUS();
-        $gioHang->Plus($_GET['masp']);
-        echo '<script> window.location = "index.php?a=12"; </script>';
+        if(is_numeric($_GET['masp']))
+        {
+            $gioHang = new GioHangBUS();
+            $gioHang->Plus($_GET['masp']);
+            header("location:index.php?a=12");
+        }
     }
 }
 ?>

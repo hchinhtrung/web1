@@ -78,6 +78,6 @@ if(isset($_SESSION["uid"]) && $_SESSION['tuid'] == 2)
 }
 else
 {
-    echo "<script>window.location.href = 'index.php?a=404';</script>";
+    header("location:index.php?a=404");
 }
     ?>

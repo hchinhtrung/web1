@@ -4,7 +4,7 @@
         if(isset($_GET['a']))
         {
 //update cho taikhoan
-            if(isset($_GET['mataikhoan']))
+            if(isset($_GET['mataikhoan']) and is_numeric($_GET['mataikhoan']))
             {
                 $taiKhoanBUS = new TaiKhoanBUS();
                 if(isset($_POST['update']))
@@ -23,7 +23,7 @@
                         if(checkdate($month, $day, $year) == false)
                         {
                             $_SESSION['checkdate'] = 1;
-                            echo "<script> window.location = 'index.php?a=22&mataikhoan=$matk';</script>";
+                            header("location:index.php?a=22&mataikhoan=$matk");
                         }
                         else
                         {
@@ -36,12 +36,12 @@
                             $check = $taiKhoanBUS->Update($taiKhoan);
                             if($check == true)
                             {
-                                echo "<script> window.location = 'index.php?a=27&mataikhoan=$matk';</script>";
+                                header("location:index.php?a=27&mataikhoan=$matk");
                             }
                             else
                             {
                                 $_SESSION['checkfalse'] = 1;
-                                echo "<script> window.location = 'index.php?a=22&mataikhoan=$matk';</script>";
+                                header("location:index.php?a=22&mataikhoan=$matk");
                             }
                         }
                     }
@@ -57,18 +57,18 @@
                         if($check == true)
                         {
                             $_SESSION['checktrue'] = 1;
-                            echo "<script> window.location = 'index.php?a=27&mataikhoan=$matk';</script>";
+                            header("location:index.php?a=27&mataikhoan=$matk");
                         }
                         else
                         {
                             $_SESSION['checkfalse'] = 1;
-                            echo "<script> window.location = 'index.php?a=22&mataikhoan=$matk';</script>";
+                            header("location:index.php?a=22&mataikhoan=$matk");
                         }
                     }
                 }
             }
 //update cho sanpham
-            else if(isset($_GET['masanpham']))
+            else if(isset($_GET['masanpham']) and is_numeric($_GET['masanpham']))
             {
                 $masp = $_GET['masanpham'];
                 $sanPhamBUS = new SanPhamBUS();
@@ -81,8 +81,7 @@
                     if($name == "" || $price=="" || $quaex == "" ||  $datad == "")
                     {
                         $_SESSION['checknull'] = 1;
-                        echo "<script> window.location= 'index.php?a=22&masanpham=$masp';</script>";
-                        echo $name;
+                        header("location:index.php?a=22&masanpham=$masp");
                     }
                     else
                     {
@@ -95,17 +94,17 @@
                         if($check == true)
                         {
                             $_SESSION['checktrue'] = 1;
-                          echo "<script>window.location = 'index.php?a=27&masanpham=$masp';</script>";
+                            header("location:index.php?a=27&masanpham=$masp");
                         }
                         else {
                             $_SESSION['checkfalse'] = 1;
-                            echo "<script>window.location = 'index.php?a=22&masanpham=$masp'</script>";
+                            header("location:index.php?a=22&masanpham=$masp");
                         }
                     }
                 }
             }
 //update cho loaisanpham
-            else if(isset($_GET['maloaisanpham']))
+            else if(isset($_GET['maloaisanpham']) and is_numeric($_GET['maloaisanpham']))
             {
                 $loaiSanPhamBUS = new LoaiSanPhamBUS();
                 if(isset($_POST['update']))
@@ -115,24 +114,24 @@
                     {
                         $malsp = $_GET['maloaisanpham'];
                         $_SESSION['checknull'] = 1;
-                        echo "<script> window.location.href = 'index.php?a=22&maloaisanpham=$malsp';</script>";
+                        header("location:index.php?a=22&maloaisanpham=$malsp");
                     }
                     $loaiSanPham = $loaiSanPhamBUS->GetByID($_GET['maloaisanpham']);
                     $loaiSanPham->TenLoaiSanPham = $name;
                     $check = $loaiSanPhamBUS->Update($loaiSanPham);
                     if($check)
                     {
-                        echo "<script> window.location.href = 'index.php?a=7';</script>";
+                        header("location:index.php?a=7");
                     }
                     else
                     {
                         $_SESSION['checkfalse'] = 1;
-                        echo "<script> window.location.href = 'index.php?a=7';</script>";
+                        header("location:index.php?a=7");
                     }
                 }
             }
 //update cho hangsanxuat
-            else if(isset($_GET['mahangsanxuat']))
+            else if(isset($_GET['mahangsanxuat']) and is_numeric($_GET['mahangsanxuat']))
             {
                 $hangSanXuatBUS = new HangSanXuatBUS();
                 if(isset($_POST['update']))
@@ -142,24 +141,24 @@
                     {
                         $madh = $_GET['mahangsanxuat'];
                         $_SESSION['checknull'] = 1;
-                        echo "<script> window.location.href = 'index.php?a=22&mahangsanxuat=$madh';</script>";
+                        header("location:index.php?a=22&mahangsanxuat=$madh");
                     }
                     $hangSanXuat = $hangSanXuatBUS->GetByID($_GET['mahangsanxuat']);
                     $hangSanXuat->TenHangSanXuat = $name;
                     $check = $hangSanXuatBUS->Update($hangSanXuat);
                     if($check)
                     {
-                        echo "<script> window.location.href = 'index.php?a=8';</script>";
+                        header("location:index.php?a=8");
                     }
                     else
                     {
                         $_SESSION['checkfalse'] = 1;
-                        echo "<script> window.location.href = 'index.php?a=8';</script>";
+                        header("location:index.php?a=8");
                     }
                 }
             }
 //update cho dondathang
-            else if(isset($_GET['madondathang']))
+            else if(isset($_GET['madondathang']) and is_numeric($_GET['madondathang']))
             {
                 $donDatHangBUS = new DonDatHangBUS();
                 if(isset($_POST['update']))
@@ -170,27 +169,27 @@
                     $check = $donDatHangBUS->Update($donDatHang);
                     if($check == true)
                     {
-                        echo "<script>window.location = 'index.php?a=9';</script>";
+                        header("location:index.php?a=9");
                     }
                     else
                     {
                         $_SESSION['checkfalse'] = 1;
-                        echo "<script>window.location = 'index.php?a=9';</script>";
+                        header("location:index.php?a=9");
                     }
                 }
             }
             else
             {
-                echo '<script> window.location = "index.php?a=404"; </script>';
+                header("location:index.php?a=404");
             }
         }
         else
         {
-            echo '<script> window.location = "index.php?a=404"; </script>';
+            header("location:index.php?a=404");
         }
     }
     else
     {
-        echo '<script> window.location = "index.php?a=404"; </script>';
+        header("location:index.php?a=404");
     }
 ?>
