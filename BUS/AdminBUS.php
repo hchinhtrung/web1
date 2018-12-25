@@ -1,6 +1,29 @@
 <?php
     class AdminBUS
     {
+        public function SelectTableSanPham($lst)
+        {
+            echo"<table id='idTable' cellspacing = '0'>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name of product</th>
+                    <th>Price</th>
+                    <th>Operation</th>
+                </tr>
+            </thead>
+            <tbody>";
+                foreach($lst as $sanPham)
+                {
+                    echo "<tr>";
+                    echo "<td>$sanPham->MaSanPham</td>";
+                    echo "<td>$sanPham->TenSanPham</td>";
+                    echo "<td>$sanPham->GiaSanPham</td>";
+                    echo '<td>';
+                    echo ('<input type="image" src="GUI/images/detail.png" id="btnlock" onclick="location=\'index.php?a=27&masanpham='.$sanPham->MaSanPham.'\';">');
+                }
+            echo "</tbody></table>";
+        }
         public function SelectTableLoaiSanPham($lst)
         {
             echo"<table id='idTable' cellspacing='0'>
