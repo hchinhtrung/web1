@@ -18,7 +18,17 @@
     </form>
     </div>
 <?php
-
+        $sanPhamBUS = new SanPhamBUS();
+        $Admin = new AdminBUS();
+        $Admin->SelectTableSanPham($sanPhamBUS->GetAll());
+            if(isset($_SESSION['deletefalse']))
+            {
+                echo '<script> alert("Delete false!"); </script>';
+            }
+            if(isset($_SESSION['deleteexists']))
+            {
+                echo '<script> alert ("You cant not delete this product!"); </script>';
+            }
         }
         else
         {
