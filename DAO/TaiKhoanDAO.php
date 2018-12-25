@@ -97,7 +97,7 @@ Class TaiKhoanDAO extends DB
     }
     public function GetByName($tentaikhoan)
     {
-        $sql = "select MaTaiKhoan, TenDangNhap, TenHienThi, MaLoaiTaiKhoan, BiXoa from taikhoan where TenDangNhap like '$tentaikhoan' or TenHienThi like '$tentaikhoan'";
+        $sql = "select MaTaiKhoan, TenDangNhap, TenHienThi, MaLoaiTaiKhoan, BiXoa from taikhoan where TenDangNhap like '%$tentaikhoan%' or TenHienThi like '%$tentaikhoan%'";
         $result = $this->ExecuteQuery($sql);
         if($result == null)
             {

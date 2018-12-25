@@ -46,7 +46,7 @@
         }
         public function GetByName($hoadon)
         {
-            $sql = "select DISTINCT dh.MaDonDatHang, dh.NgayLap, dh.TongThanhTien, dh.MaTaiKhoan, dh.MaTinhTrang from dondathang dh, taikhoan tk where tk.TenHienThi = '$hoadon' or dh.MaDonDatHang = '$hoadon' and dh.MaTaiKhoan = tk.MaTaiKhoan";   
+            $sql = "select DISTINCT dh.MaDonDatHang, dh.NgayLap, dh.TongThanhTien, dh.MaTaiKhoan, dh.MaTinhTrang from dondathang dh, taikhoan tk where tk.TenHienThi like '%$hoadon%' or dh.MaDonDatHang like '%$hoadon%' and dh.MaTaiKhoan = tk.MaTaiKhoan";   
             $result = $this->ExecuteQuery($sql);
             if($result == null)
             {

@@ -50,7 +50,7 @@
         }
         public function GetByName($tenLoaiSanPham)
         {
-            $sql = "select MaLoaiSanPham, TenLoaiSanPham, BiXoa from loaisanpham where TenLoaiSanPham like '$tenLoaiSanPham'";
+            $sql = "select MaLoaiSanPham, TenLoaiSanPham, BiXoa from loaisanpham where TenLoaiSanPham like '%$tenLoaiSanPham%'";
             $result = $this->ExecuteQuery($sql);
             if($result == null)
             {

@@ -25,7 +25,7 @@
                 $lst = $sanPhamBUS->GetByName($_POST['tensanpham']);
                 if(count($lst) == 0)
                 {
-                    echo "<h1 id='error'>Product type not found!!!</h1>";
+                    echo "<h1 id='error'>Product not found!!!</h1>";
                 }
                 else
                 {
