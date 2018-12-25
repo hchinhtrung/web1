@@ -18,6 +18,21 @@
                     $AdminBUS->SelectTableTaiKhoan($lst);
                 }
             }
+//page search cho sanpham
+            else if(isset($_POST['tensanpham']))
+            {
+                $sanPhamBUS = new SanPhamBUS();
+                $lst = $sanPhamBUS->GetByName($_POST['tensanpham']);
+                if(count($lst) == 0)
+                {
+                    echo "<h1 id='error'>Product type not found!!!</h1>";
+                }
+                else
+                {
+                    $AdminBUS = new AdminBUS();
+                    $AdminBUS->SelectTableSanPham($lst);
+                }
+            }
 //page search cho loaisanpham
             else if(isset($_POST['tenloaisanpham']))
             {
