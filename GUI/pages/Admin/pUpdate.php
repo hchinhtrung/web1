@@ -21,6 +21,22 @@
                         unset($_SESSION['checkfalse']);
                     }
                 }
+//page update cho sanpham
+                else if(isset($_GET['masanpham']))
+                {
+                    $adminBUS = new AdminBUS();
+                    $adminBUS->FromUpdateSanPham($_GET['masanpham']);
+                    if(isset($_SESSION['checknull']))
+                    {
+                        echo "<script> alert('Please fill in the required information!');</script>";
+                        unset($_SESSION['checknull']);
+                    }
+                    else if(isset($_SESSION['checkfalse']))
+                    {
+                        echo "<script> alert ('Update Failed!!');</script>";
+                        unset($_SESSION['checkfalse']);
+                    }
+                }
 //page update cho loaisanpham
                 else if(isset($_GET['maloaisanpham']))
                 {

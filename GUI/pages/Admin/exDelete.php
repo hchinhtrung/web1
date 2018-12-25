@@ -28,6 +28,29 @@
                         echo "<script>window.location.href = 'index.php?a=8';</script>";
                     }
                 }
+//thuc thi delete sanpham
+                if(isset ($_GET['masanpham']))
+                {
+                    $sanPhamBUS = new SanPhamBUS();
+                    if($sanPhamBUS->GetByID($_GET['masanpham']) != null)
+                    {
+                        $check = $sanPhamBUS ->Delete($_GET['masanpham']);
+                        if($check == true)
+                        {
+                            echo '<script> window.location ="index.php?a=6";</script>';
+                        }
+                        else
+                        {
+                            $_SESSION['deletefalse'] = 1;
+                            echo "<script>window.location.href='index.php?a=6';</script>";
+                        }
+                    }
+                    else 
+                    {
+                        $_SESSION['deleteexists'] = 1;
+                        echo "<script> window.location.href='index.php?a=6'</script>";
+                    }
+                }
 //thuc thi delete cho loaisanpham
                 else if(isset($_GET['maloaisanpham']))
                 {

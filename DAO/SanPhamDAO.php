@@ -34,31 +34,44 @@ Class SanPhamDAO extends DB
         while( $row = mysqli_fetch_array($result))
         {
             extract($row);
-            $sanPham= new SanPhamDTO();
             $sanPham->MaSanPham = $MaSanPham;
             $sanPham->TenSanPham=$TenSanPham;
             $sanPham->HinhURL=$HinhURL;
             $sanPham->GiaSanPham = $GiaSanPham;
+            $sanPham->NgayNhap = $NgayNhap;
+            $sanPham->SoLuongTon = $SoLuongTon;
+            $sanPham->MaLoaiSanPham = $MaLoaiSanPham;
+            $sanPham->MaHangSanXuat = $MaHangSanXuat;
             $lstSanPham[]= $sanPham;
         }
         return $lstSanPham;
     }
     public function GetByName($tenSanPham)
     {
-        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham where BiXoa = 0 and TenSanPham like '%$tenSanPham%'";
-        $result =$this->ExecuteQuery($sql);
-        $lstSanPham = array();
-        while( $row = mysqli_fetch_array($result))
-        {
-            extract($row);
-            $sanPham= new SanPhamDTO();
-            $sanPham->MaSanPham = $MaSanPham;
-            $sanPham->TenSanPham=$TenSanPham;
-            $sanPham->HinhURL=$HinhURL;
-            $sanPham->GiaSanPham = $GiaSanPham;
-            $lstSanPham[]= $sanPham;
-        }
-        return $lstSanPham;
+        $sql = "select MaSanPham, TenSanPham, GiaSanPham  from sanpham where TenSanPham like '$tenSanPham'";
+            $result = $this->ExecuteQuery($sql);
+            if($result == null)
+            {
+                return null;
+            }
+            else
+            {
+                $lstSanPham = array();
+                while( $row = mysqli_fetch_array($result))
+                {
+                    if($row == null)
+                    {
+                        return null;
+                    }
+                    extract($row);
+                    $sanPham= new SanPhamDTO();
+                    $sanPham->MaSanPham = $MaSanPham;
+                    $sanPham->TenSanPham=$TenSanPham;
+                    $sanPham->GiaSanPham = $GiaSanPham;
+                    $lstSanPham[]= $sanPham;
+                }
+                return $lstSanPham;
+            }
     }
     public function GetByNameAndManufacturer($tenSanPham, $maHangSanXuat)
     {
@@ -287,6 +300,7 @@ Class SanPhamDAO extends DB
                 $sanPham->TenSanPham = $TenSanPham;
                 $sanPham->HinhURL=$HinhURL;
                 $sanPham->GiaSanPham = $GiaSanPham;
+                $sanPham->NgayNhap = $NgayNhap;
                 $sanPham->SoLuongTon = $SoLuongTon;
                 $sanPham->SoLuotXem = $SoLuotXem;
                 $sanPham->BiXoa = $BiXoa;
@@ -319,8 +333,8 @@ Class SanPhamDAO extends DB
     }
     public function Update($sanPham)
     {
-        $sql = "update sanpham set TenSanPham = '$sanPham->TenSanPham', HinhURL = '$sanPham->HinhURL',  GiaSanPham = $sanPham->GiaSanPham, SoLuongTon = $sanPham->SoLuongTon, SoLuongBan = $sanPham->SoLuongBan, SoLuotXem = $sanPham->SoLuotXem , BiXoa = $sanPham->BiXoa where MaSanPham = $sanPham->MaSanPham";
-        $this->ExecuteQuery($sql);
+        $sql = "update sanpham set TenSanPham = '$sanPham->TenSanPham',  GiaSanPham = $sanPham->GiaSanPham, NgayNhap = '$sanPham->NgayNhap', SoLuongTon = $sanPham->SoLuongTon where MaSanPham = $sanPham->MaSanPham";
+        return $this->ExecuteQuery($sql);
     }
     public function DemSoLuongSanPhamThuocSanPham($maSanPham)
     {

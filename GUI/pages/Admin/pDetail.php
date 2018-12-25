@@ -26,6 +26,25 @@
 ?>
 <?php
             }
+//page chi tiet cho san pham
+            else if(isset($_GET['masanpham']))
+            {
+                $sanPhamBUS = new SanPhamBUS();
+                $admin = new AdminBUS();
+                if($sanPhamBUS ->GetByID($_GET['masanpham']) == null)
+                {
+                    echo "<h1 id='error'>Product not found!!!</h1>";
+                }
+                else
+                {
+                    $admin->formDetailProduct($_GET['masanpham']);
+                    if(isset($_SESSION['checktrue']))
+                    {
+                        echo "<script> alert('Update Product Sucessfull!');</script>";
+                        unset($_SESSION['checktrue']);
+                    }
+                }
+            }
 //page chi tiet cho dondathang
             else if(isset($_GET['madondathang']))
             {

@@ -156,6 +156,34 @@
         echo "</tbody></table>";
 
         }
+        public function FromUpdateSanPham($maSanPham)
+        {
+            $sanPhamBUS = new SanPhamBUS();
+            $sanPham = $sanPhamBUS->GetByID($maSanPham);
+            echo '<h3><a id="back" onclick="ComeBack()">&lt;&lt;</a>&nbsp;&nbsp;UPDATE PRODUCT</h3>';
+            echo '<div id="form">';
+            echo '<form name="update" action="index.php?a=25&masanpham='.$maSanPham.'" method="POST" id="idForm">';
+            echo '<h4>Name of product</h4>';
+            echo '<div>';
+            echo '<input type="text" name="adname" id="fullname" value="'.$sanPham->TenSanPham.'">';
+            echo '</div>';
+            echo '<h4>Price</h4>';
+            echo '<div>';
+            echo '<input type="text" name="price" id="fullname" value="'.$sanPham->GiaSanPham.'">';
+            echo '</div>';
+            echo '<h4>Quantity Exists</h4>';
+            echo '<div>';
+            echo '<input type="text" name="quaex" id="fullname" value="'.$sanPham->SoLuongTon.'">';
+            echo '</div>';
+            echo '<h4>Date Added</h4>';
+            echo '<div>';
+            echo '<input type="text" name="datad" id="fullname" value="'.$sanPham->NgayNhap.'">';
+            echo '</div>';
+            echo '<br/>';
+            echo '<input type="submit" name="update" id="smSignUp" value="Update">';
+            echo '</form>';
+            echo '</div>';
+        }
         public function FormUpdateLoaiSanPham($maLoaiSanPham)
         {
             $loaiSanPhamBUS = new LoaiSanPhamBUS();
@@ -521,6 +549,58 @@
             echo "</tr>";
             echo "</table>";
 
+        }
+        public function FormDetailProduct($maSanPham)
+        {
+            $sanPhamBUS = new SanPhamBUS();
+            $sanPham = $sanPhamBUS->GetByID(($maSanPham));
+            echo "<h3><a id='back' onclick='ComeBack()'>&lt;&lt;</a>&nbsp;&nbsp;PRODUCT DETAILS</h3>";
+            echo '<div id="Operation">';
+            if($sanPham->BiXoa == 0)
+            {
+                echo ('<input type="image" src="GUI/images/lock.png" id="btnlock" onclick="location=\'index.php?a=24&masanpham='.$sanPham->MaSanPham.'\';">');
+            }
+            else
+            {
+                echo ('<input type="image" src="GUI/images/unlock.png" id="btnunlock" onclick="location=\'index.php?a=24&masanpham='.$sanPham->MaSanPham.'\';">');
+            }
+            echo ('<input type="image" src="GUI/images/edit.png" id="btnupdate" onclick="location=\'index.php?a=22&masanpham='.$sanPham->MaSanPham.'\';">');
+            echo ('<input type="image" src="GUI/images/delete.png" id="btndelete" onclick="location=\'index.php?a=23&masanpham='.$sanPham->MaSanPham.'\';">');
+            echo '</div>';
+            echo"<table id='frmDetail' cellspacing='0'>";
+            echo "<tr>";
+                echo "<td>ID Product</td>";
+                echo "<td>$sanPham->MaSanPham</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<td>User name</td>";
+                echo "<td>$sanPham->TenSanPham</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<td>Date Added</td>";
+                echo "<td>$sanPham->NgayNhap</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<td>Quantity Exists</td>";
+                echo "<td>$sanPham->SoLuongTon</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<td>Sell ??Number</td>";
+                echo "<td>$sanPham->SoLuongBan</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<td>Bi Xoa</td>";
+                echo "<td>$sanPham->BiXoa</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<td>ID of Product Type</td>";
+                echo "<td>$sanPham->MaLoaiSanPham</td>";
+            echo "</tr>";
+            echo "<tr>";
+                echo "<td>ID of Manufacturer</td>";
+                echo "<td>$sanPham->MaHangSanXuat</td>";
+            echo "</tr>";
+            echo "</table>";
         }
         public function FormDetailOrder($madondathang)
         {

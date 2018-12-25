@@ -102,15 +102,8 @@
         {
             $sanPham  = new SanPhamDTO();
             $sanPham->MaSanPham = $maSanPham;
-            $soSanPham = $this->sanPhamDAO->DemSoLuongSanPham($maSanPham);
-            if($soSanPham == 0)
-            {
-                $this->sanPhamDAO->Delete($sanPham);
-            }
-            else
-            {
-                $this->sanPhamDAO->SetDelete($sanPham);
-            }
+            return $this->sanPhamDAO->Delete($sanPham);
+
         }
         public function SetDelete($maSanPham)
         {
@@ -179,6 +172,10 @@
                 $sanPham->SoLuotXem = $soLuot;
                 return $this->sanPhamDAO->Update($sanPham);
             }
+        }
+        public function Update($sanPham)
+        {
+            return $this->sanPhamDAO->Update($sanPham);
         }
     }
 ?>

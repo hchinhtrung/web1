@@ -67,6 +67,43 @@
                     }
                 }
             }
+//update cho sanpham
+            else if(isset($_GET['masanpham']))
+            {
+                $masp = $_GET['masanpham'];
+                $sanPhamBUS = new SanPhamBUS();
+                if(isset($_POST['update']))
+                {
+                    $name = $_POST['adname'];
+                    $price = $_POST['price'];
+                    $quaex = $_POST['quaex'];
+                    $datad = $_POST['datad'];
+                    if($name == "" || $price=="" || $quaex == "" ||  $datad == "")
+                    {
+                        $_SESSION['checknull'] = 1;
+                        echo "<script> window.location= 'index.php?a=22&masanpham=$masp';</script>";
+                        echo $name;
+                    }
+                    else
+                    {
+                        $sanPham = $sanPhamBUS->GetByID($_GET['masanpham']);
+                        $sanPham->TenSanPham = $name;
+                        $sanPham->GiaSanPham = $price;
+                        $sanPham->SoLuongTon = $quaex;
+                        $sanPham->NgayNhap = $datad;
+                        $check = $sanPhamBUS->Update($sanPham);
+                        if($check == true)
+                        {
+                            $_SESSION['checktrue'] = 1;
+                          echo "<script>window.location = 'index.php?a=27&masanpham=$masp';</script>";
+                        }
+                        else {
+                            $_SESSION['checkfalse'] = 1;
+                            echo "<script>window.location = 'index.php?a=22&masanpham=$masp'</script>";
+                        }
+                    }
+                }
+            }
 //update cho loaisanpham
             else if(isset($_GET['maloaisanpham']))
             {
