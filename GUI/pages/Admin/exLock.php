@@ -27,6 +27,29 @@
                     {
                     }
                 }
+//thuc thi lock hoac unlock cho sanpham
+                else if(isset($_GET['masanpham']))
+                {
+                    $sanPhamBUS = new SanPhamBUS();
+                    $sanPham = $sanPhamBUS->GetByID($_GET['masanpham']);
+                    if($sanPham != null)
+                    {
+                        if($sanPham->BiXoa == 0)
+                        {
+                            $sanPhamBUS->SetDelete($_GET['masanpham']);
+                            echo '<script> window.location = "index.php?a=6"; </script>';
+                        }
+                        else
+                        {
+                            $sanPhamBUS->UnsetDelete($_GET['masanpham']);
+                            echo '<script> window.location = "index.php?a=6"; </script>';
+                        }
+                        }
+                        else
+                        {
+                            echo '<script> window.location = "index.php?a=6"; </script>';
+                        }
+                }
 //thuc thi lock hoac unlock cho loaisanpham
                 else if(isset($_GET['maloaisanpham']))
                 {
