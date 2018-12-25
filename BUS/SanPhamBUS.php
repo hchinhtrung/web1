@@ -16,6 +16,38 @@
         {
             return $this->sanPhamDAO->GetAllAvailable();
         }
+        public function GetByName($tenSanPham)
+        {
+            return $this->sanPhamDAO->GetByName($tenSanPham);
+        }
+        public function GetByNameAndManufacturer($tenSanPham, $maHangSanXuat)
+        {
+            return $this->sanPhamDAO->GetByNameAndManufacturer($tenSanPham, $maHangSanXuat);
+        }
+        public function GetByNameAndPrice($tenSanPham, $max, $min)
+        {
+            return $this->sanPhamDAO->GetByNameAndPrice($tenSanPham, $max, $min);
+        }
+        public function GetByNameAndType($tenSanPham, $type)
+        {
+            return $this->sanPhamDAO->GetByNameAndType($tenSanPham, $type);
+        }
+        public function GetByNameAndPriceAndManufacturer($tenSanPham, $max, $min, $maHangSanXuat)
+        {
+            return $this->sanPhamDAO->GetByNameAndPriceAndManufacturer($tenSanPham, $max, $min, $maHangSanXuat);
+        }
+        public function GetByNameAndPriceAndType($tenSanPham, $max, $min, $type)
+        {
+            return $this->sanPhamDAO->GetByNameAndPriceAndType($tenSanPham, $max, $min, $type);
+        }
+        public function GetByNameAndManufacturerAndType($tenSanPham, $man, $type)
+        {
+            return $this->sanPhamDAO->GetByNameAndManufacturerAndType($tenSanPham, $man, $type);
+        }
+        public function GetByNameAndPriceAndManufacturerAndType($tenSanPham, $max, $min, $man, $type)
+        {
+            return $this->sanPhamDAO->GetByNameAndPriceAndManufacturerAndType($tenSanPham, $max, $min, $man, $type);
+        }
         public function GetTopToDate()
         {
             return $this->sanPhamDAO->GetTopToDate();

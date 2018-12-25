@@ -178,6 +178,12 @@
                     case 28:
                         include ("GUI/pages/Admin/exPrint.php");
                         break;
+                    case 29:
+                        include ("GUI/pages/pListOfSearch.php");
+                        break;
+                    case 30:
+                        include ("GUI/pages/pAdvancedSearch.php");
+                        break;
                     case 113: 
                         include ("GUI/pages/Excute/exSignUp.php");
                         break;
@@ -189,6 +195,12 @@
                         break;
                     case 120:
                         include ("GUI/pages/Excute/exOrderAddress.php");
+                        break;
+                    case 129:
+                        include ("GUI/pages/Excute/exSearch.php");
+                        break;
+                    case 130:
+                        include ("GUI/pages/Excute/exAdvancedSearch.php");
                         break;
                     default:
                         include ("GUI/pages/pError.php");

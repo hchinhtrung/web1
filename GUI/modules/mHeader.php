@@ -25,8 +25,10 @@
         <div id="a_search"><img src="GUI/images/search.png"></div>
         <ul id="frmSearch">
             <li>
-                <input type="text" id="txt">
-                <input type="button" value="Search" id="btn">
+                <form name="frmsearch" action="index.php?a=129" method="POST">
+                <input type="text" id="txt" name="search">
+                <input type="submit" value="Search" id="btn" name="submit">
+                </form>
             </li>
         </ul>
     </div>

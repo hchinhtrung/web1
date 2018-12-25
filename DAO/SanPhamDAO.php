@@ -43,6 +43,142 @@ Class SanPhamDAO extends DB
         }
         return $lstSanPham;
     }
+    public function GetByName($tenSanPham)
+    {
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham where BiXoa = 0 and TenSanPham like '%$tenSanPham%'";
+        $result =$this->ExecuteQuery($sql);
+        $lstSanPham = array();
+        while( $row = mysqli_fetch_array($result))
+        {
+            extract($row);
+            $sanPham= new SanPhamDTO();
+            $sanPham->MaSanPham = $MaSanPham;
+            $sanPham->TenSanPham=$TenSanPham;
+            $sanPham->HinhURL=$HinhURL;
+            $sanPham->GiaSanPham = $GiaSanPham;
+            $lstSanPham[]= $sanPham;
+        }
+        return $lstSanPham;
+    }
+    public function GetByNameAndManufacturer($tenSanPham, $maHangSanXuat)
+    {
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham where BiXoa = 0 and TenSanPham like '%$tenSanPham%' and MaHangSanXuat = $maHangSanXuat";
+        $result =$this->ExecuteQuery($sql);
+        $lstSanPham = array();
+        while( $row = mysqli_fetch_array($result))
+        {
+            extract($row);
+            $sanPham= new SanPhamDTO();
+            $sanPham->MaSanPham = $MaSanPham;
+            $sanPham->TenSanPham=$TenSanPham;
+            $sanPham->HinhURL=$HinhURL;
+            $sanPham->GiaSanPham = $GiaSanPham;
+            $lstSanPham[]= $sanPham;
+        }
+        return $lstSanPham;
+    }
+    public function GetByNameAndPrice($tenSanPham, $max, $min)
+    {
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham where BiXoa = 0 and TenSanPham like '%$tenSanPham%' and GiaSanPham >= $min and GiaSanPham <= $max";
+        $result =$this->ExecuteQuery($sql);
+        $lstSanPham = array();
+        while( $row = mysqli_fetch_array($result))
+        {
+            extract($row);
+            $sanPham= new SanPhamDTO();
+            $sanPham->MaSanPham = $MaSanPham;
+            $sanPham->TenSanPham=$TenSanPham;
+            $sanPham->HinhURL=$HinhURL;
+            $sanPham->GiaSanPham = $GiaSanPham;
+            $lstSanPham[]= $sanPham;
+        }
+        return $lstSanPham;
+    }
+    public function GetByNameAndType($tenSanPham, $type)
+    {
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham where BiXoa = 0 and TenSanPham like '%$tenSanPham%' and MaLoaiSanPham = $type";
+        $result =$this->ExecuteQuery($sql);
+        $lstSanPham = array();
+        while( $row = mysqli_fetch_array($result))
+        {
+            extract($row);
+            $sanPham= new SanPhamDTO();
+            $sanPham->MaSanPham = $MaSanPham;
+            $sanPham->TenSanPham=$TenSanPham;
+            $sanPham->HinhURL=$HinhURL;
+            $sanPham->GiaSanPham = $GiaSanPham;
+            $lstSanPham[]= $sanPham;
+        }
+        return $lstSanPham;
+    }
+    public function GetByNameAndPriceAndManufacturer($tenSanPham, $max, $min, $maHangSanXuat)
+    {
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham where BiXoa = 0 and TenSanPham like '%$tenSanPham%' and GiaSanPham >= $min and GiaSanPham <= $max and MaHangSanXuat = $maHangSanXuat";
+        $result =$this->ExecuteQuery($sql);
+        $lstSanPham = array();
+        while( $row = mysqli_fetch_array($result))
+        {
+            extract($row);
+            $sanPham= new SanPhamDTO();
+            $sanPham->MaSanPham = $MaSanPham;
+            $sanPham->TenSanPham=$TenSanPham;
+            $sanPham->HinhURL=$HinhURL;
+            $sanPham->GiaSanPham = $GiaSanPham;
+            $lstSanPham[]= $sanPham;
+        }
+        return $lstSanPham;
+    }
+    public function GetByNameAndPriceAndType($tenSanPham, $max, $min, $type)
+    {
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham where BiXoa = 0 and TenSanPham like '%$tenSanPham%' and GiaSanPham >= $min and GiaSanPham <= $max and MaLoaiSanPham = $type";
+        $result =$this->ExecuteQuery($sql);
+        $lstSanPham = array();
+        while( $row = mysqli_fetch_array($result))
+        {
+            extract($row);
+            $sanPham= new SanPhamDTO();
+            $sanPham->MaSanPham = $MaSanPham;
+            $sanPham->TenSanPham=$TenSanPham;
+            $sanPham->HinhURL=$HinhURL;
+            $sanPham->GiaSanPham = $GiaSanPham;
+            $lstSanPham[]= $sanPham;
+        }
+        return $lstSanPham;
+    }
+    public function GetByNameAndManufacturerAndType($tenSanPham, $man, $type)
+    {
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham where BiXoa = 0 and TenSanPham like '%$tenSanPham%' and MaHangSanXuat = $man and MaLoaiSanPham = $type";
+        $result =$this->ExecuteQuery($sql);
+        $lstSanPham = array();
+        while( $row = mysqli_fetch_array($result))
+        {
+            extract($row);
+            $sanPham= new SanPhamDTO();
+            $sanPham->MaSanPham = $MaSanPham;
+            $sanPham->TenSanPham=$TenSanPham;
+            $sanPham->HinhURL=$HinhURL;
+            $sanPham->GiaSanPham = $GiaSanPham;
+            $lstSanPham[]= $sanPham;
+        }
+        return $lstSanPham;
+    }
+    public function GetByNameAndPriceAndManufacturerAndType($tenSanPham, $max, $min, $man, $type)
+    {
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham where BiXoa = 0 and TenSanPham like '%$tenSanPham%' and MaHangSanXuat = $man and MaLoaiSanPham = $type and GiaSanPham >= $min and GiaSanPham <= $max";
+        $result =$this->ExecuteQuery($sql);
+        $lstSanPham = array();
+        while( $row = mysqli_fetch_array($result))
+        {
+            extract($row);
+            $sanPham= new SanPhamDTO();
+            $sanPham->MaSanPham = $MaSanPham;
+            $sanPham->TenSanPham=$TenSanPham;
+            $sanPham->HinhURL=$HinhURL;
+            $sanPham->GiaSanPham = $GiaSanPham;
+            $lstSanPham[]= $sanPham;
+        }
+        return $lstSanPham;
+    }
     public function GetTopToDate()
     {
         $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham from sanpham order by NgayNhap desc limit 10";
