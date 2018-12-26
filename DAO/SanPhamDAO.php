@@ -319,17 +319,17 @@ Class SanPhamDAO extends DB
     public function Delete($sanPham)
     {
         $sql= "delete from sanpham where MaSanPham = $sanPham->MaSanPham";
-        $this->ExecuteQuery($sql);
+        return $this->ExecuteQuery($sql);
     }
     public function SetDelete($sanPham)
     {
         $sql = "update sanpham set BiXoa = 1 where $sanPham->MaSanPham";
-        $this->ExecuteQuery($sql);
+        return $this->ExecuteQuery($sql);
     }
     public function UnsetDelete($sanPham)
     {
         $sql = "update sanpham set BiXoa = 0 where $sanPham->MaSanPham";
-        $this->ExecuteQuery($sql);
+        return $this->ExecuteQuery($sql);
     }
     public function Update($sanPham)
     {

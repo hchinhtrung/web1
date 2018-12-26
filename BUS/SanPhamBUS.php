@@ -89,7 +89,7 @@
         }
         public function Insert($sanPham)
         {
-            $this->sanPhamDAO->Insert($sanPham);
+            return $this->sanPhamDAO->Insert($sanPham);
         }
         public function InsertWithName($tenSanPham)
         {
@@ -109,13 +109,13 @@
         {
             $sanPham  = new SanPhamDTO();
             $sanPham->MaSanPham = $maSanPham;
-            $this->sanPhamDAO->SetDelete($sanPham);
+            return $this->sanPhamDAO->SetDelete($sanPham);
         }
         public function UnsetDelete($maSanPham)
         {
             $sanPham  = new SanPhamDTO();
             $sanPham->MaSanPham = $maSanPham;
-            $this->sanPhamDAO->UnsetDelete($sanPham);
+            return $this->sanPhamDAO->UnsetDelete($sanPham);
         }
         public function UpdateTenSanPham($tenSanPham, $maSanPham)
         {

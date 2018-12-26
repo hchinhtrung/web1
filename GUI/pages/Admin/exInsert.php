@@ -81,67 +81,76 @@
 //thuc hien insert cho san pham
                     else if($_GET['id'] == 6)
                     {
-                        if(isset($S_POST["insert"]))
-                        {
-                            if($_FILES["image_file"]["name"] != '')
-                            {
-                                $allowed_ext = array("jpg", "png" );
-                                $ext = end (explode(".", $_FILES["image_file"]["name"]));
-                                if(in_array($ext, $allowed_ext))
-                                {
-                                    if($_FILES["image_file"]["size"]<50000)
-                                    {
-                                        $name= md5(rand()) . '.' . $ext;
-                                        $path = "images/" .$name;
-                                        move_uploaded_file ($_FILE["image_file"]["tmp_name"], $path);
-                                        header("location:index.php?filename=".$name."");
-                                    }
-                                }
-                                else{
-                                    echo '<script>alert("big image file")</script>';
-                                }
-                            }
-                            else
-                            {
-                                echo '<script> alert("please select file")</script>';
-                            }
-                        
-                        $sanPhamBUS = new SanPhamBUS();
-                        $name = $_POST['adname'];
+                       $name = $_POST['adname'];
                         $manu = $_POST['manufacture'];
                         $typep = $_POST['typeofproduct'];
                         $price = $_POST['price'];
                         $quaex = $_POST['quaex'];
                         $date = date('Y-m-d');
-                        $image = $_POST['image_file'];
-
-                        if($name == "" || $manu = "" ||  $typep="" || $price="" ||$quaex ="")
+                        $filename = $_FILES['image_file']['name'];
+                        if($name =="" || $manu == "" || $typep =="" ||$price == "" || $quaex == "")
                         {
-                            $_SESSION['checknull'] = 1;
-                            echo "<script> window.location = 'index.php?a=21&id=6';</script>";   
+                            $_SESSION['productnull'] = 1;
                         }
-                        else
+                        else if(!is_numeric($price))
                         {
-                            $sanPham = new SanPhamDTO();
-                            $sanPham->TenSanPham = $name;
-                            $sanPham->TenHangSanXuat=$manu;
-                            $sanPham->GiaSanPham = $price;
-                            $sanPham->SoLuongTon = $quaex;
-                            $sanPham->HinhURL = $image;
-                            $sanPham->NgayNhap = $date;
-                            $check = $sanPhamBUS->Insert($sanPham);
-                            if($check)
+                            $_SESSION['checkprice'] = 1;
+                        }
+                        else if(!is_numeric($quaex))
+                        {
+                            $_SESSION['checkquaex'] = 1;   
+                        }
+                        else if($filename != "")
+                        {
+                            $allowed_ext = array("jpg", "png" );
+                            $tmp = explode('.', $filename);
+                            $ext = end($tmp);
+                            if(in_array($ext, $allowed_ext))
                             {
-                                echo '<script> window.location = "index.php?a=6"; </script>';
+                                if($_FILES["image_file"]["size"]<50000)
+                                {
+                                    $fname = md5(rand()).'.'.$ext;
+                                    $path = "GUI/images/".$name;
+                                    move_uploaded_file($_FILES["image_file"]["tmp_name"], $path);
+                                    $sanPham = new SanPhamDTO();
+                                    $sanPham->TenSanPham = $name;
+                                    $sanPham->HinhURL = $fname;
+                                    $sanPham->GiaSanPham = $price;
+                                    $sanPham->NgayNhap = $date;
+                                    $sanPham->SoLuongTon = $quaex;
+                                    $sanPham->MaHangSanXuat = $manu;
+                                    $sanPham->MaLoaiSanPham = $typep;
+                                    $sanPhamBUS = new SanPhamBUS();
+                                    $check = $sanPhamBUS->Insert($sanPham);
+                                    if($check)
+                                    {
+                                        $_SESSION['checktrue'] = 1;
+                                        header("location:index.php?a=21&id=6");
+                                    }
+                                    else
+                                    {
+                                        $_SESSION['checkfalse'] = 1;
+                                        header("location:index.php?a=21&id=6");
+                                    }
+                                }
+                                else
+                                {
+                                    $_SESSION['bigfile'] = 1;
+                                    header("location:index.php?a=21&id=6");
+                                }
                             }
                             else
                             {
-                                $_SESSION['checkfalse'] = 1;
-                                echo "<script> window.location = 'index.php?a=21&id=6';</script>";
+                                $_SESSION['invalidfile'] = 1;
+                                header("location:index.php?a=21&id=6");
                             }
                         }
+                        else
+                        {
+                            $_SESSION['filenull'] = 1;
+                            header("location:index.php?a=21&id=6");
+                        }
                     }
-}
 //thuc hien insert cho loai san pham
                     else if($_GET['id'] == 7)
                     {

@@ -44,14 +44,45 @@
             {
                 $adminBUS = new AdminBUS();
                 $adminBUS->FormInsertSanPham($_GET['id']);
-                if(isset($_SESSION['checknull']))
+                if(isset($_SESSION['productnull']))
                 {
                     echo "<script> alert('Please fill in the required information!');</script>";
-                    unset($_SESSION['checknull']);
+                    unset($_SESSION['productnull']);
+                }
+                else if(isset($_SESSION['checkprice']))
+                {
+                    echo "<script> alert('Invalid price!');</script>";
+                    unset($_SESSION['checkprice']);
+                }
+                else if(isset($_SESSION['checkquaex']))
+                {
+                    echo "<script> alert('Invalid quality!');</script>";
+                    unset($_SESSION['checkquaex']);
+                }
+                else if(isset($_SESSION['bigfile']))
+                {
+                    echo "<script> alert('Big image file!');</script>";
+                    unset($_SESSION['bigfile']);
+                }
+                else if(isset($_SESSION['invalidfile']))
+                {
+                    echo "<script> alert('Invalid image file!');</script>";
+                    unset($_SESSION['invalidfile']);
+                }
+                else if(isset($_SESSION['filenull']))
+                {
+                    echo "<script> alert('Please select file!');</script>";
+                    unset($_SESSION['filenull']);
                 }
                 else if(isset($_SESSION['checkfalse']))
                 {
                     echo "<script> alert('Insert Failed!');</script>";
+                    unset($_SESSION['checkfalse']);
+                }
+                else if(isset($_SESSION['checktrue']))
+                {
+                    echo "<script> alert('Insert Success!');</script>";
+                    unset($_SESSION['checktrue']);
                 }
             }
 //page insert cho loaitakhoan

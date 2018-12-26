@@ -160,13 +160,13 @@
         {
             echo '<h3><a id="back" onclick="ComeBack()">&lt;&lt;</a>&nbsp;&nbsp;INSERT PRODUCT</h3>';
             echo '<div id="form">';
-            echo "<form name='ainsert' action='index.php?a=26&id=$id' method='POST' id='idForm'>";
+            echo '<form name="insert" action="index.php?a=26&id='.$id.'" method="POST" id="idForm" enctype="multipart/form-data">';
             echo'<h4>Name of product</h4>';
             echo '<div>';
             echo '<input type="text" name="adname" id="fullname">';
             echo '</div>';
-            echo 'Name of manufacture:';
-            echo '<div id="manufacture" name="manufacture">';
+            echo '<h4>Name of manufacture:</h4>';
+            echo '<div id="city" name="manufacture">';
             echo '<select name="manufacture">
             <option value="0">--Manufacturer--</option>';
                 $hangSanXuatBUS = new HangSanXuatBUS();
@@ -177,9 +177,8 @@
                 }
             echo '</select>';
             echo '</div>';
-
-            echo 'Name of type product:';
-            echo '<div id="typeofproduct" name="typeofproduct">';
+            echo '<h4>Name of type product:</h4>';
+            echo '<div id="city" name="typeofproduct">';
             echo '<select name="typeofproduct">
             <option value="0">--Type of Product--</option>';
             $loaiSanPhamBUS = new LoaiSanPhamBUS();
@@ -192,22 +191,20 @@
             echo '</select>';
             echo '</div>';
             
-            echo 'Price:';
+            echo '<h4>Price:</h4>';
             echo '<div>';
             echo '<input type="text" name="price" id="fullname">';
             echo '</div>';
-            echo 'Quantity Exists:';
+            echo '<h4>Quantity Exists:<h4>';
             echo '<div>';
             echo '<input type="text" name="quaex" id="fullname">';
             echo '</div>';
-            echo 'Image:';
-            echo '<div id="image_file" name="image_file">';
-            echo '<form method="post" action="" enctype ="multipart/form-data">
-                    <input type="file" name="image_file">
-                    <input type="submit" name="insert" id="smSignUp" value="Insert">';
-            echo '</form>';
+            echo '<h4>Image:</h4>';
+            echo '<div id="image_file">';
+            echo '<input type="file" name="image_file">';
             echo '</div>';
-             echo '</form>';
+             echo '<input type="submit" name="insert" id="smSignUp" value="Insert">
+             </form>';
              echo '</div>';
         }
         public function FromUpdateSanPham($maSanPham)
