@@ -20,10 +20,6 @@
         $taiKhoanBUS = new TaiKhoanBUS();
         $Admin = new AdminBUS();
         $Admin->SelectTableTaiKhoan($taiKhoanBUS->GetAll());
-            if(isset($_SESSION['deletefalse']))
-            {
-                echo '<script> alert("Delete false!"); </script>';
-            }
             if(isset($_SESSION['deleteexists']))
             {
                 echo '<script> alert("You can not delete this account!"); </script>';

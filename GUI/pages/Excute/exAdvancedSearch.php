@@ -12,10 +12,11 @@ if(isset($_GET['a']))
             {
                 if(is_numeric($_POST['typeproduct']) && is_numeric($_POST['manufacturer']))
                 {
+                    $search = $_GET['search'];
                     $type = $_POST['typeproduct'];
                     $man = $_POST['manufacturer'];
                     $price = $_POST['price'];
-                    header("location:index.php?a=30&search='.$_GET['search'].'&type='.$type.'&manufacturer='.$man.'&price='.$price.'");
+                    header("location:index.php?a=30&search=$search&type=$type&manufacturer=$man&price=$price");
                 }
                 else
                 {

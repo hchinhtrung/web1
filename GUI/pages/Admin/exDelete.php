@@ -18,14 +18,13 @@
                         }
                         else
                         {
-                            $_SESSION['deletefalse'] = 1;
+                            $_SESSION['deleteexists'] = 1;
                             header("location:index.php?a=5");
                         }   
                     }
                     else
                     {
-                        $_SESSION['deleteexists'] = 1;
-                        header("location:index.php?a=8");
+                        header("location:index.php?a=404");
                     }
                 }
 //thuc thi delete sanpham
@@ -41,14 +40,13 @@
                         }
                         else
                         {
-                            $_SESSION['deletefalse'] = 1;
+                            $_SESSION['deleteexists'] = 1;
                             header("location:index.php?a=6");
                         }
                     }
                     else 
                     {
-                        $_SESSION['deleteexists'] = 1;
-                        header("location:index.php?a=6");
+                        header("location:index.php?a=404");
                     }
                 }
 //thuc thi delete cho loaisanpham
@@ -65,14 +63,13 @@
                         }
                         else
                         {
-                            $_SESSION['deletefalse'] = 1;
+                            $_SESSION['deleteexists'] = 1;
                             header("location:index.php?a=7");
                         }
                     }
                     else
                     {
-                        $_SESSION['deleteexists'] = 1;
-                        header("location:index.php?a=7");
+                        header("location:index.php?a=404");
                     }
                 }
 //thuc thi delete cho hangsanxuat
@@ -90,14 +87,13 @@
                         }
                         else
                         {
-                            $_SESSION['deletefalse'] = 1;
+                            $_SESSION['deleteexists'] = 1;
                             header("location:index.php?a=8");
                         }   
                     }   
                     else
                     {
-                        $_SESSION['deleteexists'] = 1;
-                        header("location:index.php?a=8");
+                        header("location:index.php?a=404");
                     }
                 }
             }

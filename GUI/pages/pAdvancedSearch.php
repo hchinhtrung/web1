@@ -15,9 +15,9 @@ if(isset($_GET['a']))
                 {
                     $sanPhamBUS = new SanPhamBUS();
                     $lst = $sanPhamBUS->GetByName($_GET['search']);
-                    if(count($lst) <=0)
+                    if(count($lst) <= 0)
                     {
-                        echo '<h1>Product not found</h1>';
+                        echo '<h1 id="error">Product not foundaa</h1>';
                     }
                     else
                     {
@@ -73,7 +73,7 @@ if(isset($_GET['a']))
                     $lst = $sanPhamBUS->GetByNameAndPrice($_GET['search'], $max, $min);
                     if(count($lst) <=0)
                     {
-                        echo '<h1>Product not found</h1>';
+                        echo '<h1 id="error">Product not found</h1>';
                     }
                     else
                     {
@@ -102,7 +102,7 @@ if(isset($_GET['a']))
                         $lst = $sanPhamBUS->GetByNameAndManufacturer($_GET['search'], $man);
                         if(count($lst) <=0)
                         {
-                            echo '<h1>Product not found</h1>';
+                            echo '<h1 id="error">Product not found</h1>';
                         }
                         else
                         {
@@ -153,12 +153,11 @@ if(isset($_GET['a']))
                         {
                             header("location:index.php?a=404");
                         }
-                        echo '<h3><a id="back" onclick="ComeBack()">&lt;&lt;</a>&nbsp;&nbsp;SEARCH FOR: "'.$_GET['search'].'"</h3>';
                         $sanPhamBUS = new SanPhamBUS();
                         $lst = $sanPhamBUS->GetByNameAndPriceAndManufacturer($_GET['search'], $max, $min, $man);
                         if(count($lst) <= 0)
                         {
-                            echo '<h1>Product not found</h1>';
+                            echo '<h1 id="error">Product not found</h1>';
                         }
                         else
                         {
@@ -196,7 +195,7 @@ if(isset($_GET['a']))
                         $lst = $sanPhamBUS->GetByNameAndType($_GET['search'], $type);
                         if(count($lst) <=0)
                         {
-                            echo '<h1>Product not found</h1>';
+                            echo '<h1 id="error">Product not found</h1>';
                         }
                         else
                         {
@@ -252,7 +251,7 @@ if(isset($_GET['a']))
                         $lst = $sanPhamBUS->GetByNameAndPriceAndType($_GET['search'], $max, $min, $type);
                         if(count($lst) <=0)
                         {
-                            echo '<h1>Product not found</h1>';
+                            echo '<h1 id="error">Product not found</h1>';
                         }
                         else
                         {
@@ -281,7 +280,7 @@ if(isset($_GET['a']))
                             $lst = $sanPhamBUS->GetByNameAndManufacturerAndType($_GET['search'], $man, $type);
                             if(count($lst) <=0)
                             {
-                                echo '<h1>Product not found</h1>';
+                                echo '<h1 id="error">Product not found</h1>';
                             }
                             else
                             {
@@ -336,7 +335,7 @@ if(isset($_GET['a']))
                             $lst = $sanPhamBUS->GetByNameAndPriceAndManufacturerAndType($_GET['search'], $max, $min, $man, $type);
                             if(count($lst) <= 0)
                             {
-                                echo '<h1>Product not found</h1>';
+                                echo '<h1 id="error">Product not found</h1>';
                             }
                             else
                             {

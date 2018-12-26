@@ -20,13 +20,10 @@
             $loaiSanPhamBUS = new LoaiSanPhamBUS();
             $Admin = new AdminBUS();
             $Admin->SelectTableLoaiSanPham($loaiSanPhamBUS->GetAll());
-            if(isset($_SESSION['deletefalse']))
-            {
-                echo '<script> alert("Delete false!"); </script>';
-            }
             if(isset($_SESSION['deleteexists']))
             {
                 echo '<script> alert("You can not delete this type product!"); </script>';
+                unset($_SESSION['deleteexists']);
             }
         }
         else

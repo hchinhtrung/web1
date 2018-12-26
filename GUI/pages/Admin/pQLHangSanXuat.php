@@ -20,10 +20,6 @@
             $hangSanXuatBUS = new HangSanXuatBUS();
             $Admin = new AdminBUS();
             $Admin->SelectTableHangSanXuat($hangSanXuatBUS->GetAll());
-            if(isset($_SESSION['deletefalse']))
-            {
-                echo '<script> alert("Delete false!"); </script>';
-            }
             if(isset($_SESSION['deleteexists']))
             {
                 echo '<script> alert("You can not delete this manufacturer!"); </script>';

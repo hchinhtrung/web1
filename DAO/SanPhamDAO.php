@@ -48,7 +48,7 @@ Class SanPhamDAO extends DB
     }
     public function GetByName($tenSanPham)
     {
-        $sql = "select MaSanPham, TenSanPham, GiaSanPham  from sanpham where TenSanPham like '%$tenSanPham%'";
+        $sql = "select MaSanPham, TenSanPham, HinhURL, GiaSanPham  from sanpham where TenSanPham like '%$tenSanPham%'";
             $result = $this->ExecuteQuery($sql);
             if($result == null)
             {
@@ -67,6 +67,7 @@ Class SanPhamDAO extends DB
                     $sanPham= new SanPhamDTO();
                     $sanPham->MaSanPham = $MaSanPham;
                     $sanPham->TenSanPham=$TenSanPham;
+                    $sanPham->HinhURL=$HinhURL;
                     $sanPham->GiaSanPham = $GiaSanPham;
                     $lstSanPham[]= $sanPham;
                 }
