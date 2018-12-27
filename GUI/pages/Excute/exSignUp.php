@@ -32,13 +32,10 @@
             $_SESSION['checkcaptcha'] = 1;
             header("location:index.php?a=13");
       }
-      else if($day != 0 || $month != 0 || $year != 0)
+      else if(($day != 0 || $month != 0 || $year != 0) && checkdate($month, $day, $year) == false)
       {
-          if(checkdate($month, $day, $year) == false)
-          {
-                $_SESSION['checkdate'] = 1;
-                header("location:index.php?a=13");
-          }
+            $_SESSION['checkdate'] = 1;
+            header("location:index.php?a=13");
       }
       else
       {
@@ -63,12 +60,13 @@
           }
           else
           {
-                $_SESSION['checktrue'] = 1;
-                header("location:index.php?a=13");
-              echo '<script language="javascript">';
-              echo 'alert("Sign Up Success")';
-              echo '</script>';
+                  $_SESSION['checktrue'] = 1;
+                  header("location:index.php?a=13");
           }
       }
+  }
+  else
+  {
+      header("location:index.php?a=404");
   }
 ?>
