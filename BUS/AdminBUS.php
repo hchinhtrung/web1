@@ -659,7 +659,7 @@
             $lstchiTietDonDatHang = $chiTietDonDatHangBUS->GetByMaDonDatHang($madondathang);
             echo "<h3><a id='back' onclick='ComeBack()'>&lt;&lt;</a>&nbsp;&nbsp;ACCOUNT DETAILS</h3>";
             echo '<div id="Operation">';
-            echo ('<input type="image" src="GUI/images/print.png" id="btnunlock" onclick="PrintOrder(\'detailorder\')">');
+            echo ('<input type="image" src="GUI/images/print.png" id="btnunlock" onclick="PrintOrder()">');
             echo '</div>';
             echo '<div id="detailorder">';
             echo '<div>Order ID: '.$madondathang.'/('.$donDatHang->NgayLap.')</div>';

@@ -46,7 +46,7 @@
         }
         public function GetForChart()
         {
-            $sql = "select date(NgayLap) as NgayLap, sum(TongThanhTien) as TongTien from dondathang group by date(NgayLap)";
+            $sql = "select date(NgayLap) as NgayLap, sum(TongThanhTien) as TongTien from dondathang group by date(NgayLap) order by date(NgayLap) ASC";
             $result = $this->ExecuteQuery($sql);
             $lstDonDatHang = array();
             while( $row = mysqli_fetch_array($result))

@@ -58,7 +58,7 @@ function Location()
 {
     window.location = "index.php";
 }
-function PrintOrder(strid)
+function PrintOrder()
 {   
     window.print();
 }
