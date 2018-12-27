@@ -507,7 +507,8 @@
                 </div>
                     <input type="submit" name="insert" id="smSignUp" value="Insert">
                     <span style="color:red"><p id="cautionPass"></p></span>
-                </form>';
+                </form>
+                </div>';
         }
         public function FormUpdateDonDatHang($madondathang)
         {
