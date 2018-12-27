@@ -1,6 +1,6 @@
 <div id="menu_1">
     <div id="logo">
-        <img src="GUI/images/logo.png" width="77" height="40">
+    <a href="index.php"><img src="GUI/images/logo.png" width="77" height="40" href="index.php"></a>
     </div>
     <div id="menu">
         <div id="a_menu"><img src="GUI/images/menu.png"></div>
@@ -9,7 +9,7 @@
         ?>
     </div>
     <div id="a_logo">
-        <img src="GUI/images/logo.png" width="77" height="40">
+        <a href="index.php"><img src="GUI/images/logo.png" width="77" height="40"></a>
     </div>
     <div id="signin">
         <div id="a_signin"><img src="GUI/images/avata.png"></div>
