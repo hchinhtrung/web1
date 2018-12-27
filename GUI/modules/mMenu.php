@@ -3,11 +3,11 @@
     <?php
     if(isset($_SESSION["tuid"]) &&  $_SESSION["tuid"] == 1)
     {
-        echo "<li><a href='index.php?a=5'>Tài Khoản</a></li>";
-        echo "<li><a href='index.php?a=6'>Sản Phẩm</a></li>";
-        echo "<li><a href='index.php?a=7'>Loại Sản Phẩm</a></li>";
-        echo "<li><a href='index.php?a=8'>Hãng Sản Xuất</a></li>";
-        echo "<li><a href='index.php?a=9'>Đơn Hàng</a></li>";
+        echo "<li><a href='index.php?a=5'>Account</a></li>";
+        echo "<li><a href='index.php?a=6'>Product</a></li>";
+        echo "<li><a href='index.php?a=7'>Type of product</a></li>";
+        echo "<li><a href='index.php?a=8'>Manufacture</a></li>";
+        echo "<li><a href='index.php?a=9'>Order</a></li>";
     }
     else
     {
