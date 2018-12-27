@@ -46,7 +46,7 @@
                 }
             }
 //page chi tiet cho dondathang
-            else if(isset($_GET['madondathang']) and is_numeric($_GET['madondathang ']))
+            else if(isset($_GET['madondathang']) and is_numeric($_GET['madondathang']))
             {
                 $donDatHangBUS = new DonDatHangBUS();
                 $admin = new AdminBUS();
