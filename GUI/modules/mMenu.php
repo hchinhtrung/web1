@@ -5,8 +5,13 @@
     {
         echo "<li><a href='index.php?a=5'>Account</a></li>";
         echo "<li><a href='index.php?a=6'>Product</a></li>";
+<<<<<<< Updated upstream
         echo "<li><a href='index.php?a=7'>Type of product</a></li>";
         echo "<li><a href='index.php?a=8'>Manufacture</a></li>";
+=======
+        echo "<li><a href='index.php?a=7'>Type product</a></li>";
+        echo "<li><a href='index.php?a=8'>Manufacturer</a></li>";
+>>>>>>> Stashed changes
         echo "<li><a href='index.php?a=9'>Order</a></li>";
     }
     else
